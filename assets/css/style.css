@@ -1,0 +1,889 @@
+   /*******************************************************************
+	*                                                                 *
+	*                 Site Web : florianlegoff.com                      *
+	*                                                                 * 
+	*                                                                 *
+	*               Devellopement web -> Florian LE GOFF              *
+	*                                                                 *
+	*                    Design -> Damien AUBIN                       *
+	*                                                                 *
+	*                                                                 *
+	*               Aucun Droits Réservés - CopyMe !                  *
+	*                                                                 *
+	*******************************************************************/
+
+
+@font-face{
+	font-family: 'Big_Noodle_Titling';
+	src: url('../fonts/big_noodle_titling.ttf') format('TrueType');
+}
+
+@font-face{
+	font-family: 'Bebas';
+	src: url('../fonts/BEBAS.ttf') format('TrueType');
+}
+
+@font-face{
+	font-family: 'Sansation';
+	src: url('../fonts/Sansation_Regular.ttf') format('TrueType');
+}
+
+@font-face{
+	font-family: 'Fabrica';
+	src: url('../fonts/Fabrica.otf');
+}
+
+/**********************************************************************
+							Arrière Plan 
+***********************************************************************/
+
+body
+{	
+	padding:0;
+	margin:0;
+	min-width: 980px;
+	font-family: 'Fabrica';
+}
+
+.back0
+{
+	margin-top: 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.back1
+{
+	margin-top:0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	background-color: rgb(245,245,245);
+}
+
+.borderRed
+{
+	border-top: 5px solid rgb(243,60,60);
+}
+
+.conteneur
+{
+	width: 960px;
+	margin: auto;
+	margin-top: 0px;
+}
+
+
+.clear
+{
+	clear: both;
+}
+
+/***********************************************************************
+								Header
+************************************************************************/
+
+header
+{
+	width: 100%;
+	height: 300px;
+	padding-top: 30px;
+	background-image: url('../images/header.jpg');
+}
+
+/*******************************
+			En-Tête
+********************************/
+
+header .entete
+{
+	display: inline-block;
+	width: 958px;
+	height: 110px;
+	background-color: white;
+}
+
+header .entete p.icoDev
+{
+	float: left;
+	margin-top: 30px;
+	margin-left: 35px;
+	margin-right: 25px;
+}
+
+header .entete h1
+{
+	font-size: 23px;
+	color: black;
+	margin-top: 25px;
+}
+
+header .entete h1 a
+{
+	color: black;
+	text-decoration: none;
+}
+
+header .entete h2
+{
+	margin-top: -15px;
+	font-size: 16px;
+	color: rgb(243,60,60);
+}
+
+/*******************************
+		Menu de navigation
+********************************/
+
+header nav
+{
+    display: inline-block;
+    width: 958px;
+    height: 112px;
+    margin-top:0px;
+	padding:0px;
+	background-color: white;
+
+}
+
+header nav ul
+{
+	width: 960px;
+	margin-top:0px;
+	padding:0;
+}
+
+header nav ul li
+{
+	
+	display: inline-block;
+	width: 192px;
+	height: 108px;
+	border-top: solid rgba(30,30,30,0.3) 1px;
+	margin-top:0px;
+	margin-right: -5px;
+	list-style-type : none;
+	font-size: 12px;
+	text-align: center;
+    background-color: rgb(245,245,245);
+
+}
+
+header nav a
+{
+	display: inline-block;
+	width:191px;
+	height: 65px;
+	text-decoration: none;
+	color: rgb(100,100,100);
+	vertical-align: top;
+}
+
+header nav a.linktext
+{
+	padding-top: 47px;
+}
+
+header nav a.linkimg
+{
+	display: none;
+	width:100%;
+	height: 90px;
+	padding-top: 18px;
+	text-decoration: none;
+	color: rgb(100,100,100);
+}
+
+header nav a:hover
+{
+    color: #25AECC;
+}
+
+header nav a:active
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+
+header .underNav
+{
+	display: inline-block;
+	height: 50px;
+	width: 100%;
+}
+
+header .infoNav
+{
+	display: inline-block;
+	width: 192px;
+	margin-top: -3px;
+	margin-right: -5px;
+	padding-top: 0px;
+	text-align: center;
+	color: white;
+	font-size: 13px;
+	position: relative;
+}
+
+header .infoNav span
+{
+	display: none;
+}
+
+header .infoNav img
+{
+	display: none;
+	position: absolute;
+	top:0;
+	left: 80px;
+}
+
+/***********************************************************************
+								Footer
+************************************************************************/
+
+footer
+{
+	width: 100%;
+}
+
+footer .foot1
+{
+	background-color: rgb(226,66,66);
+}
+
+footer .foot1 section.colonneFooter
+{
+	display: inline-block;
+	width: 230px;
+	margin-right: 5px;
+	vertical-align: top;
+	color: white;
+	font-size: 13px;
+}
+
+footer .foot1 section.colonneFooter h5
+{
+	font-size: 16px;
+	border-bottom: solid silver 1px;
+	padding-bottom: 15px;
+}
+
+footer .foot1 section.colonneFooter hr
+{
+	text-align: left;
+}
+
+footer .foot1 section.colonneFooter img
+{
+	vertical-align: top;
+	padding-bottom: 5px;
+}
+
+footer .foot1 section.colonneFooter a
+{
+	color: white;
+	text-decoration: none;
+}
+
+footer .foot2
+{
+	margin-top: 0px;
+	background-color: rgb(220,60,60);
+	height: 45px;
+	padding-top: 5px;
+	font-size: 12px;
+	text-align: center;
+	color: white;
+}
+
+footer .foot2 a
+{
+	text-decoration: none;
+	color: white;
+}
+
+
+/***********************************************************************
+								Page PROFIL
+************************************************************************/
+
+.myServiceBack
+{
+	width: 960px;
+	height: 500px;
+	margin: auto;
+	position: relative;
+}
+
+.myServiceBack img
+{
+	display: none;
+	position: absolute;
+	top:0;
+	left:0;
+	z-index: 1;
+}
+
+.myService 
+{
+	display: inline-block;
+	position: absolute;
+	left: 30px;
+	top: 250px;
+	width: 700px;
+	height: 220px;
+	padding-left: 100px;
+	padding-right: 100px;
+	background-color: rgba(30,30,30,0.9);
+	color: rgb(230,230,230);
+	text-align: center;
+	z-index: 2;
+}
+
+.myService h3
+{
+	margin-top: 30px;
+	color: rgb(243,60,60);
+	text-align: center;
+}
+
+.myService .descMyService
+{
+	font-size: 14px;
+	height: 100px;
+}
+
+.contAboutMe
+{
+	width: 960px;
+	margin-top: 10px;
+	border-top: solid rgb(243,60,60) 1px;
+}
+
+.titleAboutMe
+{
+	display: block;
+	width: 150px;
+	margin: auto;
+	margin-top: -10px;
+	margin-bottom: 30px;
+	text-align: center;
+	color: rgb(243,60,60);
+	background-color: rgb(245,245,245);
+}
+
+.imgAboutMe
+{
+	display: inline-block;
+	width: 550px;
+	height: 480px;
+	vertical-align: top;
+}
+
+.aboutMe
+{
+	display: inline-block;
+	width: 400px;
+	height: 370px;
+	margin-top: 120px;
+	vertical-align: top;
+	font-size: 14px;
+}
+
+.aboutMe .aboutName
+{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.aboutMe .aboutTitle
+{
+	font-size: 16px;
+	color: rgb(243,60,60);
+}
+
+.btn
+{
+	display: inline-block;
+	width: 150px;
+	height: 25px;
+	margin-top: 25px;
+	padding-top: 10px;
+	border: 2px solid black;
+	text-align: center;
+	font-size: 13px;
+	background-color: white;
+	color: black;
+	text-decoration: none;
+}
+
+.myProjet
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 660px;
+	height: 330px;
+}
+
+.myProjet .diapoProjet
+{
+	width: 660px;
+	height: 350px;
+	text-align:center;
+}
+
+.myProjet .flecheDiapo
+{
+	display: inline-block;
+	margin-top: 0px;
+	width: 26.5px;
+	color: white;
+	background-color: red;
+	vertical-align: middle;
+}
+
+.myProjet .imgDiapo
+{
+	display: inline-block;
+	margin-top: 0px;
+	width: 587px;
+	margin: auto;
+	position: relative
+}
+.myProjet .imgDiapo img
+{
+	display: none;
+	position: absolute;
+	top:0em;
+	left: 0em;
+}
+
+.myProjet .button
+{
+	text-align: center;
+}
+
+.menuCV
+{
+	width: 100%;
+	background-color: rgb(243,60,60);
+}
+
+.menuFloat
+{
+	position: fixed;
+	top:0;
+	left:0;
+}
+
+.menuCV p
+{
+	width: 750px;
+	margin:auto;
+}
+
+.menuCV a
+{
+	display: inline-block;
+	padding-top: 15px;
+	height: 35px;
+	width: 150px;
+	margin-right: -5px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+}
+
+.menuCV a:hover
+{
+	background-color: rgb(220,40,40);
+}
+
+.cv h2, .dlPdf
+{
+	text-align: center;
+	margin-bottom: -20px;
+}
+
+.cv h3
+{
+	text-align: center;
+}
+
+.cv h3 a
+{
+	color: rgb(243,60,60);
+	text-decoration: none;
+}
+
+.cv p a 
+{
+	color: rgb(51,153,255);
+	text-decoration: none;
+}
+
+.cv p a:hover
+{
+	color: rgb(243,60,60);
+	transition-duration: 0.5s;
+}
+
+.cv .cvG0
+{
+	padding: 15px;
+	width: 400px;
+	min-height: 150px;
+	background-color: white;
+}
+
+.cv .cvG1
+{
+	padding: 15px;
+	width: 400px;
+	min-height: 150px;
+	background-color: rgb(245,245,245);
+}
+
+.cv .cvD0
+{
+	padding: 15px;
+	width: 400px;
+	margin-left: 550px;
+	min-height: 150px;
+	background-color: white;
+}
+
+.cv .cvD1
+{
+	padding: 15px;
+	width: 400px;
+	margin-left: 550px;
+	min-height: 150px;
+	background-color: rgb(245,245,245);
+}
+
+
+/***********************************************************************
+								Page COMPETENCES
+************************************************************************/
+
+.lineSkill
+{
+	width: 660;
+	margin-left: 0px;
+}
+
+.skill
+{
+	display: inline-block;
+	width: 300px;
+	vertical-align: top;
+	margin-left: 15px;
+	margin-top: 20px;
+	background-color: rgb(240,240,240);
+	height: 120px;
+}
+
+.skill .visibleSkill
+{
+	margin-top: 0px;
+	height: 120px;
+}
+
+
+.skill .visibleSkill img
+{
+	float: left;
+}
+
+.skill strong
+{
+	display: inline-block;
+	margin-top: 50px;
+	margin-left: 30px;
+}
+
+.skill .skillInfos
+{
+	display: none;
+	width: 280px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 13px;
+}
+
+/***********************************************************************
+								Page PROJETS
+************************************************************************/
+
+.projet
+{
+	display: inline-block;
+	width: 300px;
+	margin-right: 16px;
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.projet p
+{
+	position: relative;
+}
+
+.projet img
+{
+	width: 300px;
+}
+
+.projet h4
+{
+	margin-top: -5px;
+}
+.projet a
+{
+	color: rgb(30,30,30);
+	text-decoration: none;
+}
+
+.projet p .viewProject
+{
+	display: none;
+	width: 300px;
+	height: 130px;
+	padding-top: 40px;
+	background: rgba(243,60,60,0.85);
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: white
+}
+
+.projet p .viewProject img
+{
+	width: 50px;
+	height: 50px;
+}
+
+.prezProjet
+{
+	display: none;
+}
+
+.enTeteProjet
+{
+	border-bottom: 1px solid rgb(150,150,150);
+}
+
+.enTeteProjet .logoProjet, .enTeteProjet .titreProjet, .enTeteProjet .closeProjet
+{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.enTeteProjet .logoProjet
+{
+
+}
+
+.enTeteProjet .titreProjet
+{
+	width: 830px;
+	margin-left: 20px;
+}
+
+.enTeteProjet .titreProjet .sTitreProjet
+{
+	font-size: 14px;
+	color: rgb(243,60,60);
+}
+
+.enTeteProjet .closeProjet img
+{
+	vertical-align: middle;
+}
+
+
+.corpsProjet .diapoProjet
+{
+	display: inline-block;
+	width: 550px;
+	vertical-align: top;
+}
+
+.corpsProjet .infosProjet
+ {
+ 	display: inline-block;
+	width: 380px;
+	margin-top: 15px;
+	margin-left: 25px;
+	vertical-align: top;
+ }
+
+.corpsProjet .infosProjet h3
+{
+	font-size: 18px;
+	color: rgb(243,60,60);
+}
+
+.corpsProjet .infosProjet p
+{
+	margin-bottom: 40px;
+	font-size: 14px;
+}
+
+.corpsProjet .infosProjet p strong
+{
+	display: block;
+	float: left;
+	width: 120px;
+}
+
+.corpsProjet .infosProjet p a
+{
+	text-decoration: none;
+	color: rgb(243,60,60);
+}
+
+
+
+.footProjet
+{
+	text-align: center;
+	border-top: 1px solid rgb(150,150,150);
+	vertical-align: top;
+}
+
+.footProjet img
+{
+	margin-left: 10px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+/***********************************************************************
+								Page SERVICES
+************************************************************************/
+
+.services
+{
+	width: 430px;
+	height: 200px;
+	padding-right: 20px;
+	padding-left: 20px;
+	display: inline-block;
+	vertical-align: top;
+	margin-left: -4px;
+	margin-bottom: -1px;
+}
+
+.services h4
+{
+	color: rgb(226,66,66);
+}
+
+.servicesHG
+{
+	border-bottom: solid 1px silver;
+	border-right: solid 1px silver;
+}
+.servicesBD
+{
+	border-top: solid 1px silver;
+	border-left: solid 1px silver;
+}
+
+.services p
+{
+	font-size: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.services p a
+{
+	color: rgb(51,153,255);
+	text-decoration: none;
+}
+
+.services p a:hover
+{
+	color: rgb(243,60,60);
+	transition-duration: 0.5s;
+}
+
+/***********************************************************************
+								Page CONTACT
+************************************************************************/
+
+.map
+{
+	display: inline-block;
+	width: 100%;
+	height: 300px;
+	vertical-align: top;
+}
+
+.formContact form
+{
+	margin-top: 20px;
+}
+
+.formContact form label
+{
+	display: block;
+	width: 130px;
+	float: left;
+	margin-left: 260px;
+	margin-right: 15px;
+	padding-top: 10px;
+	text-align: right;
+	vertical-align: middle;
+}
+
+.formContact form input
+{
+	height: 20px;
+	width: 200px;
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgb(30,30,30);
+	color: rgb(51,153,255);
+	
+}
+
+.formContact form input:focus, .formContact form textarea:focus
+{
+
+	box-shadow: 3px 3px 25px rgb(51,153,255);
+}
+
+.formContact form textarea
+{
+	width: 500px;
+	height: 150px;
+	margin-bottom: 15px;
+	margin-left: 230px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgb(30,30,30);
+	color: rgb(51,153,255);
+	
+}
+
+.formContact form input[type="submit"]
+{
+	margin-left: 420px;
+	height: 40px;
+}
+
+.formContact form input[type=submit]:hover
+{
+	color: rgb(243,60,60);
+	transition-duration: 0.5s;
+}
+
+
