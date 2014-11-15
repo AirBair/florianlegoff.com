@@ -886,4 +886,18 @@ footer .foot2 a
 	transition-duration: 0.5s;
 }
 
+/***********************************************************************
+							Page Mentions légales
+************************************************************************/
 
+.sectionlegals
+{
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.sectionlegals a
+{
+	color: rgb(243,60,60);
+	text-decoration: none;
+}

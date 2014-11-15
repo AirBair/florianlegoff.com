@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'db532997601.db.1and1.com';
 $db['default']['username'] = 'dbo532997601';
-$db['default']['password'] = 'Mileroi35*';
+$db['default']['password'] = 'o&SC9QkNIc';
 $db['default']['database'] = 'db532997601';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

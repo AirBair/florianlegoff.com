@@ -14,7 +14,7 @@
 					</a>
 				</p>
 						
-				<h4><a href="#<?php echo $projet->attribut_projet; ?>">Maths A Mort</a></h4>
+				<h4><a href="#<?php echo $projet->attribut_projet; ?>"><?php echo $projet->titre_projet; ?></a></h4>
 			</div>
 		<?php endforeach; ?>
 	</div> <!-- Fin du conteneur -->
