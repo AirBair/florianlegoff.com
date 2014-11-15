@@ -51,11 +51,8 @@
 	</footer>
 			
 
-	<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
-	<script src="<?php echo base_url(); ?>assets/javascript/custom.js">
-	</script>
-	<script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/javascript/custom.js"></script>
+	<script type="text/javascript">
 	$(function(){
 		<?php if($this->uri->segment(1) == null || $this->uri->segment(1) == 'cv')
 		{

@@ -30,6 +30,10 @@
 		<noscript><p><img src="//stats.florianlegoff.com/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 		<!-- End Piwik Code -->
 		
+		<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/color/jquery.color-2.1.2.js"></script>
+	
+
 		<header>
 			<div class="conteneur">
 				<div class="entete">
