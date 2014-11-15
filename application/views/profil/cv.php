@@ -15,7 +15,7 @@
 <div class="back0">
 	<div class="conteneur cv">
 		<h2>{ CURICULUM VITAE }</h2>
-		<p class="dlPdf" ><a class="btn" href="<?php echo site_url(); ?>assets/documents/CV Florian Le Goff.pdf">Télécharger en PDF</a></p>
+		<p class="dlPdf" ><a class="btn" href="<?php echo site_url(); ?>assets/documents/CV%20Florian%20Le%20Goff.pdf">Télécharger en PDF</a></p>
 	</div>
 </div>
 
@@ -91,7 +91,7 @@
 				<h4>Langages et Outils de Développement Web</h4>
 
 				<p>
-					Maîtrise de HTML/CSS, JavaScript/AJAX (jQuery), PHP/MySQL.</br />
+					Maîtrise de HTML/CSS, JavaScript/AJAX (jQuery), PHP/MySQL.<br />
 					Bonne connaissance du frameworks CodeIgniter et débutant sur Laravel<br />
 					Utilisation du gestionnaire de version Git, protocole SSH avec puTTY et FTP avec FileZilla.<br/>
 					Pour plus d'informations, voir la page dédié à mes <a href="<?php echo site_url('competences'); ?>">compétences dans le domaine.</a>
