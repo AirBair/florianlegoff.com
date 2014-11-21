@@ -46,17 +46,6 @@ class Contact extends CI_Controller
 
                     // Configuration du service de mail
                     $this->load->library('email');
-                    $config['protocol'] = "smtp-auth";
-                    $config['smtp_host'] = "auth.smtp.1and1.fr";
-                    $config['smtp_port'] = "587";
-                    $config['smtp_user'] = "contact@florianlegoff.com";
-                    $config['smtp_pass'] = "Mileroi35*";
-                    $config['charset'] = "utf-8";
-                    $config['mailtype'] = "html";
-                    $config['newline'] = "\r\n";
-                    
-                    // Envoi du mail
-                    $this->email->initialize($config);
                     $this->email->from($expediteur, $nom);
                     $this->email->to('contact@florianlegoff.com');
                     $this->email->cc('florianlg@a.jupimail.com');
