@@ -26,5 +26,19 @@ class Contact_model extends CI_Model
 		return (int) $this->db->where($where)->count_all_results($this->table);
 	}
 
+	public function identification()
+	{
+		$req = $this->db->select('*')
+						->from('mdpAdmin')
+						->get()
+						->result();
+
+		foreach ($req as $mdp)
+		{
+			return $mdp->mdp;
+		}
+		
+	}
+
 
 }

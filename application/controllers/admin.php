@@ -33,7 +33,7 @@ class Admin extends CI_Controller
                if( $this->form_validation->run() )
                {
                     // Si la vérification des identifiants est correct, on connecte l'utilisateur
-                    if ( $this->input->post('password') == 'mileroi' )
+                    if ( sha1(md5($this->input->post('password'))) ==  $this->contact_model->identification())
                     {
                          $data = array('login'=> 'Florian', 'logged'=>true);
                          $this->session->set_userdata($data);
