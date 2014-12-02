@@ -768,13 +768,12 @@ footer .foot2 a
 .services
 {
 	width: 430px;
-	height: 200px;
+	height: 250px;
 	padding-right: 20px;
 	padding-left: 20px;
 	display: inline-block;
 	vertical-align: top;
 	margin-left: -4px;
-	margin-bottom: -1px;
 }
 
 .services h4
@@ -787,10 +786,15 @@ footer .foot2 a
 	border-bottom: solid 1px silver;
 	border-right: solid 1px silver;
 }
-.servicesBD
+
+.servicesHD
 {
-	border-top: solid 1px silver;
-	border-left: solid 1px silver;
+	border-bottom: solid 1px silver;
+}
+
+.servicesBG
+{
+	border-right: solid 1px silver;
 }
 
 .services p
