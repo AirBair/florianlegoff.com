@@ -23,7 +23,7 @@ class Contact extends CI_Controller
 		$message = nl2br(htmlentities($this->input->post('message')));
           $objet = htmlentities($this->input->post('objet'));
 
-          $this->load->library('googlemaps');
+          /*$this->load->library('googlemaps');
 
           $config['center'] = 'saint-coulomb, france';
           $config['zoom'] = '10';
@@ -36,7 +36,7 @@ class Contact extends CI_Controller
           $marker['infowindow_content'] = 'Florian LE GOFF<br />5 rue du vieux presbytère - 35350 Saint-Coulomb';
           $this->googlemaps->add_marker($marker);
 
-          $data['map'] = $this->googlemaps->create_map();
+          $data['map'] = $this->googlemaps->create_map();*/
 	    
 
 		if (!empty($message))

@@ -1,10 +1,13 @@
 <?php require('application/views/template/header.php'); ?>
 	
+
+
 	<div class="borderRed" >
-		<section class="map">
-			<?php echo $map['html']; ?>
+		<section class="map" id="map_canvas">
 		</section>
 	</div>
+
+
 	<div class="back1">
 		<div class="conteneur">
 			<div class="formContact">
@@ -24,5 +27,30 @@
 			</div>
 		</div>
 	</div>
+
+	 <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
+	<script>
+		window.onload = function() {
+			initialize();
+		}
+		function initialize() {
+		var map = new OpenLayers.Map("map_canvas");
+		map.addLayer(new OpenLayers.Layer.OSM());
+		var lonLatSC = new OpenLayers.LonLat(-1.9099408, 48.6732632).transform(
+		new OpenLayers.Projection("EPSG:4326"),
+		map.getProjectionObject()
+		);
+		var lonLatLa = new OpenLayers.LonLat(-3.4607045160029, 48.728804628937).transform(
+		new OpenLayers.Projection("EPSG:4326"),
+		map.getProjectionObject()
+		);
+		var zoom = 9;
+		var markers = new OpenLayers.Layer.Markers("Markers");
+		map.addLayer(markers);
+		markers.addMarker(new OpenLayers.Marker(lonLatSC));
+		markers.addMarker(new OpenLayers.Marker(lonLatLa));
+		map.setCenter (lonLatSC, zoom);
+		}
+		</script> 
 
 <?php require('application/views/template/footer.php') ?>

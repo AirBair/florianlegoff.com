@@ -7,9 +7,6 @@
 		<meta name="description" content="Développeur Web en freelance." />
 		<meta name="keywords" content="florian, le goff, legoff, developpeur, web, php, html, css, mysql, jquery, javascript, freelance, auto-entrepreneur" />
 		<link rel="icon" href="favicon16.png" />
-		<?php if(isset($map)):
-			echo $map['js'];
-		endif; ?>
 	</head>
 
 	<body>
