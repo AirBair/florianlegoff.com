@@ -1,13 +1,11 @@
 <?php require('application/views/template/header.php'); ?>
 	
-
-
 	<div class="borderRed" >
-		<section class="map" id="map_canvas">
-		</section>
+		<iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://www.openstreetmap.org/export/embed.html?bbox=-2.362060546875%2C48.47110032750183%2C-1.4556884765625%2C48.8737479930069&amp;layer=mapnik&amp;marker=48.672826384100354%2C-1.90887451171875"></iframe>
 	</div>
-
-
+	<div class="back0">
+		<h2 class="titlePage">{ ME CONTACTER }</h2>
+	</div>
 	<div class="back1">
 		<div class="conteneur">
 			<div class="formContact">
@@ -27,30 +25,5 @@
 			</div>
 		</div>
 	</div>
-
-	 <script src="http://www.openlayers.org/api/OpenLayers.js"></script>
-	<script>
-		window.onload = function() {
-			initialize();
-		}
-		function initialize() {
-		var map = new OpenLayers.Map("map_canvas");
-		map.addLayer(new OpenLayers.Layer.OSM());
-		var lonLatSC = new OpenLayers.LonLat(-1.9099408, 48.6732632).transform(
-		new OpenLayers.Projection("EPSG:4326"),
-		map.getProjectionObject()
-		);
-		var lonLatLa = new OpenLayers.LonLat(-3.4607045160029, 48.728804628937).transform(
-		new OpenLayers.Projection("EPSG:4326"),
-		map.getProjectionObject()
-		);
-		var zoom = 9;
-		var markers = new OpenLayers.Layer.Markers("Markers");
-		map.addLayer(markers);
-		markers.addMarker(new OpenLayers.Marker(lonLatSC));
-		markers.addMarker(new OpenLayers.Marker(lonLatLa));
-		map.setCenter (lonLatSC, zoom);
-		}
-		</script> 
 
 <?php require('application/views/template/footer.php') ?>

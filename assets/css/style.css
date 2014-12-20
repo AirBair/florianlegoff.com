@@ -60,6 +60,11 @@ body
 	background-color: rgb(245,245,245);
 }
 
+.titlePage
+{
+	text-align: center;
+}
+
 .borderRed
 {
 	border-top: 5px solid rgb(243,60,60);
@@ -819,14 +824,6 @@ footer .foot2 a
 /***********************************************************************
 								Page CONTACT
 ************************************************************************/
-
-.map
-{
-	display: inline-block;
-	width: 100%;
-	height: 300px;
-	vertical-align: top;
-}
 
 .formContact form
 {
