@@ -37,6 +37,12 @@
 							Arrière Plan 
 ***********************************************************************/
 
+html
+{
+	margin: 0;
+	padding: 0;
+}
+
 body
 {	
 	padding:0;
@@ -306,6 +312,42 @@ footer .foot2 a
 {
 	text-decoration: none;
 	color: white;
+}
+
+
+#overlay
+{
+	display:none;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.6);
+	min-height: 900px;
+	margin-bottom: 0;
+}
+
+.idTox
+{
+	width: 840px;
+	padding: 20px;
+	position: fixed;
+	top: 150px;
+	left: 50%;
+	margin-left: -420px;
+	background-color: white;
+	display: none;
+	overflow: auto;
+	max-height: 500px;
+	text-align: center;
+}
+
+.idTox textarea
+{
+	width: 670px;
+	height: 20px;
+	margin-top: 20px;
+	padding-top: 5px;
+	text-align: center;
 }
 
 

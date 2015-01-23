@@ -43,6 +43,22 @@ function menuDynamique(page) {
 
 $(function(){
 
+   /* ID TOX */
+   $('.clickToTox').click(function(){
+
+      $('.idTox').fadeIn();
+      $('#overlay').fadeIn();
+         var taille = document.body.offsetHeight;
+      $('#overlay').css('height', taille);
+
+      return false;
+   });
+
+   $('#overlay button').click(function(){
+      $('#overlay').fadeOut();
+      return false;
+   });
+
 	/* Slider */
 	var i=0;
 	affiche();

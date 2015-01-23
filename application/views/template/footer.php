@@ -24,7 +24,7 @@
 					<p>
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> contact@florianlegoff.com<br />
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> ICQ: 669187630<br />
-						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> ID TOX (Cliquez)
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="idtox" class="clickToTox">ID TOX (Cliquez)</a>
 					</p>
 				</section>
 				<section class="colonneFooter">
@@ -49,7 +49,16 @@
 		</div>
 
 	</footer>
-			
+	
+	<div id="overlay">
+		<div class="idTox">
+			<p>
+				<strong>Identifiant TOX :</strong><br />
+				<textarea width="800px" heigh="20px">CE15213CED196E1A260A3E6D117C96D13EC5B4C93490B8F86005BA38606EB3382C43B71567B9</textarea><br /><br />
+				<button>Fermer</button>
+			</p>
+		</div>
+	</div>		
 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/javascript/custom.js"></script>
 	<script type="text/javascript">
