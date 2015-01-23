@@ -573,6 +573,44 @@ footer .foot2 a
 								Page COMPETENCES
 ************************************************************************/
 
+.catSkills
+{
+	color: rgb(243,60,60);
+	text-align: center;
+}
+
+.itemSkill
+{
+	display: inline-block;
+	width: 470px;
+	border: solid rgb(243,60,60) 2px;
+	margin-bottom: 5px;
+	background-color: rgb(200,200,200);
+	border-radius: 10px;
+	color: rgb(60,60,60);
+	text-align: center;
+}
+
+.itemSkill .titleSkill img
+{
+	display: inline-block;
+	width: 140px;
+	height: 120px;
+}
+
+.titleSkill span.skillInfos
+{
+	display: none;
+	width: 280px;
+	vertical-align: top;
+	text-align: center;
+}
+
+/*.titleSkill:hover span.skillInfos
+{
+	display: inline-block;
+}*/
+
 .lineSkill
 {
 	width: 660;

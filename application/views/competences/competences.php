@@ -2,94 +2,202 @@
 
 <div class="back0 borderRed">		
 	<section class="conteneur">
+		<h3 class="catSkills">Developpement Web</h3>
 
-		<div class="lineSkill">
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/html5.png', 'Logo HTML5'); ?>
-					<strong>HTML</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/html5.png', 'Logo HTML5'); ?>
+				<span class="skillInfos" >
+				L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+				Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>
+				<span class="clear"></span>
+			</p>
+				
+		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/css.png', 'Logo CSS'); ?>
+				<span class="skillInfos" >
+				L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+				Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/php.png', 'Logo PHP'); ?>
+				<span class="skillInfos" >
 					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
 					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
-				</p>	
-			</div>
-
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/css3.png', 'Logo CSS'); ?>
-					<strong>CSS</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
-
-				</p>	
-			</div>
-
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/php.png', 'Logo PHP'); ?>
-					<strong>PHP</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
-
-				</p>
-			</div>
-
-		</div>
-
-		<div class="lineSkill" >
-			
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/mysql.jpg', 'Logo MySql'); ?>
-					<strong>MySQL</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
-
-				</p>	
-			</div>
-
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/logoJs.png', 'Logo JavaScript'); ?>
-					<strong>JavaScript</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
-
-				</p>	
-			</div>
-
-			<div class="skill">
-				<p class="visibleSkill" >
-					<?php echo img('Skills/jquery.png', 'Logo jQuery'); ?>
-					<strong>jQuery</strong>
-					<span class="clear"></span>
-				</p>
-				<p class="skillInfos" >
-
-				</p>
-			</div>
-		</div>
-
-		<div class="lineSkill" >
-			
-		</div>			
-
-		<div class="skill">
-			<p class="visibleSkill" >
-			<?php echo img('Skills/codeigniter.jpg', 'Logo CodeIgniter'); ?>
-			<strong>CodeIgniter</strong>
-			<span class="clear"></span>
+				</span>	
+				<span class="clear"></span>
 			</p>
-			<p class="skillInfos" >
-
-			</p>	
 		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/mysql.png', 'Logo MySQL'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+			
+		</div>
+
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/logoJs.jpg', 'Logo JavaScript'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+			
+		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/git.png', 'Logo  Git'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>
+				<span class="clear"></span>
+			</p>
+				
+		</div>
+
+
 	</section>
-</div>			
+</div>
+
+<div class="back1 borderRed">		
+	<section class="conteneur">
+		<h3 class="catSkills">FrameWorks et librairies</h3>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/codeigniter.jpg', 'Logo CodeIgniter'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/jquery.png', 'Logo jQuery'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+	</section>
+</div>
+
+
+<div class="back0 borderRed">		
+	<section class="conteneur">
+		<h3 class="catSkills">Systèmes d'exploitations</h3>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/windows.png', 'Logo Windows'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/linux.png', 'Logo Linux'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+	</section>
+</div>
+
+
+<div class="back1 borderRed">		
+	<section class="conteneur">
+		<h3 class="catSkills">Administration serveurs Web</h3>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/apache.png', 'Logo Apache'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/nginx.png', 'Logo Nginx'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+
+	</section>
+</div>
+
+<div class="back0 borderRed">		
+	<section class="conteneur">
+		<h3 class="catSkills">Autre compétences</h3>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/c.png', 'Logo C'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+		<div class="itemSkill">
+			<p class="titleSkill" >
+				<?php echo img('Skills/java.png', 'Logo JAVA'); ?>
+				<span class="skillInfos" >
+					L'HTML (Hypertext Markup Language), est un langage de balisage permettant d’écrire de l’hypertexte. Il a été créé entre 1989 et 1992 par le World Wide Web Consortium (W3C).<br /> 
+					Il sert notamment à représenter des pages web en les mettant en forme via diverses ressources. Il est souvent utilisé avec du JavaScript et du CSS.
+				</span>	
+				<span class="clear"></span>
+			</p>
+		</div>
+
+	</section>
+</div>
+	
 <?php require('application/views/template/footer.php') ?>
