@@ -6,7 +6,7 @@ class Contact extends CI_Controller
      {
           parent::__construct();
 
-          $this->load->model('contact_model');
+          $this->load->model('admin_model');
           $this->load->helper('date');
      }
 
@@ -49,7 +49,7 @@ class Contact extends CI_Controller
                          );
 
                     // Envoi en base de données
-                    $this->contact_model->save($data);
+                    $this->admin_model->saveMail($data);
  
                     // Affichage de la page de confirmation.
                     return $this->load->view('contact/confirmation');

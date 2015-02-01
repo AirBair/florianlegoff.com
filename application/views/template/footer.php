@@ -16,7 +16,8 @@
 					<h5>INFORMATIONS</h5>
 					<p>
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('legals'); ?>" >Mentions légales</a><br />
-						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('cv'); ?>" >Mon CV</a>
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('cv'); ?>" >Mon CV</a><br />
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('admin'); ?>" >Espace Admin.</a>
 					</p>
 				</section>
 				<section class="colonneFooter">
@@ -54,7 +55,7 @@
 		<div class="idTox">
 			<p>
 				<strong>Identifiant TOX :</strong><br />
-				<textarea width="800px" heigh="20px">CE15213CED196E1A260A3E6D117C96D13EC5B4C93490B8F86005BA38606EB3382C43B71567B9</textarea><br /><br />
+				<textarea>CE15213CED196E1A260A3E6D117C96D13EC5B4C93490B8F86005BA38606EB3382C43B71567B9</textarea><br /><br />
 				<button>Fermer</button>
 			</p>
 		</div>

@@ -1,32 +1,20 @@
    /*******************************************************************
 	*                                                                 *
-	*                 Site Web : florianlegoff.com                      *
+	*                 Site Web : www.florianlegoff.com                *
 	*                                                                 * 
 	*                                                                 *
-	*               Devellopement web -> Florian LE GOFF              *
+	*               Developpement web -> Florian LE GOFF              *
 	*                                                                 *
-	*                    Design -> Damien AUBIN                       *
+	*            Design -> Damien AUBIN (www.aubindamien.com)         *
 	*                                                                 *
 	*                                                                 *
-	*               Aucun Droits Réservés - CopyMe !                  *
+	*               Aucuns Droits Réservés - CopyMe !                 *
 	*                                                                 *
 	*******************************************************************/
 
-
-@font-face{
-	font-family: 'Big_Noodle_Titling';
-	src: url('../fonts/big_noodle_titling.ttf') format('TrueType');
-}
-
-@font-face{
-	font-family: 'Bebas';
-	src: url('../fonts/BEBAS.ttf') format('TrueType');
-}
-
-@font-face{
-	font-family: 'Sansation';
-	src: url('../fonts/Sansation_Regular.ttf') format('TrueType');
-}
+/**********************************************************************
+							Police
+***********************************************************************/
 
 @font-face{
 	font-family: 'Fabrica';
@@ -34,7 +22,7 @@
 }
 
 /**********************************************************************
-							Arrière Plan 
+							Eléments récurrents 
 ***********************************************************************/
 
 html
@@ -83,11 +71,11 @@ body
 	margin-top: 0px;
 }
 
-
 .clear
 {
 	clear: both;
 }
+
 
 /***********************************************************************
 								Header
@@ -511,7 +499,7 @@ footer .foot2 a
 	text-align: center;
 }
 
-.menuCV
+.menuRed
 {
 	width: 100%;
 	background-color: rgb(243,60,60);
@@ -524,13 +512,13 @@ footer .foot2 a
 	left:0;
 }
 
-.menuCV p
+.menuRed p
 {
 	width: 750px;
 	margin:auto;
 }
 
-.menuCV a
+.menuRed a
 {
 	display: inline-block;
 	padding-top: 15px;
@@ -542,7 +530,7 @@ footer .foot2 a
 	text-decoration: none;
 }
 
-.menuCV a:hover
+.menuRed a:hover
 {
 	background-color: rgb(220,40,40);
 }
@@ -615,88 +603,53 @@ footer .foot2 a
 								Page COMPETENCES
 ************************************************************************/
 
-.catSkills
+h3.catSkills
 {
 	color: rgb(243,60,60);
 	text-align: center;
 }
 
-.itemSkill
+div.itemSkill
 {
 	display: inline-block;
 	width: 470px;
-	border: solid rgb(243,60,60) 2px;
+	height: 150px;
 	margin-bottom: 5px;
-	background-color: rgb(200,200,200);
+	vertical-align: top;
+	position: relative;
 	border-radius: 10px;
+	border: solid rgb(243,60,60) 2px;
+	background-color: rgb(220,220,220);
 	color: rgb(60,60,60);
 	text-align: center;
 }
 
-.itemSkill .titleSkill img
+div.itemSkill p.titleSkill img
 {
 	display: inline-block;
 	width: 140px;
 	height: 120px;
 }
 
-.titleSkill span.skillInfos
+p.titleSkill span.skillInfos
 {
-	display: none;
-	width: 280px;
+	display: inline-block;
+	width: 350px;
+	height: 124px;
+	padding: 10px 60px 0px 60px;
 	vertical-align: top;
 	text-align: center;
-}
-
-/*.titleSkill:hover span.skillInfos
-{
-	display: inline-block;
-}*/
-
-.lineSkill
-{
-	width: 660;
-	margin-left: 0px;
-}
-
-.skill
-{
-	display: inline-block;
-	width: 300px;
-	vertical-align: top;
-	margin-left: 15px;
-	margin-top: 20px;
-	background-color: rgb(240,240,240);
-	height: 120px;
-}
-
-.skill .visibleSkill
-{
-	margin-top: 0px;
-	height: 120px;
-}
-
-
-.skill .visibleSkill img
-{
-	float: left;
-}
-
-.skill strong
-{
-	display: inline-block;
-	margin-top: 50px;
-	margin-left: 30px;
-}
-
-.skill .skillInfos
-{
-	display: none;
-	width: 280px;
-	padding-left: 10px;
-	padding-right: 10px;
 	font-size: 13px;
+	position: absolute;
+	top:0;
 }
+
+span.skillInfos a
+{
+	color: rgb(243,60,60);
+	text-decoration: none;
+}
+
 
 /***********************************************************************
 								Page PROJETS
@@ -977,8 +930,116 @@ footer .foot2 a
 	text-align: center;
 }
 
+.sectionlegals h3
+{
+	color: rgb(243,60,60);
+}
+
 .sectionlegals a
+{
+	color: #0088cc;
+	text-decoration: none;
+}
+
+
+/***********************************************************************
+							Espace Administrateur
+************************************************************************/
+
+#connexionAdmin
+{
+	text-align: center;
+}
+
+#connexionAdmin input
+{
+	height: 20px;
+	width: 200px;
+	margin-bottom: 15px;
+	padding: 10px;
+	border-radius: 5px;
+	border: none;
+	background-color: rgb(30,30,30);
+	color: rgb(51,153,255);
+}
+
+#connexionAdmin input[type="submit"]
+{
+	width: 150px;
+	height: 40px;
+}
+
+#connexionAdmin input[type=submit]:hover
+{
+	color: rgb(243,60,60);
+	transition-duration: 0.5s;
+}
+
+.success
+{
+	color: green;
+}
+
+.error
+{
+	color: rgb(243,60,60);
+}
+
+
+.oneMail
+{
+	width: 960px;
+	margin: auto;
+	margin-bottom: 15px;
+	border-bottom: solid red 1px;
+	text-align: center;
+}
+
+.adminSkill
+{
+	text-align: center;
+}
+
+.adminSkill textarea
+{
+	width: 300px;
+	height: 150px;
+}
+
+.adminSkill a
 {
 	color: rgb(243,60,60);
 	text-decoration: none;
+}
+
+.adminProjet .corpsProjet
+{
+	text-align: center;
+}
+
+.adminProjet .corpsProjet input[type="text"]
+{
+	width: 400px;
+}
+
+.adminProjet .corpsProjet textarea
+{
+	width: 400px;
+	height: 200px;
+}
+
+.adminService
+{
+	text-align: center;
+}
+
+.adminService input[type="text"]
+{
+	width: 500px;
+}
+
+.adminService textarea
+{
+	width: 500px;
+	height: 200px;
 }

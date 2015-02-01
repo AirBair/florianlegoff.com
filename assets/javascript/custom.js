@@ -73,66 +73,79 @@ $(function(){
 		$(precedent).fadeOut(800);
 		$(actuel).fadeIn(800);
 		if (i==4) i=0;          
-   	}
+   }
 
 
-   	$('.btn').mouseenter(function(){
-   		$(this).animate({
-   			backgroundColor: 'rgb(243,60,60)',
-   			color: 'white'
-   		},'fast');
-   	});
+	$('.btn').mouseenter(function(){
+		$(this).animate({
+			backgroundColor: 'rgb(243,60,60)',
+			color: 'white'
+		},'fast');
+	});
 
-   	$('.btn').mouseleave(function(){
-   		$(this).animate({
-   			backgroundColor: 'white',
-   			color: 'black'
-   		},'fast');
-   	});
+	$('.btn').mouseleave(function(){
+		$(this).animate({
+			backgroundColor: 'white',
+			color: 'black'
+		},'fast');
+	});
 
-   	/* MON CV */
+	/* MON CV */
 
-      $('.menuCV a').each(function(){
-         $(this).click(function(){
-            var ancre = $(this).attr('href');
-            $('html, body').animate({  
-               scrollTop:$(ancre).offset().top - 50 
-            }, 'slow'); 
-            return false;
-         });
+   $('.menuRed a').each(function(){
+      $(this).click(function(){
+         var ancre = $(this).attr('href');
+         $('html, body').animate({  
+            scrollTop:$(ancre).offset().top - 50 
+         }, 'slow'); 
+         return false;
       });
+   });
 
-      $(window).scroll(function() {
-        if ($(window).scrollTop() >= 350)
-        {
-            // fixed
-            $('.menuCV').addClass("menuFloat");
-        }
-        else
-        {
-            // relative
-            $('.menuCV').removeClass("menuFloat");
-        }
-      });
+   $(window).scroll(function() {
+     if ($(window).scrollTop() >= 350)
+     {
+         // fixed
+         $('.menuRed').addClass("menuFloat");
+     }
+     else
+     {
+         // relative
+         $('.menuRed').removeClass("menuFloat");
+     }
+   });
 
-   	$('.cv h3 a').each(function(){
-   		$(this).click(function(){
-   			var blocCV = $(this).parent().parent().find('div.itemCV');
+	$('.cv h3 a').each(function(){
+		$(this).click(function(){
+			var blocCV = $(this).parent().parent().find('div.itemCV');
 
-   			if ($(blocCV).hasClass('open'))
-   			{
-   				$(blocCV).slideUp(150);
-   				$(blocCV).toggleClass('open').toggleClass('close');
-   			}
-   			else
-   			{
-   				$(blocCV).slideDown(100);
-   				$(blocCV).toggleClass('close').toggleClass('open');
-   			}
-   			return false;
-   		});
-   	});
+			if ($(blocCV).hasClass('open'))
+			{
+				$(blocCV).slideUp(150);
+				$(blocCV).toggleClass('open').toggleClass('close');
+			}
+			else
+			{
+				$(blocCV).slideDown(100);
+				$(blocCV).toggleClass('close').toggleClass('open');
+			}
+			return false;
+		});
+	});
 
+   /* MES COMPETENCES */
+
+   $('.skillInfos').hide();
+
+   $('.titleSkill').mouseenter(function(){
+      $(this).find('img').fadeOut(100);
+      $(this).find('.skillInfos').fadeIn(100);
+   });
+
+   $('.titleSkill').mouseleave(function(){
+      $(this).find('img').fadeIn(100);
+      $(this).find('.skillInfos').fadeOut(100);
+   });
 
    /* MES PROJETS */
 

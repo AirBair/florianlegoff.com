@@ -1,6 +1,6 @@
 <?php require('application/views/template/header.php'); ?>
 
-<div class="menuCV">
+<div class="menuRed">
 	<div class="conteneur">
 		<p>
 			<a href="#formation">FORMATION</a>

@@ -13,16 +13,4 @@ class Projets_model extends CI_Model
 						->result();
 	}
 
-	public function getService($service)
-	{
-		$req = $this->db->select('*')
-						->from('services')
-						->where('nom', $service)
-						->get();
-		if($req->num_rows > 0)
-		{
-			return $req->row();
-		}
-	}
-
 }
