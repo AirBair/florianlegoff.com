@@ -166,7 +166,7 @@ $(function(){
    			$('.prezProjet').hide();
    			var link = $(this).attr('href');
    			$(link).slideDown();
-   			$('html,body').animate({scrollTop: 1000}, 'slow');
+   			$('html,body').animate({scrollTop: $(link).offset().top}, 'slow');
    			return false;
    		});
    	});

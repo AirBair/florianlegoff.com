@@ -7,9 +7,42 @@
 		<h2 class="titlePage">{ AJOUTER UN PROJET }</h2>
 </div>
 
-<div class="back0">
-		<p style="text-align:center;">En cours de dev.</p>
+<div class="back0 addProjetAdmin">
+		<?php echo form_open('admin/projets/new'); ?>
+				<h3>Description</h3>
+				<input type="text" name="titre" placeholder="Titre du projet" /><br />
+				<input type="text" name="sousTitre" placeholder="Sous-Titre du projet" /><br />
+				<input type="text" name="attribut" placeholder="Attribut du projet" /><br />
+				<input type="text" name="miniature" placeholder="Nom miniature" /><br />
+				<input type="text" name="logo" placeholder="Nom Logo" /><br />
+				<textarea name="description" placeholder="Description du projet"></textarea>
+
+				<h3>Détails</h3>
+					<input type="text" name="client" placeholder="Client" /><br />
+					<input type="text" name="date" placeholder="Date de réalisation" /><br />
+					<textarea name="webdesign" placeholder="Web-Designer"></textarea><br />
+					<input type="text" name="techno" placeholder="Technologies" />
+				
+				<h3>Liens</h3>
+					<textarea name="url" placeholder="URL du site"></textarea><br />
+
+				<h3>Positionnement</h3>
+					<input type="number" name="position" placeholder="Position" required /><br />
+					<select name="prev" >
+						<?php foreach($projets as $projet): ?>
+							<option value="<?php echo $projet->attribut_projet; ?>"><?php echo $projet->titre_projet; ?></option>
+						<?php endforeach; ?>
+					</select><br />
+					<select name="next" >
+						<?php foreach($projets as $projet): ?>
+							<option value="<?php echo $projet->attribut_projet; ?>"><?php echo $projet->titre_projet; ?></option>
+						<?php endforeach; ?>
+					</select><br /><br />
+					<input type="submit" value="Modifier" />
+			</div>
+			<?php echo form_close(); ?>
 </div>
+
 
 <div class="back1">
 		<h2 class="titlePage">{ MODIFIER LES PROJETS }</h2>
@@ -79,7 +112,7 @@
 		<div class="footProjet" >
 			<p>
 				<a href="#<?php echo $projet->prev_projet; ?>"><img class="flecheG" src="<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheGauche.png" alt="Icone fleche projet précedent" /></a>
-				<?php echo $projet->position_projet; ?>/4
+				<?php echo $projet->position_projet; ?>/<?php echo $nbProjets; ?>
 				<a href="#<?php echo $projet->next_projet; ?>"><img class="flecheD" src="<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheDroite.png" alt="Icone fleche projet suivant" /></a>
 			</p>
 		</div>

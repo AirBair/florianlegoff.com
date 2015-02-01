@@ -220,6 +220,29 @@ class Admin extends CI_Controller
                          $this->session->set_flashdata('success', true);
                          redirect('admin/projets');exit;
                     }
+                    else if ($projet == 'new')
+                    {
+                         $infos = array(
+                              'titre_projet' => $this->input->post('titre'),
+                              'sousTitre_projet' => $this->input->post('sousTitre'),
+                              'attribut_projet' => $this->input->post('attribut'),
+                              'miniature_projet' => $this->input->post('miniature'),
+                              'icone_projet' => $this->input->post('logo'),
+                              'description_projet' => $this->input->post('description'),
+                              'client_projet' => $this->input->post('client'),
+                              'date_projet' => $this->input->post('date'),
+                              'webdesign_projet' => $this->input->post('webdesign'),
+                              'technologies_projet' => $this->input->post('techno'),
+                              'url_projet' => $this->input->post('url'),
+                              'prev_projet' => $this->input->post('prev'),
+                              'next_projet' => $this->input->post('next'),
+                              'position_projet' => $this->input->post('position')
+                         );
+
+                         $this->admin_model->addProjet($infos);
+                         $this->session->set_flashdata('success', true);
+                         redirect('admin/projets');exit;
+                    }
                     else
                     {
                          redirect('admin/projets');exit;
@@ -229,6 +252,7 @@ class Admin extends CI_Controller
                {
                     $data = array(
                          'projets' => $this->admin_model->getAllProjets(),
+                         'nbProjets' => $this->admin_model->countProjets(),
                          'titre' => 'Projets | Espace Admin'
                     );
                     $this->load->view('admin/projetsAdmin', $data);

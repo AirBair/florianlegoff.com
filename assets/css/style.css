@@ -1001,16 +1001,37 @@ span.skillInfos a
 	text-align: center;
 }
 
+.adminSkill input[type="text"]
+{
+	width: 500px;
+}
+
 .adminSkill textarea
 {
-	width: 300px;
-	height: 150px;
+	width: 500px;
+	height: 200px;
 }
 
 .adminSkill a
 {
 	color: rgb(243,60,60);
 	text-decoration: none;
+}
+
+.addProjetAdmin
+{
+	text-align: center;
+}
+
+.addProjetAdmin input[type="text"]
+{
+	width: 500px;
+}
+
+.addProjetAdmin textarea
+{
+	width: 500px;
+	height: 200px;
 }
 
 .adminProjet .corpsProjet

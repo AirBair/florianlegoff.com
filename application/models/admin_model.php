@@ -117,6 +117,11 @@ class Admin_model extends CI_Model
 						->result();
 	}
 
+	public function countProjets()
+	{
+		return (int) $this->db->count_all_results($this->projets);
+	}
+
 	public function getOneProjet($attr)
 	{
 		$req = $this->db->select('*')
@@ -128,6 +133,11 @@ class Admin_model extends CI_Model
 		{
 			return $req->row();
 		}
+	}
+
+	public function addProjet($data)
+	{
+		$this->db->insert($this->projets, $data);
 	}
 
 	public function updateProjet($projet, $data)

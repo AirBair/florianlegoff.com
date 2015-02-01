@@ -2,8 +2,12 @@
 
 <?php require('application/views/admin/menuAdmin.php'); ?>
 
+<div class="back1">
+		<h2 class="titlePage">{ MODIFIER LES SERVICES }</h2>
+</div>
+
 <?php foreach ($services as $service): ?>
-	<div class="back0 adminService">
+	<div class="back0 borderRed adminService">
 		<?php echo form_open('admin/services/' . $service->nom); ?>
 			<input type="text" name="titre" placeholder="Titre du service" value="<?php echo $service->titre; ?>" /><br /><br />
 
@@ -16,7 +20,7 @@
 
 <?php if( $this->session->flashdata('success') == true ): ?>
 	<script type="text/javascript">
-		alert("MàJ !");
+		alert("MàJ des services !");
 	</script>
 <?php endif; ?>
 

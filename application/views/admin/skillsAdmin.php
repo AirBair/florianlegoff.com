@@ -3,13 +3,10 @@
 <?php require('application/views/admin/menuAdmin.php'); ?>
 
 <div class="back0">
-		<h2 class="titlePage">{ AJOUTER UNE COMPETENCES }</h2>
+		<h2 class="titlePage">{ AJOUTER UNE COMPETENCE }</h2>
 </div>
 
 <div class="back1 adminSkill">
-	<?php if(isset($success)): ?>
-		<p class="success">Compétence ajoutée !</p>
-	<?php endif; ?>
 	<?php echo form_open('admin/competences'); ?>
 		<input type="text" name="titreSkill" id="titreSkill" placeholder="Compétence" /><br /><br />
 
@@ -31,7 +28,7 @@
 
 
 <div class="back0">
-		<h2 class="titlePage">{ MODIFIER UNE COMPETENCES }</h2>
+		<h2 class="titlePage">{ MODIFIER UNE COMPETENCE }</h2>
 </div>
 
 <div class="back1 adminSkill">
@@ -56,5 +53,11 @@
 		?>
 	<?php endforeach; ?>
 </div>
+
+<?php if(isset($success)): ?>
+	<script type="text/javascript">
+		alert('Compétence ajoutée !');
+	</script>
+<?php endif; ?>
 
 <?php require('application/views/template/footer.php') ?>

@@ -11,6 +11,7 @@ class Projets extends CI_Controller
 	{
 		$data = array(
 			'projets' => $this->admin_model->getAllProjets(),
+			'nbProjets' => $this->admin_model->countProjets(),
 			'titre' => 'Projets | Florian LE GOFF'
 		);
 		

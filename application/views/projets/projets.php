@@ -66,7 +66,7 @@
 		<div class="footProjet" >
 			<p>
 				<a href="#<?php echo $projet->prev_projet; ?>"><img class="flecheG" src="<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheGauche.png" alt="Icone fleche projet précedent" /></a>
-				<?php echo $projet->position_projet; ?>/4
+				<?php echo $projet->position_projet; ?>/<?php echo $nbProjets; ?>
 				<a href="#<?php echo $projet->next_projet; ?>"><img class="flecheD" src="<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheDroite.png" alt="Icone fleche projet suivant" /></a>
 			</p>
 		</div>
