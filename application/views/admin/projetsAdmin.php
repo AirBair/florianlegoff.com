@@ -2,13 +2,26 @@
 
 <?php require('application/views/admin/menuAdmin.php'); ?>
 
+
+<div class="back1">
+		<h2 class="titlePage">{ AJOUTER UN PROJET }</h2>
+</div>
+
+<div class="back0">
+		<p style="text-align:center;">En cours de dev.</p>
+</div>
+
+<div class="back1">
+		<h2 class="titlePage">{ MODIFIER LES PROJETS }</h2>
+</div>
+
 <div class="back0">
 	<div class="conteneur">
 		<?php foreach ($projets as $projet): ?>
 			<div class="projet">
 				<p>
 					<a href="#<?php echo $projet->attribut_projet; ?>">
-					<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->miniature_projet; ?>" alt="Miniature <?php echo $projet->titre_projet; ?>" />
+						<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->miniature_projet; ?>" alt="Miniature <?php echo $projet->titre_projet; ?>" />
 					</a>
 					<a href="#<?php echo $projet->attribut_projet; ?>" class="viewProject">
 						<img src="<?php echo site_url(); ?>assets/images/projets/voirPlus.png" alt="Icone voir +" /><br />
@@ -61,6 +74,7 @@
 
 					<input type="submit" value="Modifier" />
 			</div>
+			<?php echo form_close(); ?>
 		</div>
 		<div class="footProjet" >
 			<p>
@@ -73,5 +87,11 @@
 </div> <!-- Fin du back1 -->
 
 <?php endforeach; ?>
+
+<?php if($this->session->userdata('success') == true): ?>
+	<script type="text/javascript">
+		alert('Projet MàJ');
+	</script>
+<?php endif; ?>
 
 <?php require('application/views/template/footer.php') ?>

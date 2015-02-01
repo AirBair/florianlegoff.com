@@ -503,6 +503,7 @@ footer .foot2 a
 {
 	width: 100%;
 	background-color: rgb(243,60,60);
+	z-index: 2;
 }
 
 .menuFloat

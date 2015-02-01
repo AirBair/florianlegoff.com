@@ -218,11 +218,10 @@ class Admin extends CI_Controller
 
                          $this->admin_model->updateProjet($projet, $infos);
                          $this->session->set_flashdata('success', true);
-                         echo 'màJ';
+                         redirect('admin/projets');exit;
                     }
                     else
                     {
-                         echo 'Non trouve';
                          redirect('admin/projets');exit;
                     }
                }

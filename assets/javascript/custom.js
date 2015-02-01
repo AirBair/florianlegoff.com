@@ -163,7 +163,7 @@ $(function(){
 
    	$('.projet a').each(function(){
    		$(this).click(function(){
-   			$('.back1').hide();
+   			$('.prezProjet').hide();
    			var link = $(this).attr('href');
    			$(link).slideDown();
    			$('html,body').animate({scrollTop: 1000}, 'slow');
@@ -172,13 +172,13 @@ $(function(){
    	});
 
    	$('.prezProjet .closeProjet').click(function(){
-   		$('.back1').slideUp(300);
+   		$('.prezProjet').slideUp(300);
    		return false;
    	});
 
    	$('.prezProjet .footProjet a').each(function(){
    		$(this).click(function(){
-   			$('.back1').hide();
+   			$('.prezProjet').hide();
    			var link = $(this).attr('href');
    			$(link).show();
    			return false;
