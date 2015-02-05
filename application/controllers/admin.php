@@ -300,5 +300,46 @@ class Admin extends CI_Controller
           }
      }
 
+     public function cloud()
+     {
+          if( $this->session->userdata('logged') )
+          {
+               if( !empty($_FILES['fichier']) )
+               {
+                    
+                    $config['upload_path'] = './assets/documents/upload/';
+                    $config['allowed_types'] = 'gif|jpg|jpeg|png|bmp|mp4|txt|pdf|odt|odp|ods|zip|rar|htm|html|css|js';
+                    $config['overwrite'] = true;
+
+                    $this->load->library('upload', $config);
+
+                    if( $this->upload->do_upload('fichier') )
+                    {
+                         $data['success'] = true;
+                    }
+                    else
+                    {
+                         $data['error'] = true;
+                    }
+
+                    $data['titre'] = 'Mon Cloud | Florian LE GOFF';
+                    $this->load->view('admin/cloud', $data);
+               }
+               else
+               {
+
+                    $data = array(
+                         'titre' => 'Mon Cloud | Florian LE GOFF'
+                    );
+
+                    $this->load->view('admin/cloud', $data);
+               }
+          }
+          else
+          {
+               redirect('admin/connexion');exit;
+          }
+     }
+
 
 }

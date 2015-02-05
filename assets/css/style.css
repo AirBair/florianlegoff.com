@@ -515,7 +515,7 @@ footer .foot2 a
 
 .menuRed p
 {
-	width: 750px;
+	width: 780px;
 	margin:auto;
 }
 
@@ -1064,4 +1064,17 @@ span.skillInfos a
 {
 	width: 500px;
 	height: 200px;
+}
+
+.cloud
+{
+	text-align: center;
+}
+
+.cloud a
+{
+	display: block;
+	padding: 10px;
+	color: rgb(243,60,60);
+	text-decoration: none;
 }
