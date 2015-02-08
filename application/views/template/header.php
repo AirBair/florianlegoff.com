@@ -4,8 +4,8 @@
 		<title><?php echo $titre; ?></title>
 		<link rel="stylesheet" href="<?php echo css_url('style'); ?>" />
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-		<meta name="description" content="Développeur Web en freelance." />
-		<meta name="keywords" content="florian, le goff, legoff, developpeur, web, php, html, css, mysql, jquery, javascript, freelance, auto-entrepreneur" />
+		<meta name="description" content="Développeur Web en freelance. " />
+		<meta name="keywords" content="florian, le goff, legoff, developpeur, web, php, html, css, mysql, jquery, javascript, freelance, auto-entrepreneur, saint-malo, lannion, saint-coulomb, bretagne, ile-et-vilaine, Côtes-d'Armor" />
 		<link rel="icon" href="favicon16.png" />
 	</head>
 
@@ -36,7 +36,7 @@
 				<div class="entete">
 						<p class="icoDev"><a href="<?php echo site_url(); ?>"><img src="<?php echo site_url(); ?>assets/images/icoDeveloppeur.png" alt="Icone développeur" /></a></p>
 						<h1><a href="<?php echo site_url(); ?>">Florian LE GOFF</a></h1>
-						<h2>Développeur Web</h2>
+						<h2>Développeur Web en Freelance<br />Bretagne - Saint Malo / Lannion</h2>
 						<p class="clear"></p>
 				</div>
 				<nav class="main_navigation">

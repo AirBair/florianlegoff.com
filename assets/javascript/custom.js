@@ -139,12 +139,12 @@ $(function(){
 
    $('.titleSkill').mouseenter(function(){
       $(this).find('img').fadeOut(100);
-      $(this).find('.skillInfos').fadeIn(100);
+      $(this).find('.skillInfos').slideDown(100);
    });
 
    $('.titleSkill').mouseleave(function(){
       $(this).find('img').fadeIn(100);
-      $(this).find('.skillInfos').fadeOut(100);
+      $(this).find('.skillInfos').slideUp(100);
    });
 
    /* MES PROJETS */
