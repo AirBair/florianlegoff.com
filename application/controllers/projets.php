@@ -15,7 +15,7 @@ class Projets extends CI_Controller
 			'titre' => 'Projets | Florian LE GOFF'
 		);
 		
-		$this->load->view('projets/projets', $data);
+		$this->load->view('projets', $data);
 	}
 
 }

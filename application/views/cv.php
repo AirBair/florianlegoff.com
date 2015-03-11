@@ -13,9 +13,9 @@
 </div>
 
 <div class="back0">
-	<div class="conteneur cv">
-		<h2>{ CURICULUM VITAE }</h2>
-		<p class="dlPdf" ><a class="btn" href="<?php echo site_url(); ?>assets/documents/CV%20Florian%20Le%20Goff.pdf">Télécharger en PDF</a></p>
+	<div class="conteneur" style="text-align:center;">
+		<h2 class="titlePage">{ CURICULUM VITAE }</h2>
+		<a class="btn" href="<?php echo site_url(); ?>assets/documents/CV%20Florian%20LE%20GOFF.pdf">Télécharger en PDF</a>
 	</div>
 </div>
 
@@ -29,8 +29,9 @@
 				<h4>DUT Informatique</h4>
 
 				<p>
-					Entrée en DUT (Diplome Universitaire Technologique) Informatique à l'IUT de Lannion.<br />
-					Cursus en 2ans, qui peut se poursuivre sur une licence pro ou une école d'ingénieur.
+					2014-2015: Entrée à l'IUT de Lannion (Université de Rennes 1) en département Informatique.<br />
+					Conception, développement, maintenance d'applications informatiques.<br />
+					Administration systèmes et réseaux.
 				</p>
 			</div>
 
@@ -38,9 +39,9 @@
 				<h4>Baccalauréat Scientique (SI & ISN)</h4>
 
 				<p>
-					Obtention du baccalauréat Scientifique, filière SI (Science de l'ingénieur) et spécialité ISN (Informatique et Sciences du Numérique).<br />
-					Mention Assez Bien.<br />
-					Lycée Maupertuis à Saint-Malo.
+					2014: Baccalauréat Scientifique au Lycée Maupertuis à Saint-Malo.
+					Option Sciences de l'Ingénieur, spécialité ISN (Informatique et Sciences du Numérique).
+					Mention Assez Bien.
 				</p>
 			</div>
 		</div>
@@ -56,7 +57,7 @@
 				<h4>Auto-entrepreneur</h4>
 
 				<p>
-					Déclaration en tant qu'auto-entrepreneur dans le développement web afin de pouvoir travailler légalement sur divers projets payés.
+					Eté 2014: Auto-entrepreneur dans le développement web afin de pouvoir travailler sur des projets rémunérés en toute légalité.
 				</p>
 			</div>
 
@@ -64,9 +65,8 @@
 				<h4>Projet Quadcopter</h4>
 
 				<p>
-					Construction d'un quadcopter (=drone), dont l'objectif était de réaliser le bilant thermique de grand batiment.<br/>
-					Participation au concours du Rotary Club "Une tête et 2 mains".<br />
-					Expérience professionnel de par les contacts que j'ai eu l'occasion d'avoir ..
+					2013-2014: Construction d'un Quadcopter réalisant des bilan thermique de bâtiments dans le cadre d'un projet lycéen.
+					2eme au concours Bretagne du Rotary Club «une tête et deux mains», présentation et contact avec le milieu professionnel.
 				</p>
 			</div>
 		</div>
@@ -92,7 +92,7 @@
 
 				<p>
 					Maîtrise de HTML/CSS, JavaScript/AJAX (jQuery), PHP/MySQL.<br />
-					Bonne connaissance du frameworks CodeIgniter et débutant sur Laravel<br />
+					Bonne connaissance du frameworks CodeIgniter<br />
 					Utilisation du gestionnaire de version Git, protocole SSH avec puTTY et FTP avec FileZilla.<br/>
 					Pour plus d'informations, voir la page dédié à mes <a href="<?php echo site_url('competences'); ?>">compétences dans le domaine.</a>
 				</p>
@@ -102,7 +102,7 @@
 				<h4>Langages Logiciels</h4>
 
 				<p>
-					Niveau moyen en C, débutant en C++, JAVA et Python.
+					Bonnes bases en C et en Java. Initié au Python.
 				</p>
 			</div>
 		</div>
@@ -119,6 +119,7 @@
 
 				<p>
 					Niveau B2.<br />
+					Bonne compréhension de l'anglais informatique (documentation, API, forum développeurs).
 				</p>
 			</div>
 		</div>
@@ -135,8 +136,8 @@
 				<h4>Basket-Ball</h4>
 
 				<p>
-					Je pratique le basket-Ball en compétition (meneur de jeu) depuis 12 années. J'ai joué en niveau régional et fais plusieurs stages de sélections en équipe départementale.<br/>
-					D'une manière générale, j'aime le sport et ses challenges en général.
+					Basket-ball en compétition (meneur de jeu) depuis 12 ans, pratique au niveau régional et plusieurs stages de sélections en équipe départementale.<br />
+					Passion du sport et de ses challenges en général.
 				</p>
 			</div>
 
@@ -144,11 +145,20 @@
 				<h4>Neutralité du Net</h4>
 
 				<p>
-					Fervant défenseur de la neutralité du net, je m'intéresse à la politique sur les questions de la vie privée dans l'espace numérique et physique.
+					Neutralité du net, enjeux politique et sociétal sur les questions de la vie privée dans l'espace numérique et physique.<br />
+					Grand intérêt autour de l’open-source.
 				</p>
 			</div>
 
 			<div class="cvG0" >
+				<h4>Veille technologique</h4>
+
+				<p>
+					Passionés de nouvelles technologies, je réalise une veille permanente autour des nouveautés.
+				</p>
+			</div>
+
+			<div class="cvD0" >
 				<h4>Cinéma</h4>
 
 				<p>

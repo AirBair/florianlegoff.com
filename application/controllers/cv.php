@@ -10,7 +10,7 @@ class Cv extends CI_Controller
      public function index()
      {
      	$data['titre'] = 'CV Florian LE GOFF';
-     	$this->load->view('profil/cv', $data);
+     	$this->load->view('cv', $data);
      }
 
 

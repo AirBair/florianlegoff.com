@@ -52,14 +52,14 @@ class Contact extends CI_Controller
                     $this->admin_model->saveMail($data);
  
                     // Affichage de la page de confirmation.
-                    return $this->load->view('contact/confirmation');
+                    return $this->load->view('contact_confirmation');
  
             }
 
 		else
 		{  
                $data['titre'] = 'Contact | Florian LE GOFF';
-			$this->load->view('contact/contact', $data);
+			$this->load->view('contact', $data);
 		}
 	}
 }

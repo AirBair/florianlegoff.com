@@ -21,6 +21,6 @@
  			'informations' => $this->admin_model->getOneService('informations')
  		);
 
- 		$this->load->view('services/services', $data);
+ 		$this->load->view('services', $data);
  	}
  }

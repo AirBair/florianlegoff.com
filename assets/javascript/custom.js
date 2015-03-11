@@ -76,20 +76,6 @@ $(function(){
    }
 
 
-	$('.btn').mouseenter(function(){
-		$(this).animate({
-			backgroundColor: 'rgb(243,60,60)',
-			color: 'white'
-		},'fast');
-	});
-
-	$('.btn').mouseleave(function(){
-		$(this).animate({
-			backgroundColor: 'white',
-			color: 'black'
-		},'fast');
-	});
-
 	/* MON CV */
 
    $('.menuRed a').each(function(){
@@ -134,6 +120,15 @@ $(function(){
 	});
 
    /* MES COMPETENCES */
+
+   /*$('.skillInfos').each(function(){
+
+         var taille = $(this).offsetHeight;
+
+         var padding = (150 - taille) / 2;
+         $(this).css('padding-top', padding);
+
+   });*/
 
    $('.skillInfos').hide();
 

@@ -41,7 +41,15 @@
 		<div class="corpsProjet" >
 			<div class="diapoProjet" >
 				<p>
-					<img src="<?php echo site_url(); ?>assets/images/projets/ecranDiapo.png" alt="Fenetre comportant les screens du site" />
+					<?php if(file_exists('/assets/images/projets' . $projet->attribut_projet . '/slide/'))
+					{
+						?><img src="nothing" alt="Image à venir" /><?php
+					}
+					else
+					{
+						?><img src="<?php echo site_url(); ?>assets/images/projets/ecranDiapo.png" alt="Fenetre comportant les screens du site" /><?php
+					}
+					?>
 				</p>
 			</div>
 			<div class="infosProjet" >

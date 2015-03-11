@@ -5,7 +5,8 @@
 			<a href="<?php echo site_url('admin/competences'); ?>">Compétences</a>
 			<a href="<?php echo site_url('admin/projets'); ?>">Projets</a>
 			<a href="<?php echo site_url('admin/services'); ?>">Services</a>
-			<a href="<?php echo site_url('admin/deconnexion'); ?>">Déconnexion</a>
+			<a href="<?php echo site_url('admin/cloud'); ?>">Cloud</a>
+			<!--<a href="<?php echo site_url('admin/deconnexion'); ?>">Déconnexion</a>-->
 		</p>
 	</div>
 </div>

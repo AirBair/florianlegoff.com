@@ -8,7 +8,7 @@
 		<div id="connexionAdmin" >
 
 			<?php echo form_open('admin/connexion'); ?>
-				<input type="password" name="password" id="password" placeholder="Mot de passe" value="<?php echo set_value('password'); ?>" /><br />
+				<input type="password" name="password" id="password" placeholder="Mot de passe" value="<?php echo set_value('password'); ?>" autofocus /><br />
 
 				<?php echo form_error('password', '<span class="error">', '</span>'); ?>
 				<?php if ( isset($error) ):?>

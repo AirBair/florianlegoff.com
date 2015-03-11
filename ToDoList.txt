@@ -1,0 +1,11 @@
+- Permettre suppression dans le cloud.
+
+- Revoir structure menu rouge pour qu'il s'adapte à différents nombres de cases.
+
+- Passer en bdd la page de CV pour la rendre modifiable facilement.
+
+- Mettre clé GPG publique.
+
+- Retaper les mentions légales.
+
+- Mettre les screenshots dans les projets.
