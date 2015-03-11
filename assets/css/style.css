@@ -128,8 +128,7 @@ body
 header
 {
 	width: 100%;
-	height: 300px;
-	padding-top: 30px;
+	padding-top: 20px;
 	/*background-image: url('../images/header.jpg');*/
 	background-color: rgb(30,30,30);
 }
@@ -140,36 +139,35 @@ header
 
 header .entete
 {
-	display: inline-block;
-	width: 958px;
+	width: 960px;
 	height: 110px;
-	background-color: white;
+	margin: auto;
+	text-align: center;
 }
 
 header .entete p.icoDev
 {
 	float: left;
-	margin-top: 30px;
-	margin-left: 35px;
+	margin-top: 10px;
+	margin-left: 300px;
 	margin-right: 25px;
 }
 
 header .entete h1
 {
 	font-size: 23px;
-	color: black;
 	margin-top: 25px;
 }
 
 header .entete h1 a
 {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
 header .entete h2
 {
-	margin-top: -15px;
+	margin-top: -10px;
 	font-size: 16px;
 	color: rgb(243,60,60);
 }
@@ -181,19 +179,20 @@ header .entete h2
 header nav
 {
     display: inline-block;
-    width: 958px;
-    height: 112px;
+    width: 100%;
+    height: 110px;
     margin-top:0px;
 	padding:0px;
-	background-color: white;
+	background-color: rgb(40,40,40);
 
 }
 
 header nav ul
 {
 	width: 960px;
+	margin:auto;
 	margin-top:0px;
-	padding:0;
+	padding:0px;
 }
 
 header nav ul li
@@ -201,14 +200,13 @@ header nav ul li
 	
 	display: inline-block;
 	width: 192px;
-	height: 108px;
-	border-top: solid rgba(30,30,30,0.3) 1px;
+	height: 110px;
 	margin-top:0px;
 	margin-right: -5px;
 	list-style-type : none;
 	font-size: 12px;
 	text-align: center;
-    background-color: rgb(230,230,230);
+    /*background-color: rgb(230,230,230);*/
 
 }
 
@@ -216,9 +214,10 @@ header nav a
 {
 	display: inline-block;
 	width:191px;
-	height: 65px;
+	height: 110px;
+	margin-top: -2px;
 	text-decoration: none;
-	color: rgb(100,100,100);
+	color: rgb(150,150,150);
 	vertical-align: top;
 }
 
@@ -251,9 +250,9 @@ header nav a:active
 
 header .underNav
 {
-	display: inline-block;
 	height: 50px;
-	width: 100%;
+	width: 960px;
+	margin:auto;
 }
 
 header .infoNav
@@ -834,17 +833,6 @@ span.skillInfos a
 								Page SERVICES
 ************************************************************************/
 
-.services
-{
-	width: 430px;
-	height: 250px;
-	padding-right: 20px;
-	padding-left: 20px;
-	display: inline-block;
-	vertical-align: top;
-	margin-left: -4px;
-}
-
 .services h4
 {
 	color: rgb(226,66,66);
@@ -948,7 +936,9 @@ span.skillInfos a
 .formContact form input[type=submit]:hover
 {
 	color: rgb(243,60,60);
+	cursor: pointer;
 	transition-duration: 0.5s;
+
 }
 
 /***********************************************************************

@@ -7,7 +7,7 @@ function menuDynamique(page) {
 	$('#' + page + 'Nav').show();
 
 	$('nav ul li').mouseenter(function(){
-		$('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(100,100,100)');
+		$('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
 		$('#' + page + ' .linktext').show();
 		$('#' + page + ' .linkimg').css('display', 'none');
 		$('#' + page + 'Arrow').hide();
@@ -24,7 +24,7 @@ function menuDynamique(page) {
 	});
 
 	$('nav li').mouseleave(function() {
-		$(this).children().css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(100,100,100)');
+		$(this).children().css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
 		link = $(this).attr('id');
 		$('#' + link + ' .linktext').show();
 		$('#' + link + ' .linkimg').css('display', 'none');
