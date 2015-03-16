@@ -437,15 +437,16 @@ footer .foot2 a
 	color: rgb(243,60,60);
 }
 
-.myServiceBack
+.carrouselMain
 {
 	width: 960px;
 	height: 500px;
 	margin: auto;
+	margin-bottom: 50px;
 	position: relative;
 }
 
-.myServiceBack img
+.carrouselMain .slide
 {
 	display: none;
 	position: absolute;
@@ -454,6 +455,51 @@ footer .foot2 a
 	z-index: 1;
 }
 
+.carrouselMain .slide img
+{
+	width: 960px;
+	height: 500px;
+}
+
+.carrouselMain .slide a
+{
+	display: inline-block;
+	width: 960px;
+	padding-top: 10px;
+	height: 30px;
+	background-color: rgba(30,30,30,0.75);
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+}
+
+.carrouselMain .carrouselNav
+{
+	position: absolute;
+	bottom: -45px;
+	left: 450px;
+	z-index: 5;
+}
+
+.carrouselMain .carrouselNav span
+{
+	display: inline-block;
+	color: rgba(30,30,30,0);
+	background-color: rgba(30,30,30,0.75);
+	width: 15px;
+	height: 15px;
+	border-radius: 15px;
+	margin-left: 5px;
+}
+
+.carrouselMain .carrouselNav span:hover, .carrouselMain .carrouselNav .active
+{
+	background-color: rgb(243,60,60);
+	cursor: pointer;
+}
 
 .myService 
 {
@@ -650,31 +696,43 @@ div.itemSkill
 	background-color: rgb(220,220,220);
 	color: rgb(60,60,60);
 	text-align: center;
+	padding:0;
 }
 
-div.itemSkill p.titleSkill img
+div.itemSkill div.titleSkill p.imgSkill
 {
 	display: inline-block;
 	width: 140px;
 	height: 120px;
+	position: absolute;
+	top:0;
+	left: 150px;
+
 }
 
-p.titleSkill span.skillInfos
+div.itemSkill div.titleSkill p.imgSkill img
 {
-	display: inline-block;
+	width: 140px;
+	height: 120px;
+}
+
+div.titleSkill p.skillInfos
+{
+	display: table-cell;
 	width: 350px;
 	height: 140px;
 	padding: 10px 60px 0px 60px;
-	vertical-align: top;
+	vertical-align: middle;
 	text-align: center;
 	font-size: 13px;
 	position: absolute;
-	top:0;
+	top:-14px;
+	left: 0;
 	background-color: rgb(243,60,60);
 	color: white;
 }
 
-span.skillInfos a
+p.skillInfos a
 {
 	color: rgb(40,40,40);
 	text-decoration: none;
@@ -766,9 +824,16 @@ span.skillInfos a
 	color: rgb(243,60,60);
 }
 
+.enTeteProjet .closeProjet
+{
+	position: relative;
+}
+
 .enTeteProjet .closeProjet img
 {
-	vertical-align: middle;
+	position: absolute;
+	top:0;
+	left: 0;
 }
 
 
@@ -777,6 +842,12 @@ span.skillInfos a
 	display: inline-block;
 	width: 550px;
 	vertical-align: top;
+}
+
+.corpsProjet .diapoProjet img
+{
+	margin-top: 20px;
+	width: 550px;
 }
 
 .corpsProjet .infosProjet

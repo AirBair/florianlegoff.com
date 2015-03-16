@@ -10,13 +10,15 @@
 			<h3 class="catSkills"><?php echo $categorie->nom_catSkill; ?></h3>
 			<?php foreach($competences as $competence): ?>
 				<div class="itemSkill">
-					<p class="titleSkill" >
-						<?php echo img('Skills/' . $competence->logo_skill, 'Logo ' . $competence->title_skill); ?>
-						<span class="skillInfos" >
+					<div class="titleSkill" >
+						<p class="imgSkill">
+							<?php echo img('Skills/' . $competence->logo_skill, 'Logo ' . $competence->title_skill); ?>
+						<p>
+						<p class="skillInfos" >
 							<?php echo nl2br($competence->about_skill); ?>
-						</span>	
+						</p> 	
 						<span class="clear"></span>
-					</p>
+					</div>
 				</div>
 			<?php endforeach; ?>
 			</section>

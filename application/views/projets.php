@@ -34,22 +34,15 @@
 			</h2>
 			<p class="closeProjet">
 				<a href="close">
-					<img src="<?php echo site_url(); ?>assets/images/projets/NavigationHaut/icoClose.png" alt="Icone fermer le projet" />
+					<img src="<?php echo site_url(); ?>assets/images/projets/NavigationHaut/icoClose.png" alt="Icone fermer le projet" class="blackClose" />
+					<img src="<?php echo site_url(); ?>assets/images/projets/NavigationHaut/icoCloseSurvol.png" alt="Icone fermer le projet" class="redClose" />
 				</a>
 			</p>
 		</div>
 		<div class="corpsProjet" >
 			<div class="diapoProjet" >
 				<p>
-					<?php if(file_exists('/assets/images/projets' . $projet->attribut_projet . '/slide/'))
-					{
-						?><img src="nothing" alt="Image à venir" /><?php
-					}
-					else
-					{
-						?><img src="<?php echo site_url(); ?>assets/images/projets/ecranDiapo.png" alt="Fenetre comportant les screens du site" /><?php
-					}
-					?>
+					<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_accueil.jpg" alt="Fenetre comportant les screens du site" width="660px" />
 				</p>
 			</div>
 			<div class="infosProjet" >
@@ -86,12 +79,20 @@
 <script type="text/javascript">
 	$(function(){
 
-		$('.prezProjet .closeProjet a img').each(function(){
+		$('.prezProjet .closeProjet .redClose').each(function(){
+			$(this).hide();
+		});
+
+		$('.prezProjet .closeProjet a').each(function(){
+
 			$(this).mouseenter(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationHaut/icoCloseSurvol.png');
+         		$(this).find('.blackClose').fadeOut(100);
+         		$(this).find('.redClose').fadeIn(100);
          	});
+
          	$(this).mouseleave(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationHaut/icoClose.png');
+         		$('.prezProjet .closeProjet a .blackClose').fadeIn(100);
+         		$('.prezProjet .closeProjet a .redClose').fadeOut(100);
          	});
 		});
 

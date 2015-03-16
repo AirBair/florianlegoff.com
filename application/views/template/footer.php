@@ -31,7 +31,7 @@
 				<section class="colonneFooter">
 					<h5>PARTENAIRES</h5>
 					<p>
-						<a href="http://aubindamien.com" >Damien AUBIN<br />(graphiste, modélisateur et animateur 3D)</a>
+						<a href="http://aubindamien.com" >Damien AUBIN (Infographiste 3D)</a>
 					</p>
 				</section>
 			</div>

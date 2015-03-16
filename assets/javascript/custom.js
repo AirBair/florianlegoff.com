@@ -58,22 +58,7 @@ $(function(){
       $('#overlay').fadeOut();
       return false;
    });
-
-	/* Slider */
-	var i=0;
-	affiche();
-    setInterval(affiche, 4000);
-
-	function affiche() {
-		i++;
-		if (i==1) precedent = '#slide4'
-		else precedent = '#slide' + (i-1);
-
-		var actuel = '#slide' + i;
-		$(precedent).fadeOut(800);
-		$(actuel).fadeIn(800);
-		if (i==4) i=0;          
-   }
+	
 
 
 	/* MON CV */
@@ -132,12 +117,12 @@ $(function(){
 
    $('.skillInfos').hide();
 
-   $('.titleSkill').mouseenter(function(){
+   $('.itemSkill').mouseenter(function(){
       $(this).find('img').fadeOut(100);
       $(this).find('.skillInfos').slideDown(100);
    });
 
-   $('.titleSkill').mouseleave(function(){
+   $('.itemSkill').mouseleave(function(){
       $(this).find('img').fadeIn(100);
       $(this).find('.skillInfos').slideUp(100);
    });
