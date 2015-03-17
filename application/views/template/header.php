@@ -6,7 +6,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 		<meta name="description" content="Développeur Web en freelance. " />
 		<meta name="keywords" content="florian, le goff, legoff, developpeur, web, php, html, css, mysql, jquery, javascript, freelance, auto-entrepreneur, saint-malo, lannion, saint-coulomb, bretagne, ile-et-vilaine, Côtes-d'Armor" />
-		<link rel="icon" href="favicon16.png" />
+		<link rel="icon" href="<?php echo site_url(); ?>assets/images/favicon16.png" />
 	</head>
 
 	<body>

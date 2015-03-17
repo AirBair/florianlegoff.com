@@ -97,8 +97,8 @@ body
 .btn
 {
 	display: inline-block;
-	height: 20px;
-	min-width: 120px;
+	height: 15px;
+	min-width: 110px;
 	margin-top: 10px;
 	padding: 15px;
 	padding-left: 30px;
@@ -636,44 +636,41 @@ footer .foot2 a
 	transition-duration: 0.5s;
 }
 
-.cv .cvG0
+.cv .itemCV0
 {
-	padding: 15px;
-	width: 400px;
-	min-height: 150px;
+	width: 900px;
+	padding: 30px;
 	background-color: white;
-	margin-top: 15px;
+	text-align: center;
+	margin-top: 30px;
 }
 
-.cv .cvG1
+.cv .itemCV1
 {
-	padding: 15px;
-	width: 400px;
-	min-height: 150px;
+	width: 900px;
+	padding: 30px;
 	background-color: rgb(230,230,230);
-	margin-top: 15px;
+	text-align: center;
+	margin-top: 30px;
 }
 
-.cv .cvD0
+.updateCv form
 {
-	padding: 15px;
-	width: 400px;
-	margin-left: 550px;
-	min-height: 150px;
-	background-color: white;
-	margin-top: 15px;
+	text-align: center;
 }
 
-.cv .cvD1
+.updateCv form input[type="text"]
 {
-	padding: 15px;
-	width: 400px;
-	margin-left: 550px;
-	min-height: 150px;
-	background-color: rgb(230,230,230);
-	margin-top: 15px;
+	width: 600px;
+	text-align: center;
 }
 
+ .updateCv form textarea
+{
+	width: 600px;
+	height: 300px;
+	text-align: center;
+}
 
 /***********************************************************************
 								Page COMPETENCES

@@ -11,6 +11,8 @@ class Admin_model extends CI_Model
 	private $catSkill = 'skillCategories';
 	private $skills = 'competences';
 	private $services = 'services';
+	private $catCv = 'cvCategories';
+	private $cv = 'cv';
 
 	/*************************************************************************
 							IDENTIFICATION ADMINISTRATEUR
@@ -178,5 +180,70 @@ class Admin_model extends CI_Model
 	{
 		$this->db->where('nom', $service);
 		$this->db->update($this->services, $data);
+	}
+
+	/*************************************************************************
+									CV
+	*************************************************************************/
+
+	public function get_categoriesCv()
+	{
+		$req = $this->db->select('*')
+						->from($this->catCv)
+						->get();
+
+		if( $req->num_rows() > 0 )
+		{
+			return $req->result();
+		}
+	}
+
+	public function get_rubriquesCv($section)
+	{
+		$req = $this->db->select('*')
+						->from($this->cv)
+						->where('section', $section)
+						->get();
+
+		if( $req->num_rows() > 0 )
+		{
+			return $req->result();
+		}
+	}
+
+	public function one_rubriqueCv($id)
+	{
+		$req = $this->db->select('*')
+						->from($this->cv)
+						->where('id', $id)
+						->get();
+
+		if( $req->num_rows() > 0 )
+		{
+			return $req->row();
+		}		
+	}
+
+	public function add_rubriqueCv($infos)
+	{
+		$this->db->insert($this->cv, $infos);
+
+		return true;
+	}
+
+	public function edit_rubriqueCv($id, $infos)
+	{
+		$this->db->where('id', $id);
+		$this->db->update($this->cv, $infos);
+
+		return true;
+	}
+
+	public function delete_rubriqueCv($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete($this->cv);
+
+		return true;
 	}
 }
