@@ -13,6 +13,7 @@ class Admin_model extends CI_Model
 	private $services = 'services';
 	private $catCv = 'cvCategories';
 	private $cv = 'cv';
+	private $legals = 'legals';
 
 	/*************************************************************************
 							IDENTIFICATION ADMINISTRATEUR
@@ -168,7 +169,7 @@ class Admin_model extends CI_Model
 	{
 		$req = $this->db->select('*')
 						->from($this->services)
-						->where('nom', $service)
+						->where('id', $service)
 						->get();
 		if($req->num_rows > 0)
 		{
@@ -178,7 +179,7 @@ class Admin_model extends CI_Model
 
 	public function updateService($service, $data)
 	{
-		$this->db->where('nom', $service);
+		$this->db->where('id', $service);
 		$this->db->update($this->services, $data);
 	}
 
@@ -243,6 +244,44 @@ class Admin_model extends CI_Model
 	{
 		$this->db->where('id', $id);
 		$this->db->delete($this->cv);
+
+		return true;
+	}
+
+
+	/*************************************************************************
+									CV
+	*************************************************************************/
+
+	public function get_legals()
+	{
+		$req = $this->db->select('*')
+						->from($this->legals)
+						->get();
+
+		if( $req->num_rows() > 0)
+		{
+			return $req->result();
+		}
+	}
+
+	public function get_oneLegal($rubrique)
+	{
+		$req = $this->db->select('*')
+						->from($this->legals)
+						->where('id', $rubrique)
+						->get();
+
+		if( $req->num_rows() > 0)
+		{
+			return $req->row();
+		}
+	}
+
+	public function edit_legal($id, $infos)
+	{
+		$this->db->where('id', $id);
+		$this->db->update($this->legals, $infos);
 
 		return true;
 	}
