@@ -17,21 +17,24 @@
 					<p>
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('legals'); ?>" >Mentions légales</a><br />
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('cv'); ?>" >Mon CV</a><br />
-						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('admin'); ?>" >Espace Admin.</a>
-					</p>
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="<?php echo site_url('admin'); ?>" >Espace Admin.</a><br />
+						<?php if($this->session->userdata('logged') == true): ?>
+							<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="http://stats.florianlegoff.com" >Piwik</a><br />
+							<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="http://cloud.florianlegoff.com" >Cloud</a>
+					</p><?php endif; ?>
 				</section>
 				<section class="colonneFooter">
 					<h5>CONTACT</h5>
 					<p>
-						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> contact@florianlegoff.com<br />
-						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> ICQ: 669187630<br />
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="mailto:contact@florianlegoff.com">contact@florianlegoff.com</a><br />
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="http://pgp.mit.edu/pks/lookup?op=get&amp;search=0x329F5F50B1294A46">Clé GPG (Cliquez)</a><br />
 						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="idtox" class="clickToTox">ID TOX (Cliquez)</a>
 					</p>
 				</section>
 				<section class="colonneFooter">
 					<h5>PARTENAIRES</h5>
 					<p>
-						<a href="http://aubindamien.com" >Damien AUBIN (Infographiste 3D)</a>
+						<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="http://www.aubindamien.com" >Damien AUBIN (Infographiste 3D)</a>
 					</p>
 				</section>
 			</div>
@@ -39,7 +42,7 @@
 
 		<div class="foot2">
 			<div class="conteneur">
-				<p>Aucuns droits réservés - Copy Me - Design par <a href="http://aubindamien.com" >Damien AUBIN</a></p>
+				<p>Aucuns droits réservés - Copy Me - Design par <a href="http://www.aubindamien.com" >Damien AUBIN</a></p>
 			</div>
 		</div>
 
@@ -55,7 +58,7 @@
 		<div class="idTox">
 			<p>
 				<strong>Identifiant TOX :</strong><br />
-				<textarea>CE15213CED196E1A260A3E6D117C96D13EC5B4C93490B8F86005BA38606EB3382C43B71567B9</textarea><br /><br />
+				<textarea>AF448137C1017AA436CF0833CD55BEB5F306087434A609801466835E7C163811E06796BDBB7B</textarea><br /><br />
 				<button>Fermer</button>
 			</p>
 		</div>

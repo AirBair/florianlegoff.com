@@ -6,38 +6,42 @@ function menuDynamique(page) {
 	$('#' + page + 'Arrow').show();
 	$('#' + page + 'Nav').show();
 
-	$('nav ul li').mouseenter(function(){
-		$('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
-		$('#' + page + ' .linktext').show();
-		$('#' + page + ' .linkimg').css('display', 'none');
-		$('#' + page + 'Arrow').hide();
-		$('#' + page + 'Nav').slideUp(50);
-	});
+	/*$('nav ul li').mouseenter(function(){
+		
+	});*/
 
 	$('nav li').mouseenter(function() {
+      $('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
+      $('#' + page + ' .linktext').show();
+      $('#' + page + ' .linkimg').css('display', 'none');
+      $('#' + page + 'Arrow').hide();
+      $('#' + page + 'Nav').slideUp(50);
 		$(this).children().css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
 		link = $(this).attr('id');
 		$('#' + link + ' .linktext').hide();
 		$('#' + link + ' .linkimg').css('display', 'inline-block');
-		$('#' + link + 'Arrow').slideDown(200);
+		$('#' + link + 'Arrow').slideDown(100);
 		$('#' + link + 'Nav').slideDown(200);
 	});
 
 	$('nav li').mouseleave(function() {
-		$(this).children().css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
-		link = $(this).attr('id');
-		$('#' + link + ' .linktext').show();
-		$('#' + link + ' .linkimg').css('display', 'none');
-		$('#' + link + 'Arrow').hide();
-		$('#' + link + 'Nav').slideUp(50);
+      $(this).each(function(){
+         $(this).children().css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
+         $('.linktext').show();
+         $('.linkimg').css('display', 'none');
+      });
+      $('.infoNav').each(function(){
+         $(this).find('img').hide();
+         $(this).find('span').slideUp(100);
+      })
 	});
 
-	$('nav ul').mouseleave(function(){
+	$('nav').mouseleave(function(){
 		$('#' + page + ' a').css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
 		$('#' + page + ' .linktext').hide();
 		$('#' + page + ' .linkimg').css('display', 'inline-block');
-		$('#' + page + 'Arrow').slideDown(200);
-		$('#' + page + 'Nav').slideDown(200);
+		$('#' + page + 'Arrow').slideDown(100);
+		$('#' + page + 'Nav').slideDown(100);
 	});
 }
 
@@ -106,18 +110,10 @@ $(function(){
 
    /* MES COMPETENCES */
 
-   /*$('.skillInfos').each(function(){
-
-         var taille = $(this).offsetHeight;
-
-         var padding = (150 - taille) / 2;
-         $(this).css('padding-top', padding);
-
-   });*/
 
    $('.skillInfos').hide();
 
-   $('.itemSkill').mouseenter(function(){
+   /*$('.itemSkill').mouseenter(function(){
       $(this).find('img').fadeOut(100);
       $(this).find('.skillInfos').slideDown(100);
    });
@@ -125,7 +121,7 @@ $(function(){
    $('.itemSkill').mouseleave(function(){
       $(this).find('img').fadeIn(100);
       $(this).find('.skillInfos').slideUp(100);
-   });
+   });*/
 
    /* MES PROJETS */
 

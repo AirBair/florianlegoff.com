@@ -34,9 +34,12 @@
 		<header>
 
 			<div class="entete">
-				<!--<p class="icoDev"><a href="<?php echo site_url(); ?>"><img src="<?php echo site_url(); ?>assets/images/icoDeveloppeur.png" alt="Icone développeur" /></a></p>-->
-				<h1><a href="<?php echo site_url(); ?>">Florian LE GOFF</a></h1>
-				<h2>Développeur Web en Freelance<br />Bretagne - Saint Malo / Lannion</h2>
+				<h1>
+					<a href="<?php echo site_url(); ?>">Florian LE GOFF</a>
+				</h1>
+				<h2>
+					Développeur Web en Freelance<br />Bretagne - Saint Malo / Lannion
+				</h2>
 				<p class="clear"></p>
 			</div>
 
@@ -66,11 +69,11 @@
 			</nav>
 
 			<div class="underNav">
-				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="profilArrow" /><br /><br /><span id="profilNav">PROFIL</span></p>
-				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="competencesArrow" /><br /><br /><span id="competencesNav">COMPETENCES</span></p>
-				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="projetsArrow" /><br /><br /><span id="projetsNav">PROJETS</span></p>
-				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="servicesArrow" /><br /><br /><span id="servicesNav">SERVICES</span></p>
-				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="contactArrow" /><br /><br /><span id="contactNav">CONTACT</span></p>
+				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="profilArrow" /><br /><span id="profilNav">PROFIL</span></p>
+				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="competencesArrow" /><br /><span id="competencesNav">COMPETENCES</span></p>
+				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="projetsArrow" /><br /><span id="projetsNav">PROJETS</span></p>
+				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="servicesArrow" /><br /><span id="servicesNav">SERVICES</span></p>
+				<p class="infoNav"><img src="<?php echo site_url(); ?>assets/images/logosMenu/flecheMenu.png" alt="Fleche" id="contactArrow" /><br /><span id="contactNav">CONTACT</span></p>
 			</div>
 
 		</header>

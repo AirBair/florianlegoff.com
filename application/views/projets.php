@@ -42,7 +42,7 @@
 		<div class="corpsProjet" >
 			<div class="diapoProjet" >
 				<p>
-					<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_accueil.jpg" alt="Fenetre comportant les screens du site" width="660px" />
+					<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_accueil.jpg" alt="Fenetre comportant les screens du site" />
 				</p>
 			</div>
 			<div class="infosProjet" >
