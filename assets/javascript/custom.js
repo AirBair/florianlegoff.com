@@ -111,8 +111,6 @@ $(function(){
    /* MES COMPETENCES */
 
 
-   $('.skillInfos').hide();
-
    /*$('.itemSkill').mouseenter(function(){
       $(this).find('img').fadeOut(100);
       $(this).find('.skillInfos').slideDown(100);

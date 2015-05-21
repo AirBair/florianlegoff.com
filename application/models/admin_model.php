@@ -73,6 +73,8 @@ class Admin_model extends CI_Model
 	public function addSkill($data)
 	{
 		$this->db->insert($this->skills, $data);
+
+		return $this->db->insert_id();
 	}
 
 	public function readSkill($categorie)

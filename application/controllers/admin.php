@@ -100,20 +100,48 @@ class Admin extends CI_Controller
                     if ( $this->admin_model->getCompetence($idSkill) )
                     {
                          $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required|xss_clean');
-                         $this->form_validation->set_rules('logoSkill', 'Logo de la compétence', 'trim|required|xss_clean');
+                         $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim|xss_clean');
                          $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required|xss_clean');
+                         $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required|xss_clean');
                          $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required|xss_clean');
 
                          if ( $this->form_validation->run() )
                          {
                               $competence = array(
                                    'title_skill' => htmlspecialchars($this->input->post('titreSkill')),
-                                   'logo_skill' => htmlspecialchars($this->input->post('logoSkill')),
+                                   'logo_skill' => htmlspecialchars($this->input->post('logoName')),
                                    'about_skill' => $this->input->post('descriptionSkill'),
+                                   'note' => $this->input->post('note'),
                                    'cat_skill' => htmlspecialchars($this->input->post('catSkill'))
                               );
 
                               $this->admin_model->modifSkill($idSkill, $competence);
+
+                              if(!empty($_FILES['logoSkill']['name'])):
+
+                                   // On configure les informations d'upload
+                                   $config = array(
+                                        'upload_path' => './assets/images/Skills/',
+                                        'allowed_types' => 'gif|jpg|jpeg|png',
+                                        'overwrite' => TRUE
+                                   );
+
+                                   // On upload l'image selon la configuration établie
+                                   $this->load->library('upload', $config);
+
+                                   // Si l'upload de la première image s'est effectué
+                                   if( $this->upload->do_upload('logoSkill') )
+                                   {
+                                        // On affecte la variable en base de données.
+                                        $data_upload = $this->upload->data();
+                                        $image = array(
+                                             'logo_skill' => $data_upload['file_name']
+                                        );
+                                        $this->admin_model->modifSkill($idSkill, $image);
+                                   }
+                                   else
+                                        echo 'Erreur dans l\'upload de l\'image.';
+                              endif;
 
                               $data = array(
                                    'titre' => 'Modifications compétences | Espace Admin',
@@ -144,20 +172,47 @@ class Admin extends CI_Controller
                else
                {
                     $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required|xss_clean');
-                    $this->form_validation->set_rules('logoSkill', 'Logo de la compétence', 'trim|required|xss_clean');
+                    $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim|xss_clean');
                     $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required|xss_clean');
+                    $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required|xss_clean');
                     $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required|xss_clean');
 
                     if ( $this->form_validation->run() )
                     {
                          $competence = array(
                               'title_skill' => htmlspecialchars($this->input->post('titreSkill')),
-                              'logo_skill' => htmlspecialchars($this->input->post('logoSkill')),
+                              'logo_skill' => htmlspecialchars($this->input->post('logoName')),
                               'about_skill' => $this->input->post('descriptionSkill'),
+                              'note' => $this->input->post('note'),
                               'cat_skill' => htmlspecialchars($this->input->post('catSkill'))
                          );
 
-                         $this->admin_model->addSkill($competence);
+                         $lastId = $this->admin_model->addSkill($competence);
+
+                         if(!empty($_FILES['logoSkill']['name'])):
+
+                              // On configure les informations d'upload
+                              $config = array(
+                                   'upload_path' => './assets/images/Skills/',
+                                   'allowed_types' => 'gif|jpg|jpeg|png'
+                              );
+
+                              // On upload l'image selon la configuration établie
+                              $this->load->library('upload', $config);
+
+                              // Si l'upload de la première image s'est effectué
+                              if( $this->upload->do_upload('logoSkill') )
+                              {
+                                   // On affecte la variable en base de données.
+                                   $data_upload = $this->upload->data();
+                                   $image = array(
+                                        'logo_skill' => $data_upload['file_name']
+                                   );
+                                   $this->admin_model->modifSkill($lastId, $image);
+                              }
+                              else
+                                   echo 'Erreur dans l\'upload de l\'image.';
+                         endif;
 
                          $data = array(
                               'titre' => 'Compétences | Espace Admin',

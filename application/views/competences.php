@@ -10,15 +10,20 @@
 			<h3 class="catSkills"><?php echo $categorie->nom_catSkill; ?></h3>
 			<?php foreach($competences as $competence): ?>
 				<div class="itemSkill">
-					<div class="titleSkill" >
-						<p class="imgSkill">
-							<?php echo img('Skills/' . $competence->logo_skill, 'Logo ' . $competence->title_skill); ?>
-						<p>
-						<p class="skillInfos" >
-							<?php echo nl2br($competence->about_skill); ?>
-						</p> 	
-						<span class="clear"></span>
-					</div>
+					<p class="imgSkill">
+						<?php echo img('Skills/' . $competence->logo_skill, 'Logo ' . $competence->title_skill); ?>
+					</p>
+					<p class="skillInfos" >
+						<span class="titleSkill"><?php echo nl2br($competence->title_skill); ?></span>
+						<span class="noteSkill">
+							<?php for($i=0 ; $i<5 ; $i++):
+								if($competence->note > $i)
+									echo '<img src="/assets/images/star_full.png" alt="Etoile pleine" />';
+								else
+									echo '<img src="/assets/images/star_empty.png" alt="Etoile vide" />';
+							endfor; ?>
+						</span>
+					</p> 	
 				</div>
 			<?php endforeach; ?>
 			</section>

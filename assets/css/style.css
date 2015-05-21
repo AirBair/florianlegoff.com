@@ -714,50 +714,37 @@ div.itemSkill
 	height: 150px;
 	margin-bottom: 5px;
 	vertical-align: top;
-	position: relative;
 	background-color: rgb(220,220,220);
 	color: rgb(60,60,60);
-	text-align: center;
-	padding:0;
 }
 
-div.itemSkill div.titleSkill p.imgSkill
+p.imgSkill
 {
 	display: inline-block;
-	width: 140px;
-	height: 120px;
-	position: absolute;
-	top:0;
-	left: 150px;
-
-}
-
-div.itemSkill div.titleSkill p.imgSkill img
-{
-	width: 140px;
-	height: 120px;
-}
-
-div.titleSkill p.skillInfos
-{
-	display: table-cell;
-	width: 350px;
-	height: 140px;
-	padding: 10px 60px 0px 60px;
+	text-align: right;
+	width: 200px;
 	vertical-align: middle;
-	text-align: center;
-	font-size: 13px;
-	position: absolute;
-	top:-14px;
-	left: 0;
-	background-color: rgb(243,60,60);
-	color: white;
 }
 
-p.skillInfos a
+p.imgSkill img
 {
-	color: rgb(40,40,40);
-	text-decoration: none;
+	width: 140px;
+	height: 120px;
+}
+
+p.skillInfos
+{
+	display: inline-block;
+	width: 210px;
+	margin-left: 20px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+p.skillInfos span
+{
+	display: block;
+	margin-bottom: 15px;
 }
 
 
