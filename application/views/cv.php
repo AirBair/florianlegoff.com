@@ -1,5 +1,10 @@
 <?php require('application/views/template/header.php'); ?>
 
+<div class="banniereSkills">
+	<h3>CURICULUM VITAE</h3>
+	<a class="btn" href="<?php echo site_url(); ?>assets/documents/CV%20Florian%20LE%20GOFF.pdf">Télécharger en PDF</a>
+</div>
+
 <div class="menuRed">
 	<div class="conteneur">
 		<p>
@@ -12,12 +17,6 @@
 	</div>
 </div>
 
-<div class="back0">
-	<div class="conteneur" style="text-align:center;">
-		<h2 class="titlePage">{ CURICULUM VITAE }</h2>
-		<a class="btn" href="<?php echo site_url(); ?>assets/documents/CV%20Florian%20LE%20GOFF.pdf">Télécharger en PDF</a>
-	</div>
-</div>
 
 <?php $inc = 1; ?>
 <?php foreach($section as $section): ?>

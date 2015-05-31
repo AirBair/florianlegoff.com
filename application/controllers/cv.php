@@ -13,6 +13,7 @@ class Cv extends CI_Controller
      {
      	$data = array(
                'titre' => 'CV Florian LE GOFF',
+               'description' => 'Mon Curiculum Vitae - Florian LE GOFF',
                'section' => $this->admin_model->get_categoriesCv()
           );
      	$this->load->view('cv', $data);

@@ -15,6 +15,7 @@
  	{
  		$data = array(
  			'titre' => 'Services | Florian LE GOFF',
+               'description' => 'Vous cherchez à réaliser votre site internet ? Je vous propose mes services de développeur web !',
  			'propose' => $this->admin_model->getOneService('propose'),
  			'but' => $this->admin_model->getOneService('but'),
  			'avantages' => $this->admin_model->getOneService('avantages'),

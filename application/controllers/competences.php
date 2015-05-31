@@ -4,13 +4,12 @@ class Competences extends CI_Controller
 {
 	public function index()
 	{
-		$this->french();
-	}
+		$data = array(
+			'titre' => 'Compétences | Florian LE GOFF',
+			'description' => 'Compétences en programmation et gestion de projets - Florian LE GOFF.',
+			'categories' => $this->admin_model->getCategorieSkill()
+		);
 
-	public function french()
-	{
-		$data['titre'] = 'Compétences | Florian LE GOFF';
-		$data['categories'] = $this->admin_model->getCategorieSkill();
 		$this->load->view('competences', $data);
 	}
 }

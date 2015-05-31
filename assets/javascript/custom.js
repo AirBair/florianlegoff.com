@@ -1,14 +1,10 @@
-function menuDynamique(page) {
+/*function menuDynamique(page) {
 
 	$('#' + page + ' a').css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
 	$('#' + page + ' .linktext').hide();
 	$('#' + page + ' .linkimg').css('display', 'inline-block');
 	$('#' + page + 'Arrow').show();
 	$('#' + page + 'Nav').show();
-
-	/*$('nav ul li').mouseenter(function(){
-		
-	});*/
 
 	$('nav li').mouseenter(function() {
       $('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
@@ -43,7 +39,7 @@ function menuDynamique(page) {
 		$('#' + page + 'Arrow').slideDown(100);
 		$('#' + page + 'Nav').slideDown(100);
 	});
-}
+}*/
 
 $(function(){
 

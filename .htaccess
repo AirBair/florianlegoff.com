@@ -26,8 +26,6 @@ Options +FollowSymLinks
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ index.php?/$1 [L]
 
-    RewriteCond %{HTTP_HOST} !^www\.florianlegoff\.com [NC]
-    RewriteRule (.*) http://www.florianlegoff.com/$1 [QSA,R=301,L]
 </IfModule>
  
 <IfModule !mod_rewrite.c>

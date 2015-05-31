@@ -58,7 +58,10 @@ class Contact extends CI_Controller
 
 		else
 		{  
-               $data['titre'] = 'Contact | Florian LE GOFF';
+               $data = array(
+                    'titre' => 'Contact | Florian LE GOFF',
+                    'description' => 'Des questions ? Des propositions ? Contactez-moi ! - Florian LE GOFF'
+               );
 			$this->load->view('contact', $data);
 		}
 	}

@@ -13,6 +13,7 @@ class Legals extends CI_Controller
 	{
 		$data = array(
 			'titre' => 'Mentions Légales | Florian LE GOFF',
+               'description' => 'Mentions légales du site www.florianlegoff.com',
 			'legals' => $this->admin_model->get_legals()
 		);
 		$this->load->view('legals', $data);

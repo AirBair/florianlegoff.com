@@ -12,7 +12,10 @@
 
  	public function index()
  	{
- 		$data['titre'] = 'Erreur 404 | Florian LE GOFF';
+ 		$data = array(
+ 			'titre' => 'Erreur 404 | Florian LE GOFF',
+ 			'description' => 'Cette page n\'existe pas sur le site mon site ! - Florian LE GOFF'
+ 		);
  		$this->load->view('404', $data);
  	}
  }

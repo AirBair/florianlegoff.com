@@ -20,6 +20,15 @@
 	font-family: 'Fabrica';
 	src: url('../fonts/Fabrica.otf');
 }
+@font-face{
+	font-family: 'Sinkin400Regular';
+	src: url('../fonts/SinkinSans-400Regular.otf');
+}
+
+@font-face{
+	font-family: 'Sinkin200Light';
+	src: url('../fonts/SinkinSans-200XLight.otf');
+}
 
 /**********************************************************************
 							Eléments récurrents 
@@ -38,10 +47,13 @@ html
 
 body
 {	
-	padding:0;
 	margin:0;
-	min-width: 980px;
+	padding-top: 20px;
+	margin-bottom: 100px;
+	min-width: 960px;
 	font-family: 'Fabrica';
+	background-color: rgb(20,20,20);
+	color: white;
 }
 
 .back0
@@ -56,7 +68,7 @@ body
 	margin-top:0px;
 	padding-top: 50px;
 	padding-bottom: 50px;
-	background-color: rgb(230,230,230);
+	background-color: rgb(50,50,50);
 }
 
 .back0_black
@@ -79,7 +91,6 @@ body
 {
 	text-align: center;
 	color: rgb(243,60,60);
-	boder
 }
 
 .borderRed
@@ -89,7 +100,8 @@ body
 
 .conteneur
 {
-	width: 960px;
+	width: 100%;
+	max-width: 1300px;
 	margin: auto;
 	margin-top: 0px;
 }
@@ -102,13 +114,12 @@ body
 .btn
 {
 	display: inline-block;
-	height: 15px;
+	height: 20px;
 	min-width: 110px;
 	margin-top: 10px;
-	padding: 15px;
+	padding: 10px;
 	padding-left: 30px;
 	padding-right: 30px;
-	border-radius: 50px;
 	background-color: #3c424f;
 	color: white;
 	font-size: 16px;
@@ -120,99 +131,70 @@ body
 
 .btn:hover
 {
-	background-color: rgb(243,60,60);
+	background-color: #b64444;
 
 	transition : background-color 0.3s;
+}
+
+a
+{
+	color: rgb(243,60,60);
+	text-decoration: none;
+}
+
+a:active
+{
+	text-decoration: none;
 }
 
 
 /***********************************************************************
 								Header
 ************************************************************************/
-
 header
 {
-	width: 100%;
-	padding-top: 20px;
-	/*background-image: url('../images/header.jpg');*/
-	background-color: rgb(30,30,30);
-}
-
-/*******************************
-			En-Tête
-********************************/
-
-header .entete
-{
-	width: 960px;
-	height: 110px;
-	margin: auto;
-	text-align: center;
-	position: relative;
-}
-
-header .entete p.icoDevG
-{
-	position: absolute;
-	top: 0;
-	left: 270px;
-}
-
-header .entete p.icoDevD
-{
-	position: absolute;
-	top: 0;
-	left: 650px;
-}
-
-header .entete h1
-{
-	font-size: 23px;
-	margin-top: 25px;
-}
-
-header .entete h1 a
-{
-	color: white;
-	text-decoration: none;
-}
-
-header .entete h2
-{
-	margin-top: -10px;
-	font-size: 16px;
-	color: rgb(243,60,60);
+	display: none;
 }
 
 /*******************************
 		Menu de navigation
 ********************************/
+footer
+{
+	width: calc(100% - 30px);
+	position: fixed;
+	bottom:0;
+	left: 0;
+	z-index: 20;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: rgb(20,20,20);
+}
 
-header nav
+footer nav
 {
     display: inline-block;
     width: 100%;
-    height: 110px;
+    height: 80px;
     margin-top:0px;
 	padding:0px;
-	background-color: rgb(40,40,40);
-
 }
 
-header nav ul
+footer nav ul
 {
-	width: 960px;
+	width: 100%;
+	max-width: 1300px;
 	margin:auto;
 	margin-top:0px;
 	padding:0px;
 }
 
-header nav ul li
+footer nav ul li
 {
 	
 	display: inline-block;
-	width: 192px;
-	height: 110px;
+	width: 20%;
+	height: 80px;
 	margin-top:0px;
 	margin-right: -5px;
 	list-style-type : none;
@@ -220,10 +202,10 @@ header nav ul li
 	text-align: center;
 }
 
-header nav a
+footer nav a
 {
 	display: inline-block;
-	width:191px;
+	width:260px;
 	height: 61px;
 	margin-top: -3px;
 	text-decoration: none;
@@ -231,131 +213,52 @@ header nav a
 	vertical-align: top;
 }
 
-header nav a.linktext
+footer nav a.linkimg
 {
-	padding-top: 47px;
-}
-
-header nav a.linkimg
-{
-	display: none;
 	width:100%;
-	height: 92px;
-	padding-top: 18px;
+	height: 50px;
+	padding-top: 10px;
 	text-decoration: none;
 	color: rgb(100,100,100);
 }
 
-header nav a:hover
+footer nav a.linkimg img
 {
-    color: #25AECC;
+	width: 60px;
+	height: 60px;
 }
 
-header nav a:active
+footer nav a.linkText
 {
-    color: #760001;
-    border-bottom: 3px solid #760001;
-}
-
-
-header .underNav
-{
-	height: 50px;
-	width: 960px;
-	margin:auto;
-}
-
-header .infoNav
-{
-	display: inline-block;
-	width: 192px;
-	margin-top: -3px;
-	margin-right: -5px;
-	padding-top: 0px;
+	display: none;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	letter-spacing: 3px;
+	font-size: 16px;
 	text-align: center;
+}
+
+footer nav li:hover a.linkText
+{
 	color: white;
-	font-size: 13px;
-	position: relative;
 }
 
-header .infoNav span
+.legals
 {
 	display: none;
-	padding-bottom: 20px;
-}
-
-header .infoNav img
-{
-	display: none;
-	position: absolute;
-	top:0;
-	left: 80px;
+	text-align: center;
+	width: 100%;
+	max-width: 1300px;
+	margin: auto;
+	margin-top: 60px;
+	margin-bottom: 25px;
+	padding-top: 25px;
+	border-top: solid 1px rgba(243,60,60,0.7);
 }
 
 /***********************************************************************
 								Footer
 ************************************************************************/
-
-footer
-{
-	width: 100%;
-}
-
-footer .foot1
-{
-	background-color: rgb(226,66,66);
-}
-
-footer .foot1 section.colonneFooter
-{
-	display: inline-block;
-	width: 230px;
-	margin-right: 5px;
-	vertical-align: top;
-	color: white;
-	font-size: 13px;
-}
-
-footer .foot1 section.colonneFooter h5
-{
-	font-size: 16px;
-	border-bottom: solid silver 1px;
-	padding-bottom: 15px;
-}
-
-footer .foot1 section.colonneFooter hr
-{
-	text-align: left;
-}
-
-footer .foot1 section.colonneFooter img
-{
-	vertical-align: top;
-	padding-bottom: 5px;
-}
-
-footer .foot1 section.colonneFooter a
-{
-	color: white;
-	text-decoration: none;
-}
-
-footer .foot2
-{
-	margin-top: 0px;
-	background-color: rgb(220,60,60);
-	height: 45px;
-	padding-top: 5px;
-	font-size: 12px;
-	text-align: center;
-	color: white;
-}
-
-footer .foot2 a
-{
-	text-decoration: none;
-	color: white;
-}
 
 
 #overlay
@@ -398,54 +301,87 @@ footer .foot2 a
 								Page PROFIL
 ************************************************************************/
 
+
+.banniereAbout
+{
+	width: 100%;
+	height: 450px;
+	background-image: url('/assets/images/bannieres/banProfil.jpg');
+	background-repeat:no-repeat;
+	background-position: center center;
+	color: rgb(230,230,230);
+	text-align: center;
+}
+
+.banniereAbout h3
+{
+	padding-top: 150px;
+	font-family: 'Sinkin200Light';
+	font-size: 25px;
+	color: rgb(230,230,230);
+	letter-spacing: 15px;
+}
+
 .contAboutMe
 {
-	width: 960px;
-	margin: auto;
-	margin-top: 10px;
-	border-top: solid rgb(243,60,60) 1px;
+	width: 100%;
+	vertical-align: top;
+	background-color: rgb(30,30,30);
 }
 
 .titleAboutMe
 {
-	display: block;
-	width: 150px;
-	margin: auto;
-	margin-top: -10px;
-	margin-bottom: 30px;
-	text-align: center;
-	color: rgb(243,60,60);
-	background-color: white;
+	display: inline-block;
+	width: calc(50% - 50px);
+	padding: 25px;
+	vertical-align: middle;
 }
 
-.imgAboutMe
+.titleAboutMe .aboutName
 {
-	display: inline-block;
-	width: 550px;
-	height: 480px;
-	vertical-align: top;
+	font-size: 40px;
+	font-family: 'Sinkin400Regular';
+	letter-spacing: 10px;
+}
+
+.titleAboutMe .aboutTitle
+{
+	font-size: 18px;
+	color: #b43c3c;
+	font-family: 'Sinkin200Light';
+	letter-spacing: 3px;
 }
 
 .aboutMe
 {
 	display: inline-block;
-	width: 400px;
-	height: 370px;
-	margin-top: 120px;
-	vertical-align: top;
+	width: calc(50% - 50px);
+	padding: 25px;
+	margin-top: 100px;
 	font-size: 14px;
+	color: white;
+	vertical-align: middle;
+	margin-bottom: 70px;
+	text-align: justify;
+	margin-left: -5px;
 }
 
-.aboutMe .aboutName
-{
-	font-size: 22px;
-	font-weight: bold;
-}
+@media all and (max-width: 1024px){
 
-.aboutMe .aboutTitle
-{
-	font-size: 16px;
-	color: rgb(243,60,60);
+    .titleAboutMe
+    {
+    	width: 100%;
+    	margin-top: 70px;
+    	text-align: center;
+    }
+
+    .aboutMe
+	{
+		display: inline-block;
+		width: 80%;
+		margin-left: 10%;
+		margin-top: 40px;
+	}
 }
 
 .carrouselMain
@@ -548,62 +484,14 @@ footer .foot2 a
 	margin-left: 20px;
 }
 
-
 /***********************************************************************
-								Page PROJETS
+								Page CV
 ************************************************************************/
-
-
-.myProjet
-{
-	display: inline-block;
-	vertical-align: top;
-	width: 660px;
-	height: 330px;
-}
-
-.myProjet .diapoProjet
-{
-	width: 660px;
-	height: 350px;
-	text-align:center;
-}
-
-.myProjet .flecheDiapo
-{
-	display: inline-block;
-	margin-top: 0px;
-	width: 26.5px;
-	color: white;
-	background-color: red;
-	vertical-align: middle;
-}
-
-.myProjet .imgDiapo
-{
-	display: inline-block;
-	margin-top: 0px;
-	width: 587px;
-	margin: auto;
-	position: relative
-}
-.myProjet .imgDiapo img
-{
-	display: none;
-	position: absolute;
-	top:0em;
-	left: 0em;
-}
-
-.myProjet .button
-{
-	text-align: center;
-}
 
 .menuRed
 {
 	width: 100%;
-	background-color: rgb(243,60,60);
+	background-color: #b64444;
 	z-index: 2;
 }
 
@@ -637,10 +525,15 @@ footer .foot2 a
 	background-color: rgb(220,40,40);
 }
 
+.cv
+{
+
+}
 
 .cv h3
 {
 	text-align: center;
+	font-family: 'Sinkin200Light';
 }
 
 .cv h3 a
@@ -665,8 +558,9 @@ footer .foot2 a
 {
 	width: 900px;
 	padding: 30px;
-	background-color: white;
+	background-color: rgb(30,30,30);
 	text-align: center;
+	margin: auto;
 	margin-top: 30px;
 }
 
@@ -674,8 +568,9 @@ footer .foot2 a
 {
 	width: 900px;
 	padding: 30px;
-	background-color: rgb(230,230,230);
+	background-color: rgb(60,60,60);
 	text-align: center;
+	margin: auto;
 	margin-top: 30px;
 }
 
@@ -701,38 +596,102 @@ footer .foot2 a
 								Page COMPETENCES
 ************************************************************************/
 
-h3.catSkills
+.banniereSkills
 {
-	color: rgb(243,60,60);
+	width: 100%;
+	height: 250px;
+	background-image: url('/assets/images/myServices.jpg');
+	background-repeat:no-repeat;
+	background-position: center center;
+	color: rgb(230,230,230);
 	text-align: center;
+}
+
+.banniereSkills h3
+{
+	padding-top: 100px;
+	font-family: 'Sinkin200Light';
+	font-size: 25px;
+	color: rgb(230,230,230);
+	letter-spacing: 15px;
+}
+
+.skills
+{
+	position: relative;
+	vertical-align: top;
+}
+
+.navCatSkills
+{
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+	position: fixed;
+	top: 350px;
+	left: 5%;
+}
+
+.navCatSkills p
+{
+	display: inline-block;
+	margin-bottom: 20px;
+	color: (100,100,100);
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.navCatSkills p:hover
+{
+	color: rgb(226,66,66);
+	transition: color 0.3s;
+}
+
+
+.contentCatSkills
+{
+	display: inline-block;
+	width: 75%;
+	vertical-align: top;
+	position: absolute;
+	top: 50px;
+	left: 25%;
+	text-align: center;
+}
+
+.catSkills
+{
+	margin-bottom: 150px;
 }
 
 div.itemSkill
 {
 	display: inline-block;
-	width: 470px;
+	width: 30%;
+	min-width: 400px;
 	height: 150px;
 	margin-bottom: 5px;
 	vertical-align: top;
-	background-color: rgb(220,220,220);
+	background-color: rgb(50,50,50);
 	color: rgb(60,60,60);
 }
 
 p.imgSkill
 {
 	display: inline-block;
-	text-align: right;
-	width: 200px;
+	text-align: center;
+	width: 150px;
 	vertical-align: middle;
+	color: rgb(230,230,230);
 }
 
 p.imgSkill img
 {
-	width: 140px;
-	height: 120px;
+	width: 100px;
+	height: 85px;
 }
 
-p.skillInfos
+div.skillInfos
 {
 	display: inline-block;
 	width: 210px;
@@ -741,18 +700,60 @@ p.skillInfos
 	vertical-align: middle;
 }
 
-p.skillInfos span
+div.skillInfos a.rdExt
 {
-	display: block;
-	margin-bottom: 15px;
+	display: inline-block;
+	margin-right: 3px;
+	width: 26px;
+	height: 26px;
+	border-radius: 26px;
+	border: solid rgb(226,66,66) 1px;
+	vertical-align: top;
 }
+
+div.skillInfos span.rdInt
+{
+	display: inline-block;
+	margin-top: 5px;
+	width: 16px;
+	height: 16px;
+	border-radius: 16px;
+	background-color: rgb(226,66,66);
+}
+
 
 
 /***********************************************************************
 								Page PROJETS
 ************************************************************************/
+.banniereProjets
+{
+	width: 100%;
+	height: 450px;
+	background-image: url('/assets/images/myServices.jpg');
+	background-repeat:no-repeat;
+	background-position: center center;
+	color: rgb(230,230,230);
+	text-align: center;
+}
 
-.projet
+.banniereProjets h3
+{
+	padding-top: 150px;
+	font-family: 'Sinkin200Light';
+	font-size: 25px;
+	color: rgb(230,230,230);
+	letter-spacing: 15px;
+}
+
+.grilleProjets
+{
+	text-align: center;
+	margin-top: 70px;
+	margin-bottom: 70px;
+}
+
+.grilleProjets .projet
 {
 	display: inline-block;
 	width: 300px;
@@ -761,27 +762,27 @@ p.skillInfos span
 	text-align: center;
 }
 
-.projet p
+.grilleProjets .projet p
 {
 	position: relative;
 }
 
-.projet img
+.grilleProjets .projet img
 {
 	width: 300px;
 }
 
-.projet h4
+.grilleProjets .projet h4
 {
 	margin-top: -5px;
 }
-.projet a
+.grilleProjets .projet a
 {
-	color: rgb(30,30,30);
+	color: rgb(230,230,230);
 	text-decoration: none;
 }
 
-.projet p .viewProject
+.grilleProjets .projet p .viewProject
 {
 	display: none;
 	width: 300px;
@@ -794,7 +795,7 @@ p.skillInfos span
 	color: white
 }
 
-.projet p .viewProject img
+.grilleProjets .projet p .viewProject img
 {
 	width: 50px;
 	height: 50px;
@@ -802,120 +803,163 @@ p.skillInfos span
 
 .prezProjet
 {
-	display: none;
+	width: 100%;
 }
 
-.enTeteProjet
+.prezProjet .enTeteProjet
 {
-	border-bottom: 1px solid rgb(150,150,150);
+	background-color: rgb(40,40,40);
+	text-align: center;
+	padding: 70px 0 70px 0;
 }
 
-.enTeteProjet .logoProjet, .enTeteProjet .titreProjet, .enTeteProjet .closeProjet
+.enTeteProjet h2
 {
-	display: inline-block;
-	vertical-align: middle;
+	font-family: 'Sinkin200Light';
+	color: rgb(230,230,230);
+	letter-spacing: 5px;
+	text-align: center;
 }
 
-.enTeteProjet .logoProjet
-{
-
-}
-
-.enTeteProjet .titreProjet
-{
-	width: 830px;
-	margin-left: 20px;
-}
-
-.enTeteProjet .titreProjet .sTitreProjet
+.enTeteProjet h2 span.sTitreProjet
 {
 	font-size: 14px;
-	color: rgb(243,60,60);
+	letter-spacing: 0px;
 }
 
-.enTeteProjet .closeProjet
+.corpsProjet
 {
-	position: relative;
+	width: 100%;
+	max-width: 1500px;
+	margin: auto;
+	text-align: center;
+	padding: 70px 0 70px 0px;
 }
 
-.enTeteProjet .closeProjet img
-{
-	position: absolute;
-	top:0;
-	left: 0;
-}
-
-
-.corpsProjet .diapoProjet
-{
-	display: inline-block;
-	width: 550px;
-	vertical-align: top;
-}
-
-.corpsProjet .diapoProjet img
-{
-	margin-top: 20px;
-	width: 550px;
-}
-
-.corpsProjet .infosProjet
- {
- 	display: inline-block;
-	width: 380px;
-	margin-top: 15px;
-	margin-left: 25px;
-	vertical-align: top;
- }
-
-.corpsProjet .infosProjet h3
-{
-	font-size: 18px;
-	color: rgb(243,60,60);
-}
-
-.corpsProjet .infosProjet p
-{
-	margin-bottom: 40px;
-	font-size: 14px;
-}
-
-.corpsProjet .infosProjet p strong
-{
-	display: block;
-	float: left;
-	width: 120px;
-}
-
-.corpsProjet .infosProjet p a
-{
-	text-decoration: none;
-	color: rgb(243,60,60);
-}
-
-
-
-.footProjet
+.corpsProjet h3
 {
 	text-align: center;
-	border-top: 1px solid rgb(150,150,150);
+	margin-bottom: 70px;
+	color: rgb(230,230,230);
+	font-family: 'Sinkin200Light';
+}
+
+.corpsProjet .descriptionProjet
+{
+	display: inline-block;
+	width: 50%;
+	text-align: justify;
+	margin-right: 5%;
+	vertical-align: top;
+	color: rgb(180,180,180);
+	transition: color 0.3s;
+}
+
+.corpsProjet .descriptionProjet:hover
+{
+	color: rgb(230,230,230);
+	transition: color 0.3s;
+}
+
+.corpsProjet .detailsProjet
+{
+	display: inline-block;
+	width: 40%;
+	border: solid rgba(226,66,66,0.6) 1px;
 	vertical-align: top;
 }
 
-.footProjet img
+.corpsProjet .detailsProjet span
 {
-	margin-left: 10px;
-	margin-right: 10px;
-	vertical-align: middle;
+	display: inline-block;
+	width: 45%;
+	margin-bottom: 60px;
+	text-align: center;
+	color: rgb(180,180,180);
+}
+
+.corpsProjet .detailsProjet span strong
+{
+	display: block;
+	margin-bottom: 10px;
+	color: rgb(230,230,230);
+}
+
+.prezProjet .footProjet
+{
+	background-color: rgb(50,50,50);
+	text-align: center;
+	vertical-align: top;
+	padding: 30px 0 30px 0;
+}
+
+.footProjet h3
+{
+	color: rgb(230,230,230);
+	font-family: 'Sinkin200Light';
 }
 
 /***********************************************************************
 								Page SERVICES
 ************************************************************************/
+.banniereServices
+{
+	width: 100%;
+	height: 250px;
+	background-image: url('/assets/images/myServices.jpg');
+	background-repeat:no-repeat;
+	background-position: center center;
+	color: rgb(230,230,230);
+	text-align: center;
+}
 
-.services h4
+.banniereServices h3
+{
+	padding-top: 100px;
+	font-family: 'Sinkin200Light';
+	font-size: 25px;
+	color: rgb(230,230,230);
+	letter-spacing: 15px;
+}
+
+.service
+{
+	display: inline-block;
+	width: calc(40% - 50px);
+	margin-left: 5%;
+	margin-top: 70px;
+	border: solid 1px rgba(0,0,0,0);
+	text-align: justify;
+	vertical-align: top;
+	min-width: 500px;
+	padding: 25px;
+	color: rgb(180,180,180);
+	transition : border 0.3s;
+	transition : color 0.3s;
+}
+
+@media all and (max-width: 1024px)
+{
+    .service 
+    {
+    	width: calc(80% - 50px);
+    	margin-left: 10%;
+    }
+}
+
+.service:hover
+{
+	border: solid rgba(226,66,66,0.6) 1px;
+	color: rgb(250,250,250);
+	transition : border 0.3s;
+	transition : color 0.3s;
+}
+
+.service h4
 {
 	color: rgb(226,66,66);
+	text-align: center;
+	font-size: 18px;
 }
 
 .servicesHG
@@ -959,15 +1003,16 @@ p.skillInfos span
 
 .formContact form
 {
-	margin-top: 20px;
+	margin: auto;
+	margin-top: 70px;
+	width: 500px;
 }
 
 .formContact form label
 {
 	display: block;
-	width: 130px;
+	width: 150px;
 	float: left;
-	margin-left: 260px;
 	margin-right: 15px;
 	padding-top: 10px;
 	text-align: right;
@@ -998,7 +1043,6 @@ p.skillInfos span
 	width: 500px;
 	height: 150px;
 	margin-bottom: 15px;
-	margin-left: 230px;
 	padding: 10px;
 	border-radius: 5px;
 	border: none;
@@ -1009,7 +1053,7 @@ p.skillInfos span
 
 .formContact form input[type="submit"]
 {
-	margin-left: 420px;
+	margin-left: 160px;
 	height: 40px;
 }
 

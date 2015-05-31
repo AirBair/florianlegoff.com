@@ -1,19 +1,20 @@
 <?php require('application/views/template/header.php'); ?>
 
-<div class="back0 borderRed">
-	<div class="contAboutMe">
-		<h3 class="titleAboutMe">A PROPOS</h3>
-		<p class="imgAboutMe">
-			<img src="<?php echo site_url(); ?>assets/images/picMoi.jpg" alt="Photo Florian LE GOFF" />
+<div class="banniereAbout">
+	<h3>A PROPOS</h3>
+</div>
+<div class="contAboutMe">
+	<div class="conteneur">
+		<p class="titleAboutMe">
+			<span class="aboutName">FLORIAN LE GOFF</span><br />
+			<span class="aboutTitle">Developpeur Web en Freelance</span><br /><br />
+			<a class="btn" href="<?php echo site_url('cv'); ?>">MON CV</a>
 		</p>
 		<p class="aboutMe">
-			<span class="aboutName">Florian LE GOFF</span><br />
-			<span class="aboutTitle">Developpeur Web</span><br /><br />
 			Développeur web en freelance (auto-entrepreneur) et autodidacte de 19 ans sur Saint-Malo et Lannion.<br/><br />
 			Je suis passionné d'informatique et de nouvelles technologies depuis toujours, je me suis auto-formé au développement web à travers ses différents langages.<br /><br />
 			C'est ainsi que de jour en jour, j'enrichis mes connaissances tout en pratiquant ma passion pour le web.<br />
-			Je porte également un point d'honneur au respect de la vie privée notamment sur internet et du bon usage de ce dernier.<br /><br />
-			<a class="btn" href="<?php echo site_url('cv'); ?>">MON CV</a>
+			Je porte également un point d'honneur au respect de la vie privée notamment sur internet et au bon usage de ce dernier.<br /><br />
 		</p>
 	</div>
 </div>
