@@ -1,13 +1,10 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Profil extends CI_Controller
 {
 	public function index()
-	{
-		$this->french();
-	}
-
-	public function french()
 	{
 		$data = array(
 			'titre' => 'Florian LE GOFF - Developpeur Web Saint-Malo',
@@ -15,4 +12,4 @@ class Profil extends CI_Controller
 		);
 		$this->load->view('profil.php', $data);
 	}
-}
+} // Fin de la classe profil.php (page d'accueil)

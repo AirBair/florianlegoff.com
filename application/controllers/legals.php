@@ -19,6 +19,32 @@ class Legals extends CI_Controller
 		$this->load->view('legals', $data);
 	}
 
+     public function add()
+     {
+          if(!$this->session->userdata('logged') || $rubrique == null || !$this->admin_model->one_rubriqueCv($rubrique) ):
+               redirect('services');exit;
+          endif;
+
+          $this->form_validation->set_rules('rubrique', 'Rubrique', 'trim|required');
+          $this->form_validation->set_rules('informations', 'Informations', 'trim|required');
+
+          if($this->form_validation->run())
+          {
+               $infos = array(
+                    'rubrique' => $this->input->post('rubrique'),
+                    'informations' => $this->input->post('informations')
+               );
+
+               $this->admin_model->add_legal($infos);
+
+               redirect('legals');exit;
+          }
+          else
+          {
+               // Charger le formulaire d'ajout.
+          }
+     } // Fin de la fonction d'ajout de rubrique légale
+
 	public function edit($rubrique = null)
 	{
 		if(!$this->session->userdata('logged') || $rubrique == null || !$this->admin_model->one_rubriqueCv($rubrique) ):
@@ -47,6 +73,6 @@ class Legals extends CI_Controller
      		);
      		$this->load->view('admin/legalsUpdate', $data);
      	}
-	}
-}
+	} // Fin de la fonction d'édition de rubrique légale
+} // Fin de la classe legals.php
 

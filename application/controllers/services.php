@@ -1,9 +1,9 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-  class Services extends CI_Controller
-
- {
+class Services extends CI_Controller
+{
 
  	public function __construct()
  	{
@@ -26,7 +26,7 @@
  		$this->load->view('services', $data);
  	}
 
- 	 public function edit($rubrique = null)
+ 	public function edit($rubrique = null)
      {
      	if(!$this->session->userdata('logged') || $rubrique == null || !$this->admin_model->one_rubriqueCv($rubrique) ):
      		redirect('services');exit;
@@ -53,7 +53,7 @@
      			'titre' => 'Edition de rubrique Service',
      			'rubrique' => $this->admin_model->getOneService($rubrique)
      		);
-     		$this->load->view('admin/servicesUpdate', $data);
+     		$this->load->view('admin/services_admin', $data);
      	}
-     }
+     } // Fin de la fonction d'édition de services
  }

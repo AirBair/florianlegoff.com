@@ -1,10 +1,8 @@
 <?php require('application/views/template/header.php') ?>
 
-<div class="back0 borderRed">
-	<div class="conteneur">
-		<h2 style="text-align:center;">{ Mentions légales }</h2>
-	</div>
-</div><!-- Fin du back0 -->
+<div class="banniereSkills">
+	<h3>MENTIONS LEGALES</h3>
+</div>
 
 <div class="back1">
 	<div class="conteneur">

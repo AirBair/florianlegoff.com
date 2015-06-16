@@ -1,12 +1,12 @@
 <?php
 
+if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 class Cv extends CI_Controller
 {
      public function __construct()
      {
           parent::__construct();
-
-          $this->load->model('admin_model');
      }
 
      public function index()
@@ -50,7 +50,7 @@ class Cv extends CI_Controller
                );
                $this->load->view('admin/cvAdd', $data);
           }
-     }
+     } // Fin de la fonction d'ajout de rubrique CV
 
      public function edit($rubrique = null)
      {
@@ -84,7 +84,7 @@ class Cv extends CI_Controller
      		);
      		$this->load->view('admin/cvUpdate', $data);
      	}
-     }
+     } // Fin de la fonction d'édition de rubrique CV
 
      public function delete($rubrique = null)
      {
@@ -94,7 +94,7 @@ class Cv extends CI_Controller
 
           $this->admin_model->delete_rubriqueCv($rubrique);
           redirect('cv');exit;
-     }
+     } // Fin de la fonction de suppression de rubrique CV
 
 
 }

@@ -19,6 +19,7 @@ class Admin_model extends CI_Model
 							IDENTIFICATION ADMINISTRATEUR
 	*************************************************************************/
 
+	// Retourne le mot de passe hashé
 	public function identification()
 	{
 		$req = $this->db->select('*')
@@ -26,9 +27,9 @@ class Admin_model extends CI_Model
 						->get()
 						->result();
 
-		foreach ($req as $mdp)
+		if ($req->num_rows() > 0)
 		{
-			return $mdp->mdp;
+			return $req->row();
 		}
 		
 	}
@@ -37,11 +38,13 @@ class Admin_model extends CI_Model
 									BOITE MAIL
 	*************************************************************************/
 
-	public function saveMail($data)
+	// Compte le nombre de mail
+	public function countMail($where = array())
 	{
-		$this->db->insert($this->mail, $data);
+		return (int) $this->db->where($where)->count_all_results($this->mail);
 	}
 
+	// Retourne tous les mails
 	public function readMail()
 	{
 		return $this->db->select('*')
@@ -49,18 +52,46 @@ class Admin_model extends CI_Model
 						->order_by('id', 'desc')
 						->get()
 						->result();
-		
 	}
 
-	public function countMail($where = array())
+	// Retourne un mail précis
+	public function getMail($mail)
 	{
-		return (int) $this->db->where($where)->count_all_results($this->mail);
+		$req = $this->db->select('*')
+					 	->from($this->mail)
+					 	->where('id', $mail)
+					 	->get();
+
+		if($req->num_rows() > 0)
+		{
+			return $req->row();
+		}
+	}
+
+	// Sauvegarde un mail 
+	public function saveMail($data)
+	{
+		$this->db->insert($this->mail, $data);
+	}
+
+	// Supprime un mail
+	public function delMail($mail)
+	{
+		$this->db->where('id', $mail);
+		$this->db->delete($this->mail);
 	}
 
 	/*************************************************************************
 									COMPETENCES
 	*************************************************************************/
 
+	// Compte le nombre de compétences
+	public function countSkills()
+	{
+		return (int) $this->db->count_all_results($this->skills);
+	}
+
+	// Retourne les catégories des compétences (sans les compétences)
 	public function getCategorieSkill()
 	{
 		return $this->db->select('*')
@@ -70,13 +101,7 @@ class Admin_model extends CI_Model
 						->result();
 	}
 
-	public function addSkill($data)
-	{
-		$this->db->insert($this->skills, $data);
-
-		return $this->db->insert_id();
-	}
-
+	// Retourne toutes les compétences d'une catégorie
 	public function readSkill($categorie)
 	{
 		$req = $this->db->select('*')
@@ -90,6 +115,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Retourne une compétence précise
 	public function getCompetence($idSkill)
 	{
 		$req = $this->db->select('*')
@@ -98,22 +124,47 @@ class Admin_model extends CI_Model
 						->get()
 						->result();
 
-		foreach($req as $cpt)
+		if($req->num_rows() > 0)
 		{
-			return $cpt;
+			return $req->row();
 		}
 	}
 
+	// Ajoute une compétence
+	public function addSkill($data)
+	{
+		$this->db->insert($this->skills, $data);
+
+		return $this->db->insert_id();
+	}
+
+	// Modifie une compétence
 	public function modifSkill($skill, $infos)
 	{
 		$this->db->where('id_skill', $skill);
 		$this->db->update($this->skills, $infos);
 	}
 
+	// Supprime une compétence
+	public function delSkill($skill)
+	{
+		$this->db->where('id_skill', $skill);
+		$this->db->delete($this->skills);
+
+		return true;
+	}
+
 	/*************************************************************************
 									PROJETS
 	*************************************************************************/
+	
+	// Compte le nombre de projet
+	public function countProjets()
+	{
+		return (int) $this->db->count_all_results($this->projets);
+	}
 
+	// Retourne tous les projets
 	public function getAllProjets()
 	{
 		return $this->db->select('*')
@@ -122,11 +173,7 @@ class Admin_model extends CI_Model
 						->result();
 	}
 
-	public function countProjets()
-	{
-		return (int) $this->db->count_all_results($this->projets);
-	}
-
+	// Retourne un projet précis
 	public function getOneProjet($attr)
 	{
 		$req = $this->db->select('*')
@@ -140,21 +187,31 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Ajoute un projet
 	public function addProjet($data)
 	{
 		$this->db->insert($this->projets, $data);
 	}
 
+	// Modifie un projet
 	public function updateProjet($projet, $data)
 	{
 		$this->db->where('attribut_projet', $projet);
 		$this->db->update($this->projets, $data);
 	}
 
+	// Supprime un projet
+	public function delProjet($projet)
+	{
+		$this->db->where('attribut_projet', $projet);
+		$this->db->delete($this->projets);
+	}
+
 	/*************************************************************************
 									SERVICES
 	*************************************************************************/
 
+	// Retourne tous les services
 	public function getServices()
 	{
 		$req = $this->db->select('*')
@@ -167,6 +224,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Retourne un service précis
 	public function getOneService($service)
 	{
 		$req = $this->db->select('*')
@@ -179,6 +237,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Modifie un service
 	public function updateService($service, $data)
 	{
 		$this->db->where('id', $service);
@@ -189,6 +248,7 @@ class Admin_model extends CI_Model
 									CV
 	*************************************************************************/
 
+	// Retourne les catégories du CV (sans les rubriques des catégories)
 	public function get_categoriesCv()
 	{
 		$req = $this->db->select('*')
@@ -201,6 +261,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Retourne toutes les rubriques d'une catégorie du CV
 	public function get_rubriquesCv($section)
 	{
 		$req = $this->db->select('*')
@@ -214,6 +275,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Retourne une rubrique précise
 	public function one_rubriqueCv($id)
 	{
 		$req = $this->db->select('*')
@@ -227,6 +289,7 @@ class Admin_model extends CI_Model
 		}		
 	}
 
+	// Ajoute une rubrique au CV
 	public function add_rubriqueCv($infos)
 	{
 		$this->db->insert($this->cv, $infos);
@@ -234,6 +297,7 @@ class Admin_model extends CI_Model
 		return true;
 	}
 
+	// Modifie une rubrique au CV
 	public function edit_rubriqueCv($id, $infos)
 	{
 		$this->db->where('id', $id);
@@ -242,6 +306,7 @@ class Admin_model extends CI_Model
 		return true;
 	}
 
+	// Supprime une rubrique du CV
 	public function delete_rubriqueCv($id)
 	{
 		$this->db->where('id', $id);
@@ -252,9 +317,10 @@ class Admin_model extends CI_Model
 
 
 	/*************************************************************************
-									CV
+							Mentions Légales
 	*************************************************************************/
 
+	// Retourne toutes les mentions légales
 	public function get_legals()
 	{
 		$req = $this->db->select('*')
@@ -267,6 +333,7 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Retourne une rubrique légale précise
 	public function get_oneLegal($rubrique)
 	{
 		$req = $this->db->select('*')
@@ -280,6 +347,13 @@ class Admin_model extends CI_Model
 		}
 	}
 
+	// Ajoute une rubrique légale
+	public function add_legal($infos)
+	{
+		$this->db->insert($this->legals, $infos);
+	}
+
+	// Modifie une rubrique légale
 	public function edit_legal($id, $infos)
 	{
 		$this->db->where('id', $id);
@@ -287,4 +361,12 @@ class Admin_model extends CI_Model
 
 		return true;
 	}
-}
+
+	// Supprime une rubrique légale
+	public function del_legal($id)
+	{
+		$this->db->where('id', $id);
+		$this->db->delete($this->legals);
+	}
+
+} // Fin du modèle admin_model.php

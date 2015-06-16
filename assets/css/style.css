@@ -322,6 +322,18 @@ footer nav li:hover a.linkText
 	letter-spacing: 15px;
 }
 
+@media all and (max-width: 1366px){
+	.banniereAbout
+	{
+		height: 220px;
+	}
+
+	.banniereAbout h3
+	{
+		padding-top: 100px;
+	}
+}
+
 .contAboutMe
 {
 	width: 100%;
@@ -739,11 +751,23 @@ div.skillInfos span.rdInt
 
 .banniereProjets h3
 {
-	padding-top: 150px;
+	padding-top: 200px;
 	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
+}
+
+@media all and (max-width: 1366px){
+	.banniereProjets
+	{
+		height: 220px;
+	}
+
+	.banniereProjets h3
+	{
+		padding-top: 100px;
+	}
 }
 
 .grilleProjets
@@ -938,8 +962,7 @@ div.skillInfos span.rdInt
 	transition : color 0.3s;
 }
 
-@media all and (max-width: 1024px)
-{
+@media all and (max-width: 1024px){
     .service 
     {
     	width: calc(80% - 50px);
