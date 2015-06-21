@@ -1,22 +1,19 @@
 <?php require('application/views/template/header.php'); ?>
 
-<div class="back0 borderRed">
-	<h2 class="titlePage">{ CONNEXION ADMINISTRATEUR }</h2>
-</div>
 
-<div class="back1">
-		<div id="connexionAdmin" >
 
-			<?php echo form_open('admin/connexion'); ?>
-				<input type="password" name="password" id="password" placeholder="Mot de passe" value="<?php echo set_value('password'); ?>" autofocus /><br />
+<div id="connexionAdmin" class="conteneur">
 
-				<?php echo form_error('password', '<span class="error">', '</span>'); ?>
-				<?php if ( isset($error) ):?>
-				<span class="error"><?php echo $error; ?></span>
-				<?php endif; ?>
-			<?php echo form_close(); ?>
+	<h3>ESPACE ADMINISTRATEUR</h3>
 
-		</div>
+	<?php echo form_open('admin/connexion'); ?>
+		<input type="password" name="password" id="password" placeholder="Mot de passe" value="<?php echo set_value('password'); ?>" autofocus /><br />
+
+		<?php echo form_error('password', '<span class="error">', '</span>'); ?>
+		<?php if ( isset($error) ):?>
+		<span class="error"><?php echo $error; ?></span>
+		<?php endif; ?>
+	<?php echo form_close(); ?>
 
 </div>
 	

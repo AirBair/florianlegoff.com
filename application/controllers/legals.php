@@ -21,7 +21,7 @@ class Legals extends CI_Controller
 
      public function add()
      {
-          if(!$this->session->userdata('logged') || $rubrique == null || !$this->admin_model->one_rubriqueCv($rubrique) ):
+          if(!$this->session->userdata('logged')):
                redirect('services');exit;
           endif;
 
@@ -41,7 +41,10 @@ class Legals extends CI_Controller
           }
           else
           {
-               // Charger le formulaire d'ajout.
+               $data = array(
+                    'titre' => 'Ajout de rubrique Service'
+               );
+               $this->load->view('admin/legals_admin', $data);
           }
      } // Fin de la fonction d'ajout de rubrique légale
 
@@ -71,7 +74,7 @@ class Legals extends CI_Controller
      			'titre' => 'Edition de rubrique Service',
      			'rubrique' => $this->admin_model->get_oneLegal($rubrique)
      		);
-     		$this->load->view('admin/legalsUpdate', $data);
+     		$this->load->view('admin/legals_admin', $data);
      	}
 	} // Fin de la fonction d'édition de rubrique légale
 } // Fin de la classe legals.php

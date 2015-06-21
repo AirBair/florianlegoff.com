@@ -17,6 +17,7 @@
 			</p>
 					
 			<h4><a href="#<?php echo $projet->attribut_projet; ?>"><?php echo $projet->titre_projet; ?></a></h4>
+			
 		</div>
 	<?php endforeach; ?>
 </div> <!-- Fin du conteneur -->
@@ -24,6 +25,13 @@
 <?php foreach ($projets as $projet): ?>
 
 <div class="prezProjet" id="<?php echo $projet->attribut_projet; ?>">
+
+	<?php if($this->session->userdata('logged')): ?>
+		<p class="modoProjet">
+			<a href="<?php echo site_url('projets/edit/'.$projet->attribut_projet); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
+			<a href="<?php echo site_url('projets/delete/'.$projet->attribut_projet); ?>" onclick="return confirm('Confirmation de suppresion ?'); "><img src="<?php echo site_url(); ?>assets/images/icones/ico_delete.png" alt="Supprimer" /></a>
+		</p>
+	<?php endif; ?>
 
 	<div class="enTeteProjet">
 		<h2 class="titreProjet">
@@ -99,24 +107,7 @@
          		$('.prezProjet .closeProjet a .redClose').fadeOut(100);
          	});
 		});
-
-     	$('.prezProjet .footProjet .flecheG').each(function(){
-        	$(this).mouseenter(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheGaucheSurvol.png');
-         	});
-         	$(this).mouseleave(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheGauche.png');
-         	});
-      	});
-
-      	$('.prezProjet .footProjet .flecheD').each(function(){
-         	$(this).mouseenter(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheDroiteSurvol.png')
-         	});
-         	$(this).mouseleave(function(){
-         		$(this).attr('src', '<?php echo site_url(); ?>assets/images/projets/NavigationBas/icoFlecheDroite.png')
-         	});
-      	});
+</script>
 
     })
 </script>

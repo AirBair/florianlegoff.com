@@ -31,7 +31,13 @@
 											echo '<a class="rdExt"><span></span></a>';
 									endfor; ?>
 								</span>
-							</div> 	
+							</div>
+							<?php if($this->session->userdata('logged') == true): ?>
+								<p class="skillModo">
+									<a href="<?php echo site_url('competences/edit/'.$competence->id_skill); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
+									<a class="delComp" href="<?php echo site_url('competences/delete/'.$competence->id_skill); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_delete.png" alt="Supprimer" /></a>
+								</p>
+							<?php endif; ?>	
 						</div>
 					<?php endforeach; ?>
 					</section>
@@ -40,4 +46,31 @@
 	</div>
 
 </div>
+
+<script type="text/javascript">
+	
+	$(function(){
+		$('.delComp').each(function() {
+			$(this).on('click', function(){
+				
+				if( confirm('Confirmation de suppression ?') )
+				{
+					var url = $(this).attr('href');
+
+					var comp = $(this).closest('div.itemSkill');
+
+					$.getJSON(url, function(data){
+						if(data.success)
+						{
+							$(comp).fadeOut();
+						}
+					});
+				}
+
+				return false;
+			});
+		});
+	});
+</script>
+
 <?php require('application/views/template/footer.php') ?>

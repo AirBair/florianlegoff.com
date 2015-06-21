@@ -56,4 +56,4 @@ class Services extends CI_Controller
      		$this->load->view('admin/services_admin', $data);
      	}
      } // Fin de la fonction d'édition de services
- }
+ } // Fin de la classe services.php

@@ -1,6 +1,6 @@
 <?php require('application/views/template/header.php') ?>
 
-<div class="banniereSkills">
+<div class="banniereLegals">
 	<h3>MENTIONS LEGALES</h3>
 </div>
 

@@ -48,7 +48,7 @@ class Cv extends CI_Controller
                     'titre' => 'Edition de rubrique CV',
                     'sections' => $this->admin_model->get_categoriesCv()
                );
-               $this->load->view('admin/cvAdd', $data);
+               $this->load->view('admin/cv_admin', $data);
           }
      } // Fin de la fonction d'ajout de rubrique CV
 
@@ -82,7 +82,7 @@ class Cv extends CI_Controller
                     'sections' => $this->admin_model->get_categoriesCv(),
      			'rubrique' => $this->admin_model->one_rubriqueCv($rubrique)
      		);
-     		$this->load->view('admin/cvUpdate', $data);
+     		$this->load->view('admin/cv_admin', $data);
      	}
      } // Fin de la fonction d'édition de rubrique CV
 
@@ -92,8 +92,18 @@ class Cv extends CI_Controller
                redirect('cv');exit;
           endif;
 
-          $this->admin_model->delete_rubriqueCv($rubrique);
-          redirect('cv');exit;
+          if($this->input->is_ajax_request())
+          {
+               $this->admin_model->delete_rubriqueCv($rubrique);
+               $response['success'] = true;
+               echo json_encode($response);exit;
+          }
+          else
+          {
+               $this->admin_model->delete_rubriqueCv($rubrique);
+               redirect('cv');exit;
+          }
+          
      } // Fin de la fonction de suppression de rubrique CV
 
 

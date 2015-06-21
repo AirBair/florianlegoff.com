@@ -36,7 +36,7 @@ class Contact extends CI_Controller
                     $this->load->library('email');
                     $this->email->from($expediteur, $nom);
                     $this->email->to('contact@florianlegoff.com');
-                    $this->email->cc('florianlg@a.jupimail.com');
+                    $this->email->cc('florianlg@cryptolab.net');
                     $this->email->subject($objet);
                     $this->email->message($message);
                     $this->email->send();
@@ -67,4 +67,5 @@ class Contact extends CI_Controller
                );
 			$this->load->view('contact', $data);
 		}
+     }
 } // Fin de la classe contact.php   

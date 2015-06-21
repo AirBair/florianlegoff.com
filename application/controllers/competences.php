@@ -81,7 +81,7 @@ class Competences extends CI_Controller
                     'categories' => $this->admin_model->getCategorieSkill()
                );
 
-               $this->load->view('admin/skillsAdmin', $data);
+               $this->load->view('admin/competences_admin', $data);
           }
 	} // Fin de la fonction d'ajout de compétences.
 
@@ -151,7 +151,7 @@ class Competences extends CI_Controller
                     'competence' => $this->admin_model->getCompetence($idSkill)
                );
 
-               $this->load->view('admin/skillUpdate', $data);
+               $this->load->view('admin/competences_admin', $data);
           }
 	} // Fin de la fonction d'édition de compétence.
 
@@ -168,8 +168,17 @@ class Competences extends CI_Controller
 
           if( $this->admin_model->delSkill($idSkill) )
           {
-               $this->session->set_flashdata('success', true);
-               redirect('competences');exit;
+               if($this->input->is_ajax_request())
+               {
+                    $response['success'] = true;
+                    echo json_encode($response);exit;
+               }
+               else
+               {
+                    $this->session->set_flashdata('success', true);
+                    redirect('competences');exit;
+               }
+               
           }
           else
                echo 'Erreur à la suppression';

@@ -7,6 +7,7 @@ class Admin_model extends CI_Model
 	// Déclarations des tables à utiliser.
 	private $mail = 'mailPerso';
 	private $admin = 'mdpAdmin';
+	private $profil = 'profil';
 	private $projets = 'projets';
 	private $catSkill = 'skillCategories';
 	private $skills = 'competences';
@@ -20,18 +21,15 @@ class Admin_model extends CI_Model
 	*************************************************************************/
 
 	// Retourne le mot de passe hashé
-	public function identification()
+	public function identification($mdp)
 	{
 		$req = $this->db->select('*')
 						->from($this->admin)
-						->get()
-						->result();
+						->where('mdp', $mdp)
+						->get();
 
 		if ($req->num_rows() > 0)
-		{
-			return $req->row();
-		}
-		
+			return true;
 	}
 
 	/*************************************************************************
@@ -63,23 +61,45 @@ class Admin_model extends CI_Model
 					 	->get();
 
 		if($req->num_rows() > 0)
-		{
 			return $req->row();
-		}
 	}
 
 	// Sauvegarde un mail 
 	public function saveMail($data)
 	{
-		$this->db->insert($this->mail, $data);
+		return $this->db->insert($this->mail, $data);
 	}
 
 	// Supprime un mail
 	public function delMail($mail)
 	{
-		$this->db->where('id', $mail);
-		$this->db->delete($this->mail);
+		return $this->db->where('id', $mail)
+						->delete($this->mail);
 	}
+
+	/*************************************************************************
+									Profil
+	*************************************************************************/
+
+	// Retourne une rubrique du profil
+	public function getProfil($id)
+	{
+		$req = $this->db->select('*')
+						->from($this->profil)
+						->where('id', $id)
+						->get();
+
+		if($req->num_rows() > 0)
+			return $req->row();
+	}
+
+	// Modifie une rubrique du profil
+	public function editProfil($id, $infos)
+	{
+		return $this->db->where('id', $id)
+						->update($this->profil, $infos);
+	}
+
 
 	/*************************************************************************
 									COMPETENCES
@@ -110,9 +130,7 @@ class Admin_model extends CI_Model
 						->get();
 
 		if($req->num_rows() > 0)
-		{
 			return $req->result();
-		}
 	}
 
 	// Retourne une compétence précise
@@ -121,13 +139,10 @@ class Admin_model extends CI_Model
 		$req = $this->db->select('*')
 						->from($this->skills)
 						->where('id_skill', $idSkill)
-						->get()
-						->result();
+						->get();
 
 		if($req->num_rows() > 0)
-		{
 			return $req->row();
-		}
 	}
 
 	// Ajoute une compétence
@@ -141,17 +156,15 @@ class Admin_model extends CI_Model
 	// Modifie une compétence
 	public function modifSkill($skill, $infos)
 	{
-		$this->db->where('id_skill', $skill);
-		$this->db->update($this->skills, $infos);
+		return $this->db->where('id_skill', $skill)
+						->update($this->skills, $infos);
 	}
 
 	// Supprime une compétence
 	public function delSkill($skill)
 	{
-		$this->db->where('id_skill', $skill);
-		$this->db->delete($this->skills);
-
-		return true;
+		return $this->db->where('id_skill', $skill)
+						->delete($this->skills);
 	}
 
 	/*************************************************************************
@@ -182,29 +195,27 @@ class Admin_model extends CI_Model
 						->get();
 
 		if($req->num_rows() > 0)
-		{
 			return $req->row();
-		}
 	}
 
 	// Ajoute un projet
 	public function addProjet($data)
 	{
-		$this->db->insert($this->projets, $data);
+		return $this->db->insert($this->projets, $data);
 	}
 
 	// Modifie un projet
 	public function updateProjet($projet, $data)
 	{
-		$this->db->where('attribut_projet', $projet);
-		$this->db->update($this->projets, $data);
+		return $this->db->where('attribut_projet', $projet)
+						->update($this->projets, $data);
 	}
 
 	// Supprime un projet
 	public function delProjet($projet)
 	{
-		$this->db->where('attribut_projet', $projet);
-		$this->db->delete($this->projets);
+		return $this->db->where('attribut_projet', $projet)
+						->delete($this->projets);
 	}
 
 	/*************************************************************************
@@ -219,9 +230,7 @@ class Admin_model extends CI_Model
 						->get();
 
 		if($req->num_rows > 0)
-		{
 			return $req->result();
-		}
 	}
 
 	// Retourne un service précis
@@ -231,17 +240,16 @@ class Admin_model extends CI_Model
 						->from($this->services)
 						->where('id', $service)
 						->get();
+
 		if($req->num_rows > 0)
-		{
 			return $req->row();
-		}
 	}
 
 	// Modifie un service
 	public function updateService($service, $data)
 	{
-		$this->db->where('id', $service);
-		$this->db->update($this->services, $data);
+		return $this->db->where('id', $service)
+						->update($this->services, $data);
 	}
 
 	/*************************************************************************
@@ -256,9 +264,7 @@ class Admin_model extends CI_Model
 						->get();
 
 		if( $req->num_rows() > 0 )
-		{
 			return $req->result();
-		}
 	}
 
 	// Retourne toutes les rubriques d'une catégorie du CV
@@ -270,9 +276,7 @@ class Admin_model extends CI_Model
 						->get();
 
 		if( $req->num_rows() > 0 )
-		{
 			return $req->result();
-		}
 	}
 
 	// Retourne une rubrique précise
@@ -284,24 +288,20 @@ class Admin_model extends CI_Model
 						->get();
 
 		if( $req->num_rows() > 0 )
-		{
 			return $req->row();
-		}		
 	}
 
 	// Ajoute une rubrique au CV
 	public function add_rubriqueCv($infos)
 	{
-		$this->db->insert($this->cv, $infos);
-
-		return true;
+		return $this->db->insert($this->cv, $infos);
 	}
 
 	// Modifie une rubrique au CV
 	public function edit_rubriqueCv($id, $infos)
 	{
-		$this->db->where('id', $id);
-		$this->db->update($this->cv, $infos);
+		return $this->db->where('id', $id)
+						->update($this->cv, $infos);
 
 		return true;
 	}
@@ -309,10 +309,8 @@ class Admin_model extends CI_Model
 	// Supprime une rubrique du CV
 	public function delete_rubriqueCv($id)
 	{
-		$this->db->where('id', $id);
-		$this->db->delete($this->cv);
-
-		return true;
+		return $this->db->where('id', $id)
+						->delete($this->cv);
 	}
 
 
@@ -328,9 +326,7 @@ class Admin_model extends CI_Model
 						->get();
 
 		if( $req->num_rows() > 0)
-		{
 			return $req->result();
-		}
 	}
 
 	// Retourne une rubrique légale précise
@@ -342,31 +338,27 @@ class Admin_model extends CI_Model
 						->get();
 
 		if( $req->num_rows() > 0)
-		{
 			return $req->row();
-		}
 	}
 
 	// Ajoute une rubrique légale
 	public function add_legal($infos)
 	{
-		$this->db->insert($this->legals, $infos);
+		return $this->db->insert($this->legals, $infos);
 	}
 
 	// Modifie une rubrique légale
 	public function edit_legal($id, $infos)
 	{
-		$this->db->where('id', $id);
-		$this->db->update($this->legals, $infos);
-
-		return true;
+		return $this->db->where('id', $id)
+						->update($this->legals, $infos);
 	}
 
 	// Supprime une rubrique légale
 	public function del_legal($id)
 	{
-		$this->db->where('id', $id);
-		$this->db->delete($this->legals);
+		return $this->db->where('id', $id)
+						->delete($this->legals);
 	}
 
 } // Fin du modèle admin_model.php

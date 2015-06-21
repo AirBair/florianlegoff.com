@@ -5,13 +5,11 @@
 </div>
 <?php foreach($services as $service): ?>
 	<div class="service">
-		<h4>
-			<?php echo $service->titre; ?>
-			<?php if($this->session->userdata('logged')): ?>
-				- <a href="<?php echo site_url('services/edit/' . $service->id); ?>">Editer </a>
-			<?php endif; ?>		
-		</h4>
+		<h4><?php echo $service->titre; ?></h4>
 		<p><?php echo nl2br($service->contenu); ?></p>
+		<?php if($this->session->userdata('logged')): ?>
+			<a class="modoService" href="<?php echo site_url('services/edit/' . $service->id); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
+		<?php endif; ?>	
 	</div>
 <?php endforeach; ?>
 

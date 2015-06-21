@@ -11,11 +11,11 @@
 			<a class="btn" href="<?php echo site_url('cv'); ?>">MON CV</a>
 		</p>
 		<p class="aboutMe">
-			Développeur web en freelance (auto-entrepreneur) et autodidacte de 19 ans sur Saint-Malo et Lannion.<br/><br />
-			Je suis passionné d'informatique et de nouvelles technologies depuis toujours, je me suis auto-formé au développement web à travers ses différents langages.<br /><br />
-			C'est ainsi que de jour en jour, j'enrichis mes connaissances tout en pratiquant ma passion pour le web.<br />
-			Je porte également un point d'honneur au respect de la vie privée notamment sur internet et au bon usage de ce dernier.<br /><br />
+			<?php echo nl2br($profil->texte); ?>
 		</p>
+		<?php if($this->session->userdata('logged')): ?>
+			<a class="modoProfil" href="<?php echo site_url('profil/edit/' . $profil->id); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
+		<?php endif; ?>	
 	</div>
 </div>
 
@@ -45,14 +45,15 @@
 <div class="back0 myService">
 	<h3>JE DEVELOPPE POUR VOUS !</h3>
 	<p class="descMyService">
-		Vous êtes intéressé par la création d'un site web, mais vous n'avez pas le temps ou pas les compétences nécessaire pour le fabriquer ?<br /><br />
-
-		Contactez moi, nous étudierons ensemble votre projet, de la phase de conception jusqu'à la réalisation et l'hébergement.<br />
-		Ce sont des offres complètes que je peux vous proposer.<br /><br />
+		<?php echo nl2br($service->texte); ?>
 	</p>
 	<p class="myServiceBtn">
 		<a class="btn" href="<?php echo site_url('services'); ?>">Mes Services</a> <a class="btn" href="<?php echo site_url('competences'); ?>">Mes compétences</a>
 	</p>
+
+	<?php if($this->session->userdata('logged')): ?>
+		<a class="modoProfil" href="<?php echo site_url('profil/edit/' . $service->id); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
+	<?php endif; ?>	
 </div>
 
 <?php require('application/views/template/footer.php') ?>
