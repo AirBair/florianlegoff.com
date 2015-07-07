@@ -147,6 +147,11 @@ a:active
 	text-decoration: none;
 }
 
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Sinkin200Light';
+}
+
 
 /***********************************************************************
 								Header
@@ -316,7 +321,6 @@ footer nav li:hover a.linkText
 .banniereAbout h3
 {
 	padding-top: 150px;
-	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
@@ -399,8 +403,8 @@ footer nav li:hover a.linkText
 
 .carrouselMain
 {
-	width: 960px;
-	height: 500px;
+	width: 1300px;
+	height: 731px;
 	margin: auto;
 	margin-bottom: 50px;
 	position: relative;
@@ -417,14 +421,14 @@ footer nav li:hover a.linkText
 
 .carrouselMain .slide img
 {
-	width: 960px;
-	height: 500px;
+	width: 1300px;
+	height: 731px;
 }
 
 .carrouselMain .slide a
 {
 	display: inline-block;
-	width: 960px;
+	width: 1300px;
 	padding-top: 10px;
 	height: 30px;
 	background-color: rgba(30,30,30,0.75);
@@ -440,7 +444,7 @@ footer nav li:hover a.linkText
 {
 	position: absolute;
 	bottom: -45px;
-	left: 450px;
+	left: 600px;
 	z-index: 5;
 }
 
@@ -461,12 +465,30 @@ footer nav li:hover a.linkText
 	cursor: pointer;
 }
 
+@media all and (max-width: 1366px){
+	.carrouselMain, .carrouselMain .slide img
+	{
+		width: 960px;
+		height: 500px;
+	}
+
+	.carrouselMain .slide a
+	{
+		width: 960px;
+	}
+
+	.carrouselMain .carrouselNav
+	{
+		left: 450px;
+	}
+}
+
 .myService 
 {
 	display: inline-block;
 	width: 100%;
 	height: 350px;
-	background-image: url('/assets/images/myServices.jpg');
+	background-image: url('/assets/images/bannieres/myServices.jpg');
 	background-repeat:no-repeat;
 	background-position: center center;
 	color: rgb(230,230,230);
@@ -556,12 +578,7 @@ footer nav li:hover a.linkText
 {
 	margin-top: 50px;
 	margin-bottom: 100px;
-}
-
-.cvSection h3, .cvSection h4
-{
 	text-align: center;
-	font-family: 'Sinkin200Light';
 }
 
 .cvSection a
@@ -609,7 +626,7 @@ footer nav li:hover a.linkText
 {
 	width: 100%;
 	height: 250px;
-	background-image: url('/assets/images/myServices.jpg');
+	background-image: url('/assets/images/bannieres/myServices.jpg');
 	background-repeat:no-repeat;
 	background-position: center center;
 	color: rgb(230,230,230);
@@ -619,7 +636,6 @@ footer nav li:hover a.linkText
 .banniereSkills h3
 {
 	padding-top: 100px;
-	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
@@ -665,12 +681,19 @@ footer nav li:hover a.linkText
 	position: absolute;
 	top: 50px;
 	left: 25%;
-	text-align: center;
 }
 
 .catSkills
 {
 	margin-bottom: 150px;
+}
+
+.catSkills h3
+{
+	color: rgb(230,230,230);
+	letter-spacing: 5px;
+	text-align: center;
+	margin-bottom: 50px;
 }
 
 div.itemSkill
@@ -758,7 +781,7 @@ div.itemSkill p.skillModo img
 {
 	width: 100%;
 	height: 450px;
-	background-image: url('/assets/images/myServices.jpg');
+	background-image: url('/assets/images/bannieres/myServices.jpg');
 	background-repeat:no-repeat;
 	background-position: center center;
 	color: rgb(230,230,230);
@@ -768,7 +791,6 @@ div.itemSkill p.skillModo img
 .banniereProjets h3
 {
 	padding-top: 200px;
-	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
@@ -856,16 +878,24 @@ div.itemSkill p.skillModo img
 
 .enTeteProjet h2
 {
-	font-family: 'Sinkin200Light';
 	color: rgb(230,230,230);
 	letter-spacing: 5px;
 	text-align: center;
+	margin-bottom: 70px;
 }
 
 .enTeteProjet h2 span.sTitreProjet
 {
 	font-size: 14px;
 	letter-spacing: 0px;
+}
+
+@media all and (max-width: 1366px){
+	.enTeteProjet .diapoProjet img
+	{
+		width: 960px;
+		height: 500px;
+	}
 }
 
 .corpsProjet
@@ -882,7 +912,6 @@ div.itemSkill p.skillModo img
 	text-align: center;
 	margin-bottom: 70px;
 	color: rgb(230,230,230);
-	font-family: 'Sinkin200Light';
 }
 
 .corpsProjet .descriptionProjet
@@ -937,7 +966,6 @@ div.itemSkill p.skillModo img
 .footProjet h3
 {
 	color: rgb(230,230,230);
-	font-family: 'Sinkin200Light';
 }
 
 .modoProjet
@@ -954,7 +982,7 @@ div.itemSkill p.skillModo img
 {
 	width: 100%;
 	height: 250px;
-	background-image: url('/assets/images/myServices.jpg');
+	background-image: url('/assets/images/bannieres/myServices.jpg');
 	background-repeat:no-repeat;
 	background-position: center center;
 	color: rgb(230,230,230);
@@ -964,7 +992,6 @@ div.itemSkill p.skillModo img
 .banniereServices h3
 {
 	padding-top: 100px;
-	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
@@ -1105,7 +1132,7 @@ div.itemSkill p.skillModo img
 {
 	width: 100%;
 	height: 250px;
-	background-image: url('/assets/images/myServices.jpg');
+	background-image: url('/assets/images/bannieres/myServices.jpg');
 	background-repeat:no-repeat;
 	background-position: center center;
 	color: rgb(230,230,230);
@@ -1115,7 +1142,6 @@ div.itemSkill p.skillModo img
 .banniereLegals h3
 {
 	padding-top: 100px;
-	font-family: 'Sinkin200Light';
 	font-size: 25px;
 	color: rgb(230,230,230);
 	letter-spacing: 15px;
@@ -1138,6 +1164,30 @@ div.itemSkill p.skillModo img
 	text-decoration: none;
 }
 
+/***********************************************************************
+							Page 404
+************************************************************************/
+.error404
+{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+}
+.error404 h3
+{
+	color: rgb(230,230,230);
+	letter-spacing: 5px;
+	text-align: center;
+	font-size: 40px;
+}
+
+.error404 p
+{
+	font-family: 'Sinkin200Light';
+	color: rgb(230,230,230);
+	text-align: center;
+}
 
 /***********************************************************************
 							Espace Administrateur

@@ -14,7 +14,6 @@ if($this->uri->segment(2) == 'edit')
 		<h3>Description</h3>
 			<input type="text" name="titre" placeholder="Titre du projet" value="<?php echo $projet->titre_projet; ?>" /><br />
 			<input type="text" name="sousTitre" placeholder="Sous-Titre du projet" value="<?php echo $projet->sousTitre_projet; ?>" /><br />
-			<input type="text" name="miniature" placeholder="Nom miniature" value="<?php echo $projet->miniature_projet; ?>" /><br />
 			<input type="text" name="logo" placeholder="Nom Logo" value="<?php echo $projet->icone_projet; ?>" /><br />
 			<textarea name="description"><?php echo $projet->description_projet; ?></textarea>
 
@@ -37,7 +36,6 @@ else
 			<input type="text" name="titre" placeholder="Titre du projet" /><br />
 			<input type="text" name="sousTitre" placeholder="Sous-Titre du projet" /><br />
 			<input type="text" name="attribut" placeholder="Attribut du projet" /><br />
-			<input type="text" name="miniature" placeholder="Nom miniature" /><br />
 			<input type="text" name="logo" placeholder="Nom Logo" /><br />
 			<textarea name="description" placeholder="Description du projet"></textarea>
 

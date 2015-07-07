@@ -8,10 +8,10 @@
 		<div class="projet">
 			<p>
 				<a href="#<?php echo $projet->attribut_projet; ?>">
-				<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->miniature_projet; ?>" alt="Miniature <?php echo $projet->titre_projet; ?>" />
+				<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_300px.jpg" alt="Miniature <?php echo $projet->titre_projet; ?>" />
 				</a>
 				<a href="#<?php echo $projet->attribut_projet; ?>" class="viewProject">
-					<img src="<?php echo site_url(); ?>assets/images/projets/voirPlus.png" alt="Icone voir +" /><br />
+					<img src="<?php echo site_url(); ?>assets/images/icones/ico_seeProject.png" alt="Icone voir +" /><br />
 					Voir le Projet
 				</a>
 			</p>
@@ -45,7 +45,7 @@
 		</p>-->
 		<div class="diapoProjet" >
 			<p>
-				<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_accueil.jpg" alt="Fenetre comportant les screens du site" />
+				<img src="<?php echo site_url(); ?>assets/images/projets/<?php echo $projet->attribut_projet; ?>/<?php echo $projet->attribut_projet; ?>_1300px.jpg" alt="Fenetre comportant les screens du site" />
 			</p>
 		</div>
 	</div> <!-- Fin de l'entête -->
@@ -107,9 +107,6 @@
          		$('.prezProjet .closeProjet a .redClose').fadeOut(100);
          	});
 		});
-</script>
-
-    })
 </script>
 
 <?php require('application/views/template/footer.php') ?>

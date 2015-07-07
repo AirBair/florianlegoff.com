@@ -28,7 +28,6 @@ class Projets extends CI_Controller
 
         $this->form_validation->set_rules('titre', 'Titre', 'trim|required|xss_clean');
         $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('miniature', 'Miniature', 'trim|required|xss_clean');
         $this->form_validation->set_rules('logo', 'Logo', 'trim|required|xss_clean');
         $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
         $this->form_validation->set_rules('client', 'Titre', 'trim|required|xss_clean');
@@ -45,7 +44,6 @@ class Projets extends CI_Controller
             $infos = array(
                 'titre_projet' => $this->input->post('titre'),
                 'sousTitre_projet' => $this->input->post('sousTitre'),
-                'miniature_projet' => $this->input->post('miniature'),
                 'icone_projet' => $this->input->post('logo'),
                 'description_projet' => $this->input->post('description'),
                 'client_projet' => $this->input->post('client'),
@@ -85,7 +83,6 @@ class Projets extends CI_Controller
 
           $this->form_validation->set_rules('titre', 'Titre', 'trim|required|xss_clean');
           $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('miniature', 'Miniature', 'trim|required|xss_clean');
           $this->form_validation->set_rules('logo', 'Logo', 'trim|required|xss_clean');
           $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
           $this->form_validation->set_rules('client', 'Titre', 'trim|required|xss_clean');
@@ -99,7 +96,6 @@ class Projets extends CI_Controller
             $infos = array(
                 'titre_projet' => $this->input->post('titre'),
                 'sousTitre_projet' => $this->input->post('sousTitre'),
-                'miniature_projet' => $this->input->post('miniature'),
                 'icone_projet' => $this->input->post('logo'),
                 'description_projet' => $this->input->post('description'),
                 'client_projet' => $this->input->post('client'),

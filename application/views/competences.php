@@ -7,7 +7,7 @@
 
 	<div class="navCatSkills">
 	<?php foreach ($categories as $categorie): ?>
-		<p><?php echo $categorie->nom_catSkill; ?></p>
+		<p id="<?php echo $categorie->id_catSkill; ?>"><?php echo $categorie->nom_catSkill; ?></p>
 	<?php endforeach; ?>
 	</div>
 
@@ -15,7 +15,8 @@
 		<?php foreach ($categories as $categorie):
 			$competences = $this->admin_model->readSkill($categorie->id_catSkill);
 			if (isset($competences)): ?>
-					<section class="catSkills">
+					<section class="catSkills" id="section<?php echo $categorie->id_catSkill; ?>">
+						<h3><?php echo $categorie->nom_catSkill; ?></h3>
 					<?php foreach($competences as $competence): ?>
 						<div class="itemSkill">
 							<p class="imgSkill">
@@ -50,6 +51,7 @@
 <script type="text/javascript">
 	
 	$(function(){
+		// Suppression d'une compétence en AJAX
 		$('.delComp').each(function() {
 			$(this).on('click', function(){
 				
@@ -70,6 +72,17 @@
 				return false;
 			});
 		});
+
+		// Menu Contextuel des compétences
+		$('.navCatSkills p').each(function(){
+	      $(this).click(function(){
+	         var ancre = '#section'+$(this).attr('id');
+	         $('html, body').animate({  
+	            scrollTop:$(ancre).offset().top - 50 
+	         }, 'slow'); 
+	         return false;
+	      });
+   });
 	});
 </script>
 

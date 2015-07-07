@@ -22,19 +22,19 @@
 <div class="back1">
 	<div class="carrouselMain">
 		<p class="slide" id="slide1">
-			<img src="<?php echo site_url(); ?>assets/images/slider/damienaubin.jpg" alt="Projet Damien AUBIN" />
+			<img src="<?php echo site_url(); ?>assets/images/projets/damien/damien_1300px.jpg" alt="Projet Damien AUBIN" />
 			<a href="<?php echo site_url('projets'); ?>" title="Voir le projet" class="slideTitle" >Damien Aubin - Site Web Personnel</a>
 		</p>
 		<p class="slide" id="slide2">
-			<img src="<?php echo site_url(); ?>assets/images/slider/aloderose.jpg" alt="Projet A l'O de Rose" />
+			<img src="<?php echo site_url(); ?>assets/images/projets/aloderoses/aloderoses_1300px.jpg" alt="Projet A l'O de Rose" />
 			<a href="<?php echo site_url('projets'); ?>" title="Voir le projet" class="slideTitle" >A l'O de Roses - Site Web E-commerce</a>
 		</p>
 		<p class="slide" id="slide3">
-			<img src="<?php echo site_url(); ?>assets/images/slider/quadcopter.jpg" alt="Projet Quadcopter" />
+			<img src="<?php echo site_url(); ?>assets/images/projets/quadcopter/quadcopter_1300px.jpg" alt="Projet Quadcopter" />
 			<a href="<?php echo site_url('projets'); ?>" title="Voir le projet" class="slideTitle" >Quadcopter Lycée maupertuis Saint Malo 2013-2014 - Projet de formation</a>
 		</p>
 		<p class="slide" id="slide4">
-			<img src="<?php echo site_url(); ?>assets/images/slider/mathsamort.jpg" alt="Projet Maths à Mort" />
+			<img src="<?php echo site_url(); ?>assets/images/projets/mathsamort/mathsamort_1300px.jpg" alt="Projet Maths à Mort" />
 			<a href="<?php echo site_url('projets'); ?>" title="Voir le projet" class="slideTitle" >Maths à Mort - Jeu de maths en ligne, projet de formation</a>
 		</p>
 	</div>
