@@ -75,14 +75,27 @@
 
 		// Menu Contextuel des compétences
 		$('.navCatSkills p').each(function(){
-	      $(this).click(function(){
-	         var ancre = '#section'+$(this).attr('id');
-	         $('html, body').animate({  
-	            scrollTop:$(ancre).offset().top - 50 
-	         }, 'slow'); 
-	         return false;
-	      });
-   });
+	    	$(this).click(function(){
+	        	var ancre = '#section'+$(this).attr('id');
+	         	$('html, body').animate({  
+	            	scrollTop:$(ancre).offset().top - 50 
+	         	}, 'slow'); 
+	        	return false;
+	    	});
+   		});
+
+		// Suivi du menu dans la page
+		$(window).scroll(function() {
+			var cible = 270 - $(window).scrollTop();
+     		if (cible <= 50)
+     		{
+         		$('.navCatSkills').css('top', '50px');
+         	}
+         	else
+         	{
+         		$('.navCatSkills').css('top', cible+'px');
+         	}
+   		});
 	});
 </script>
 
