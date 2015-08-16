@@ -180,10 +180,12 @@ class Admin_model extends CI_Model
 	// Retourne tous les projets
 	public function getAllProjets()
 	{
-		return $this->db->select('*')
+		$req = $this->db->select('*')
 						->from($this->projets)
-						->get()
-						->result();
+						->get();
+
+		if($req->num_rows() > 0)
+			return $req->result();
 	}
 
 	// Retourne un projet précis
@@ -229,7 +231,7 @@ class Admin_model extends CI_Model
 						->from($this->services)
 						->get();
 
-		if($req->num_rows > 0)
+		if($req->num_rows() > 0)
 			return $req->result();
 	}
 
@@ -241,7 +243,7 @@ class Admin_model extends CI_Model
 						->where('id', $service)
 						->get();
 
-		if($req->num_rows > 0)
+		if($req->num_rows() > 0)
 			return $req->row();
 	}
 
@@ -263,7 +265,7 @@ class Admin_model extends CI_Model
 						->from($this->catCv)
 						->get();
 
-		if( $req->num_rows() > 0 )
+		if($req->num_rows() > 0)
 			return $req->result();
 	}
 
@@ -275,7 +277,7 @@ class Admin_model extends CI_Model
 						->where('section', $section)
 						->get();
 
-		if( $req->num_rows() > 0 )
+		if($req->num_rows() > 0)
 			return $req->result();
 	}
 
@@ -287,7 +289,7 @@ class Admin_model extends CI_Model
 						->where('id', $id)
 						->get();
 
-		if( $req->num_rows() > 0 )
+		if($req->num_rows() > 0)
 			return $req->row();
 	}
 
@@ -325,7 +327,7 @@ class Admin_model extends CI_Model
 						->from($this->legals)
 						->get();
 
-		if( $req->num_rows() > 0)
+		if($req->num_rows() > 0)
 			return $req->result();
 	}
 
@@ -337,7 +339,7 @@ class Admin_model extends CI_Model
 						->where('id', $rubrique)
 						->get();
 
-		if( $req->num_rows() > 0)
+		if($req->num_rows() > 0)
 			return $req->row();
 	}
 

@@ -6,19 +6,19 @@
 				<section class="colonneFooter">
 					<h5>PLAN DU SITE</h5>
 					<p>
-						<a href="http://www.florianlegoff.com/profil" >Profil</a><br />
-						<a href="http://www.florianlegoff.com/competences" >Compétences</a><br />
-						<a href="http://www.florianlegoff.com/projets" >Projets</a><br />
-						<a href="http://www.florianlegoff.com/services" >Services</a><br />
-						<a href="http://www.florianlegoff.com/contact" >Contact</a>
+						<a href="<?php echo site_url('profil'); ?>" >Profil</a><br />
+						<a href="<?php echo site_url('competences'); ?>" >Compétences</a><br />
+						<a href="<?php echo site_url('projets'); ?>" >Projets</a><br />
+						<a href="<?php echo site_url('services'); ?>" >Services</a><br />
+						<a href="<?php echo site_url('contact'); ?>" >Contact</a>
 					</p>
 				</section>
 				<section class="colonneFooter">
 					<h5>INFORMATIONS</h5>
 					<p>
-						<a href="http://www.florianlegoff.com/legals" >Mentions légales</a><br />
-						<a href="http://www.florianlegoff.com/cv" >Mon CV</a><br />
-						<a href="http://www.florianlegoff.com/admin" >Espace Admin.</a><br />
+						<a href="<?php echo site_url('legals'); ?>" >Mentions légales</a><br />
+						<a href="<?php echo site_url('cv'); ?>" >Mon CV</a><br />
+						<a href="<?php echo site_url('admin'); ?>" >Espace Admin</a><br />
 						<?php if($this->session->userdata('logged')): ?>
 						<a href="http://stats.florianlegoff.com">Piwik</a>
 						<?php endif; ?>
