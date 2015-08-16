@@ -36,7 +36,7 @@
 /*
 Noir clair : 2d3440
 Noir sombre : 262c35
-Rouge : c24450
+Rouge : c24450 // b43c3c
 Boutons : 3c424f
 */
 html
@@ -151,6 +151,18 @@ a:active
 h1, h2, h3, h4, h5, h6
 {
 	font-family: 'Sinkin200Light';
+}
+
+.formError
+{
+	display: inline-block;
+	width: calc(100% - 20px);
+	max-width: 1280px;
+	margin: auto;
+	margin-bottom: 50px;
+	padding-left: 20px;
+	background-color: #b43c3c;
+	text-align: left;
 }
 
 
@@ -1108,12 +1120,17 @@ div.itemSkill p.skillModo img
 /***********************************************************************
 								Page CONTACT
 ************************************************************************/
+.formContact
+{
+	margin-top: 70px;
+	text-align: center;
+}
 
 .formContact form
 {
 	margin: auto;
-	margin-top: 70px;
 	width: 500px;
+	text-align: left;
 }
 
 .formContact form label

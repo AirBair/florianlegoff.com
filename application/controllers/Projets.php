@@ -26,18 +26,18 @@ class Projets extends CI_Controller
             redirect('admin/connexion');exit;
         endif;
 
-        $this->form_validation->set_rules('titre', 'Titre', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('logo', 'Logo', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('client', 'Titre', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('date', 'date', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('webdesign', 'webdesign', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('techno', 'techno', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('url', 'url', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('prev', 'Projet précédent', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('next', 'Projet suivant', 'trim|required|xss_clean');
-        $this->form_validation->set_rules('position', 'position', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('titre', 'Titre', 'trim|required');
+        $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required');
+        $this->form_validation->set_rules('logo', 'Logo', 'trim|required');
+        $this->form_validation->set_rules('description', 'Description', 'trim|required');
+        $this->form_validation->set_rules('client', 'Titre', 'trim|required');
+        $this->form_validation->set_rules('date', 'date', 'trim|required');
+        $this->form_validation->set_rules('webdesign', 'webdesign', 'trim|required');
+        $this->form_validation->set_rules('techno', 'techno', 'trim|required');
+        $this->form_validation->set_rules('url', 'url', 'trim|required');
+        $this->form_validation->set_rules('prev', 'Projet précédent', 'trim|required');
+        $this->form_validation->set_rules('next', 'Projet suivant', 'trim|required');
+        $this->form_validation->set_rules('position', 'position', 'trim|required');
 
         if($this->form_validation->run())
         {
@@ -81,15 +81,15 @@ class Projets extends CI_Controller
                redirect('projets');exit;
           endif;
 
-          $this->form_validation->set_rules('titre', 'Titre', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('logo', 'Logo', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('description', 'Description', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('client', 'Titre', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('date', 'date', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('webdesign', 'webdesign', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('techno', 'techno', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('url', 'url', 'trim|required|xss_clean');
+          $this->form_validation->set_rules('titre', 'Titre', 'trim|required');
+          $this->form_validation->set_rules('sousTitre', 'Sous-Titre', 'trim|required');
+          $this->form_validation->set_rules('logo', 'Logo', 'trim|required');
+          $this->form_validation->set_rules('description', 'Description', 'trim|required');
+          $this->form_validation->set_rules('client', 'Titre', 'trim|required');
+          $this->form_validation->set_rules('date', 'date', 'trim|required');
+          $this->form_validation->set_rules('webdesign', 'webdesign', 'trim|required');
+          $this->form_validation->set_rules('techno', 'techno', 'trim|required');
+          $this->form_validation->set_rules('url', 'url', 'trim|required');
 
         if($this->form_validation->run())
         {

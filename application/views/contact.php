@@ -2,9 +2,15 @@
 	
 <iframe width="100%" height="300px" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/florian-le-goff_49646?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
 
-<?php echo validation_errors(); ?>
-
 <div class="formContact">
+	<?php
+	if(validation_errors() != null): ?>
+		<div class="formError">
+			<h4>Erreur(s) dans la validation du formulaire :</h4>
+			<?php echo validation_errors(); ?>
+		</div>
+	<?php endif; ?>
+	
 	<?php echo form_open('contact'); ?>
 			<label for="nom">Votre nom :</label>
 			<input type="text" name="nom" id="nom" value="<?php echo set_value('nom'); ?>" required autofocus /><br />

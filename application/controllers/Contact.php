@@ -19,8 +19,6 @@ class Contact extends CI_Controller
           $this->form_validation->set_rules('message', 'Message', 'trim|required');
           $this->form_validation->set_rules('objet', 'Objet', 'trim|required');
 
-          $this->form_validation->set_error_delimiters('<p class="formError">', '</p>');
-
 		if ($this->form_validation->run())
           {
                     date_default_timezone_set('Europe/Paris');

@@ -22,11 +22,13 @@ class Competences extends CI_Controller
                redirect('admin/connexion');exit;
           endif;
 
-          $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim|xss_clean');
-          $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required|xss_clean');
+          $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required');
+          $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim');
+          $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required');
+          $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required');
+          $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required');
+
+          $this->form_validation->set_error_delimiters('<p class="formError">', '</p>');
 
           if ( $this->form_validation->run() )
           {
@@ -96,11 +98,13 @@ class Competences extends CI_Controller
 			redirect('competences');exit;
 		endif;
 
-          $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim|xss_clean');
-          $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required|xss_clean');
-          $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required|xss_clean');
+          $this->form_validation->set_rules('titreSkill', 'Intitulé de la compétence', 'trim|required');
+          $this->form_validation->set_rules('logoName', 'Logo de la compétence', 'trim');
+          $this->form_validation->set_rules('catSkill', 'Catégorie de la compétence', 'trim|required');
+          $this->form_validation->set_rules('note', 'Note de la compétence', 'trim|required');
+          $this->form_validation->set_rules('descriptionSkill', 'Description de la compétence', 'trim|required');
+
+          $this->form_validation->set_error_delimiters('<p class="formError">', '</p>');
 
           if ( $this->form_validation->run() )
           {

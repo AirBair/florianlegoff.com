@@ -8,6 +8,13 @@
 <div class="conteneur formUpdate">
 
 <?php
+if(validation_errors() != null): ?>
+	<div class="formError">
+		<h4>Erreur(s) dans la validation du formulaire :</h4>
+		<?php echo validation_errors(); ?>
+	</div>
+<?php endif;
+
 if($this->uri->segment(2) == 'edit')
 {
 	echo form_open('projets/edit/' . $projet->attribut_projet); ?>
