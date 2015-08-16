@@ -5,7 +5,10 @@
 </div>
 <div class="skills">
 
+	<p class="openNavCatSkills"><img src="<?php echo site_url(); ?>assets/images/icones/flecheMenu_droit.png" alt="Flèche déroulante" /></p>
+	
 	<div class="navCatSkills">
+		<p id="sideBar"><img src="<?php echo site_url(); ?>assets/images/icones/flecheMenu_gauche.png" alt="Flèche déroulante" /></p>
 	<?php foreach ($categories as $categorie): ?>
 		<p id="<?php echo $categorie->id_catSkill; ?>"><?php echo $categorie->nom_catSkill; ?></p>
 	<?php endforeach; ?>
@@ -51,6 +54,7 @@
 <script type="text/javascript">
 	
 	$(function(){
+
 		// Suppression d'une compétence en AJAX
 		$('.delComp').each(function() {
 			$(this).on('click', function(){
@@ -73,7 +77,45 @@
 			});
 		});
 
-		// Menu Contextuel des compétences
+		/** Menu Déroulant **/
+
+		// Effet au survol
+		$('.openNavCatSkills').mouseenter(function(){
+			$(this).animate({paddingLeft: "20px"},70);
+		});
+
+		$('.openNavCatSkills').mouseleave(function(){
+			$(this).animate({paddingLeft: "0px"},70);
+		});
+
+		// Ouverture au clic
+		$('.openNavCatSkills').click(function(){
+			$(this).hide();
+			$('div.navCatSkills').slideDown(100);
+		});
+
+		// Fermeture au clic
+   		$('p#sideBar').click(function(){
+			$('div.navCatSkills').slideUp(150);
+			$('.openNavCatSkills').show();
+		});
+
+		// Suivi du menu dans la page
+		$(window).scroll(function() {
+			var cible = 250 - $(window).scrollTop();
+     		if (cible <= 0)
+     		{
+         		$('.navCatSkills').css('top', '0px');
+         		$('.openNavCatSkills').css('top', '0px');
+         	}
+         	else
+         	{
+         		$('.navCatSkills').css('top', cible+'px');
+         		$('.openNavCatSkills').css('top', cible+'px');
+         	}
+   		});
+
+		// Scroll à la section demandée
 		$('.navCatSkills p').each(function(){
 	    	$(this).click(function(){
 	        	var ancre = '#section'+$(this).attr('id');
@@ -84,18 +126,6 @@
 	    	});
    		});
 
-		// Suivi du menu dans la page
-		$(window).scroll(function() {
-			var cible = 270 - $(window).scrollTop();
-     		if (cible <= 50)
-     		{
-         		$('.navCatSkills').css('top', '50px');
-         	}
-         	else
-         	{
-         		$('.navCatSkills').css('top', cible+'px');
-         	}
-   		});
 	});
 </script>
 
