@@ -121,7 +121,7 @@ body
 	padding: 10px;
 	padding-left: 30px;
 	padding-right: 30px;
-	background-color: #3c424f;
+	border: solid 2px #c24450;
 	color: white;
 	font-size: 16px;
 	text-align: center;
@@ -365,53 +365,37 @@ footer nav li:hover a.linkText
 								Page PROFIL
 ************************************************************************/
 
-
-.banniereAbout
-{
-	width: 100%;
-	height: 450px;
-	background-image: url('/assets/images/bannieres/banProfil.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-	color: rgb(230,230,230);
-	text-align: center;
-}
-
-.banniereAbout h3
-{
-	padding-top: 150px;
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-@media all and (max-width: 1366px){
-	.banniereAbout
-	{
-		height: 220px;
-		background-image: url('/assets/images/bannieres/banProfil_220.jpg');
-	}
-
-	.banniereAbout h3
-	{
-		padding-top: 100px;
-	}
-}
-
 .contAboutMe
 {
 	width: 100%;
-	vertical-align: top;
 	background-color: rgb(30,30,30);
+}
+
+.imgAbout
+{
+	display: inline-block;
+	width: 45%;
+	height: 700px;
+	vertical-align: top;
+	background-image: url('/assets/images/bannieres/banProfil_700.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.contentAboutMe
+{
+	display: inline-block;
+	width: 55%;
+	margin-left: -5px;
+	vertical-align: top;
 	position: relative;
 }
 
 .titleAboutMe
 {
-	display: inline-block;
-	width: calc(50% - 50px);
+	margin-top: 80px;
 	padding: 25px;
-	vertical-align: middle;
+	text-align: center;
 }
 
 .titleAboutMe .aboutName
@@ -431,33 +415,18 @@ footer nav li:hover a.linkText
 
 .aboutMe
 {
-	display: inline-block;
-	width: calc(50% - 50px);
+	width: 70%;
 	padding: 25px;
-	margin-top: 100px;
-	font-size: 14px;
+	margin: auto;
+	font-size: 15px;
 	color: white;
-	vertical-align: middle;
-	margin-bottom: 70px;
 	text-align: justify;
-	margin-left: -5px;
 }
 
-@media all and (max-width: 1024px){
-
-    .titleAboutMe
-    {
-    	width: 100%;
-    	margin-top: 70px;
-    	text-align: center;
-    }
-
-    .aboutMe
+@media all and (max-width: 1366px){
+	.titleAboutMe .aboutName
 	{
-		display: inline-block;
-		width: 80%;
-		margin-left: 10%;
-		margin-top: 40px;
+		font-size: 30px;
 	}
 }
 
@@ -545,39 +514,75 @@ footer nav li:hover a.linkText
 
 .myService 
 {
-	display: inline-block;
 	width: 100%;
-	height: 350px;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
+	margin: auto;
+	margin-top: 0px;
 	color: rgb(230,230,230);
-	text-align: center;
 	position: relative;
 }
 
-.myService h3
+.myService .imgMyService
 {
-	color: rgb(243,60,60);
-	text-align: center;
-	font-size: 20px;
-	font-weight: bold;
-	padding-top: 10px;
+	display: inline-block;
+	width: 45%;
+	margin-top: -25px;
+	height: 500px;
+	vertical-align: top;
+	background-image: url('/assets/images/bannieres/myServices.jpg');
+	background-repeat:no-repeat;
+	background-position: center center;
 }
 
-.myService .descMyService
+.myService .contentMyService
 {
-	width: 960px;
-	margin: auto;
-	margin-top: 50px;
-	margin-bottom: 20px;
+	display: inline-block;
+	width: calc(55% - 40px);
+	height: 410px;
+	margin-left: -5px;
+	padding: 20px;
+	vertical-align: top;
+	background-color: rgb(30,30,30);
+	text-align: center;
 	font-size: 16px;
 	color: white;
 }
 
+.myService .contentMyService h3
+{
+	padding-top: 10px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	color: #c24450;
+	font-size: 22px;
+	font-weight: bold;
+}
+
 .myService .myServiceBtn a
 {
+	margin-top: 50px;
 	margin-left: 20px;
+}
+
+@media all and (max-width: 1366px){
+	.myService .imgMyService
+	{
+		width: 100%;
+		margin-top: -25px;
+		height: 200px;
+	}
+
+	.myService .contentMyService
+	{
+		display: inline-block;
+		width: 100%;
+	}
+
+	.myService .descMyService
+	{
+		width: 80%;
+		margin-left: 10%;
+		text-align: justify;
+	}
 }
 
 .modoProfil
@@ -585,11 +590,11 @@ footer nav li:hover a.linkText
 	display: none;
 }
 
-.contAboutMe:hover .modoProfil, .myService:hover .modoProfil
+.contentAboutMe:hover .modoProfil, .myService:hover .modoProfil
 {
 	display: block;
 	position: absolute;
-	top: 5px;
+	top: 25px;
 	right: 5px;
 }
 

@@ -1,10 +1,8 @@
 <?php require('application/views/template/header.php'); ?>
 
-<div class="banniereAbout">
-	<h3>A PROPOS</h3>
-</div>
+
 <div class="contAboutMe">
-	<div class="conteneur">
+	<div class="contentAboutMe">
 		<p class="titleAboutMe">
 			<span class="aboutName">FLORIAN LE GOFF</span><br />
 			<span class="aboutTitle">Developpeur Web en Freelance</span><br /><br />
@@ -17,6 +15,7 @@
 			<a class="modoProfil" href="<?php echo site_url('profil/edit/' . $profil->id); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
 		<?php endif; ?>	
 	</div>
+	<div class="imgAbout"></div>
 </div>
 
 <div class="back1">
@@ -42,14 +41,17 @@
 
 <script type="text/javascript" src="<?php echo site_url(); ?>assets/javascript/carrousel.js"></script>
 
-<div class="back0 myService">
-	<h3>JE DEVELOPPE POUR VOUS !</h3>
-	<p class="descMyService">
-		<?php echo nl2br($service->texte); ?>
-	</p>
-	<p class="myServiceBtn">
-		<a class="btn" href="<?php echo site_url('services'); ?>">Mes Services</a> <a class="btn" href="<?php echo site_url('competences'); ?>">Mes compétences</a>
-	</p>
+<div class="myService">
+	<div class="imgMyService"></div>
+	<div class="contentMyService">
+		<h3>JE DEVELOPPE POUR VOUS !</h3>
+		<p class="descMyService" >
+			<?php echo nl2br($service->texte); ?>
+		</p>
+		<p class="myServiceBtn">
+			<a class="btn" href="<?php echo site_url('services'); ?>">Mes Services</a> <a class="btn" href="<?php echo site_url('competences'); ?>">Mes compétences</a>
+		</p>
+	</div>
 
 	<?php if($this->session->userdata('logged')): ?>
 		<a class="modoProfil" href="<?php echo site_url('profil/edit/' . $service->id); ?>"><img src="<?php echo site_url(); ?>assets/images/icones/ico_edit.png" alt="Editer" /></a>
