@@ -515,7 +515,6 @@ footer nav li:hover a.linkText
 .myService 
 {
 	width: 100%;
-	margin: auto;
 	margin-top: 0px;
 	color: rgb(230,230,230);
 	position: relative;
@@ -573,8 +572,10 @@ footer nav li:hover a.linkText
 
 	.myService .contentMyService
 	{
-		display: inline-block;
 		width: 100%;
+		margin: 0;
+		padding:0;
+		padding-bottom: 30px;
 	}
 
 	.myService .descMyService
