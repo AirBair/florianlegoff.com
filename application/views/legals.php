@@ -4,8 +4,8 @@
 	<h3>MENTIONS LEGALES</h3>
 </div>
 
-<div class="back1">
-	<div class="conteneur">
+<div class="back0">
+	<div class="conteneur mentionsLegales">
 
 		<?php foreach($legals as $legal): ?>
 			<section class="sectionlegals">

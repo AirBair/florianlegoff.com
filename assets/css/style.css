@@ -1239,20 +1239,29 @@ div.itemSkill p.skillModo img
 	letter-spacing: 15px;
 }
 
+.mentionsLegales
+{
+	text-align: center;
+}
+
 .sectionlegals
 {
-	margin-bottom: 50px;
-	text-align: center;
+	display: inline-block;
+	width: calc(50% - 3px);
+	vertical-align: top;
+	margin-bottom: 80px;
+	font-size: 16px;
 }
 
 .sectionlegals h3
 {
-	color: rgb(243,60,60);
+	color: #c24450;
+	font-size: 22px;
 }
 
 .sectionlegals a
 {
-	color: #0088cc;
+	color: #b43c3c;
 	text-decoration: none;
 }
 
