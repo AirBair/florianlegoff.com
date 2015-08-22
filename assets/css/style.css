@@ -165,6 +165,17 @@ h1, h2, h3, h4, h5, h6
 	text-align: left;
 }
 
+.formSuccess
+{
+	display: inline-block;
+	width: calc(100% - 20px);
+	max-width: 1280px;
+	margin: auto;
+	margin-bottom: 50px;
+	padding-left: 20px;
+	background-color: #669966;
+	text-align: left;
+}
 
 /***********************************************************************
 								Header
@@ -1149,44 +1160,25 @@ div.itemSkill p.skillModo img
 .formContact
 {
 	margin-top: 70px;
-	text-align: center;
 }
 
 .formContact form
 {
-	margin: auto;
-	width: 500px;
-	text-align: left;
-}
-
-.formContact form label
-{
-	display: block;
-	width: 150px;
-	float: left;
-	margin-right: 15px;
-	padding-top: 10px;
-	text-align: right;
-	vertical-align: middle;
+	display: inline-block;
+	width: calc(55% - 2px);
+	border-right: solid 2px #c24450;
+	vertical-align: top;
 }
 
 .formContact form input
 {
 	height: 20px;
-	width: 200px;
+	width: 300px;
 	margin-bottom: 15px;
 	padding: 10px;
-	border-radius: 5px;
-	border: none;
+	border: solid 1px rgb(60,60,60);
 	background-color: rgb(30,30,30);
-	color: rgb(51,153,255);
-	
-}
-
-.formContact form input:focus, .formContact form textarea:focus
-{
-
-	box-shadow: 3px 3px 25px rgb(51,153,255);
+	color: rgb(200,200,200);
 }
 
 .formContact form textarea
@@ -1195,16 +1187,15 @@ div.itemSkill p.skillModo img
 	height: 150px;
 	margin-bottom: 15px;
 	padding: 10px;
-	border-radius: 5px;
-	border: none;
+	border: solid 1px rgb(60,60,60);
 	background-color: rgb(30,30,30);
-	color: rgb(51,153,255);
-	
+	color: rgb(200,200,200);
 }
 
 .formContact form input[type="submit"]
 {
-	margin-left: 160px;
+	width: 150px;
+	margin-left: 175px;
 	height: 40px;
 }
 
@@ -1213,7 +1204,56 @@ div.itemSkill p.skillModo img
 	color: rgb(243,60,60);
 	cursor: pointer;
 	transition-duration: 0.5s;
+}
 
+.formContact .infosContact
+{
+	display: inline-block;
+	width: 45%;
+	margin-left: -5px;
+	vertical-align: top;
+}
+
+.formContact .infosContact h3
+{
+	text-align: center;
+	color: #c24450;
+}
+
+.formContact .infosContact p
+{
+	width: 400px;
+	margin: auto;
+	margin-top: 70px;
+}
+
+.formContact .infosContact span
+{
+	display: block;
+	padding-left: 40px;
+	padding-top: 10px;
+}
+
+.formContact .infosContact img
+{
+	vertical-align: middle;
+	padding-right: 20px;
+}
+
+.formContact .infosContact label
+{
+	display: none;
+}
+
+.formContact .infosContact textarea	
+{
+	display: none;
+	width: 100%;
+	padding: 10px;
+	padding: 10px;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
 }
 
 /***********************************************************************
