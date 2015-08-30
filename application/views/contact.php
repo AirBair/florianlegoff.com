@@ -15,6 +15,7 @@
 		</div>
 	
 	<?php echo form_open('contact'); ?>
+		<h3>ME CONTACTER</h3>
 			<input type="text" name="nom" id="nom" placeholder="Votre nom" value="<?php echo set_value('nom'); ?>" autofocus /><br />
 			
 			<input type="text" name="mail" id="mail" placeholder="Votre e-mail" value="<?php echo set_value('mail'); ?>" /><br />
@@ -27,7 +28,7 @@
 	<?php echo form_close(); ?>
 
 	<div class="infosContact" >
-		<h3>Informations de Contact</h3>
+		<h3>INFOS COMPLEMENTAIRES</h3>
 
 		<p>
 			<span><img src="<?php echo site_url(); ?>assets/images/icones/ico_mail.png" alt="Icone courriel" /> <a href="mailto:contact@florianlegoff.com">contact@florianlegoff.com</a></span>
