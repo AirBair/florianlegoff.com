@@ -1,7 +1,7 @@
    /*******************************************************************
 	*                                                                 *
 	*                 Site Web : www.florianlegoff.com                *
-	*                                                                 * 
+	*                                                                 *
 	*                                                                 *
 	*               Developpement web -> Florian LE GOFF              *
 	*                                                                 *
@@ -31,7 +31,7 @@
 }
 
 /**********************************************************************
-							Eléments récurrents 
+							Eléments récurrents
 ***********************************************************************/
 /*
 Noir clair : 2d3440
@@ -46,7 +46,7 @@ html
 }
 
 body
-{	
+{
 	margin:0;
 	padding: 0;
 	margin-top: -25px;
@@ -218,7 +218,7 @@ footer nav ul
 
 footer nav ul li
 {
-	
+
 	display: inline-block;
 	width: 20%;
 	height: 85px;
@@ -522,7 +522,7 @@ footer nav li:hover a.linkText
 	}
 }
 
-.myService 
+.myService
 {
 	width: 100%;
 	margin-top: 0px;
@@ -728,14 +728,15 @@ footer nav li:hover a.linkText
 .openNavCatSkills
 {
 	width: 40px;
-	height: 40px;
-	padding-top: 10px;
+	height: 100%;
+	margin: 0;
 	position: fixed;
 	top: 250px;
 	left: 0px;
 	background-color: rgb(30,30,30);
 	z-index: 3;
 	cursor: pointer;
+	vertical-align: top;
 }
 
 .navCatSkills
@@ -1120,7 +1121,7 @@ div.itemSkill p.skillModo img
 }
 
 @media all and (max-width: 1366px){
-    .service 
+    .service
     {
     	width: calc(80% - 50px);
     	margin-left: 10%;
@@ -1248,7 +1249,7 @@ div.itemSkill p.skillModo img
 	display: none;
 }
 
-.formContact .infosContact textarea	
+.formContact .infosContact textarea
 {
 	display: none;
 	width: 100%;
@@ -1343,7 +1344,7 @@ div.itemSkill p.skillModo img
 	position: absolute;
     top: 50%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%); 
+    transform: translateX(-50%) translateY(-50%);
 }
 .error404 h3
 {
