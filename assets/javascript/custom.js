@@ -58,7 +58,7 @@ $(function(){
       $('#overlay').fadeOut();
       return false;
    });
-	
+
 
 
 	/* MON CV */
@@ -66,15 +66,15 @@ $(function(){
    $('.menuRed a').each(function(){
       $(this).click(function(){
          var ancre = $(this).attr('href');
-         $('html, body').animate({  
-            scrollTop:$(ancre).offset().top - 50 
-         }, 'slow'); 
+         $('html, body').animate({
+            scrollTop:$(ancre).offset().top - $('.menuRed').innerHeight() - 20
+         }, 'slow');
          return false;
       });
    });
 
    $(window).scroll(function() {
-     if ($(window).scrollTop() >= 350)
+     if ($(window).scrollTop() >= $('.banniereSkills').innerHeight())
      {
          // fixed
          $('.menuRed').addClass("menuFloat");
@@ -86,20 +86,8 @@ $(function(){
      }
    });
 
-	$('.cv h3 a').each(function(){
+	$('.cvSection h3 a').each(function(){
 		$(this).click(function(){
-			var blocCV = $(this).parent().parent().find('div.itemCV');
-
-			if ($(blocCV).hasClass('open'))
-			{
-				$(blocCV).slideUp(150);
-				$(blocCV).toggleClass('open').toggleClass('close');
-			}
-			else
-			{
-				$(blocCV).slideDown(100);
-				$(blocCV).toggleClass('close').toggleClass('open');
-			}
 			return false;
 		});
 	});
@@ -155,7 +143,7 @@ $(function(){
    		});
    	});
 
-   
-   
+
+
 
 });

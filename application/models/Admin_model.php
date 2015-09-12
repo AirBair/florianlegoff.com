@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 if ( !defined('BASEPATH')) exit('No direct script access allowed');
 
@@ -64,7 +64,7 @@ class Admin_model extends CI_Model
 			return $req->row();
 	}
 
-	// Sauvegarde un mail 
+	// Sauvegarde un mail
 	public function saveMail($data)
 	{
 		return $this->db->insert($this->mail, $data);
@@ -170,7 +170,7 @@ class Admin_model extends CI_Model
 	/*************************************************************************
 									PROJETS
 	*************************************************************************/
-	
+
 	// Compte le nombre de projet
 	public function countProjets()
 	{
@@ -275,6 +275,7 @@ class Admin_model extends CI_Model
 		$req = $this->db->select('*')
 						->from($this->cv)
 						->where('section', $section)
+						->order_by('id', 'desc')
 						->get();
 
 		if($req->num_rows() > 0)
