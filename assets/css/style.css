@@ -330,44 +330,16 @@ footer nav li:hover a.linkText
 	color: rgb(200,200,200);
 }
 
-/***********************************************************************
-								Footer
-************************************************************************/
-
-
-#overlay
-{
-	display:none;
-	position: absolute;
-	top: 0; left: 0;
-	width: 100%;
-	background-color: rgba(0,0,0,0.6);
-	min-height: 900px;
-	margin-bottom: 0;
-}
-
 .idTox
 {
-	width: 840px;
-	padding: 20px;
-	position: fixed;
-	top: 150px;
-	left: 50%;
-	margin-left: -420px;
-	background-color: white;
-	display: none;
-	overflow: auto;
-	max-height: 500px;
-	text-align: center;
-}
-
-.idTox textarea
-{
-	width: 670px;
-	height: 20px;
-	margin-top: 20px;
-	padding-top: 5px;
-	text-align: center;
+	width: 90%;
+	height: 50px;
+	max-width: 90%;
+	max-height: 50px;
+	padding: 5px;
+	border: solid 1px rgb(40,40,40);
+	background-color: rgb(20,20,20);
+	color: rgb(150,150,150);
 }
 
 

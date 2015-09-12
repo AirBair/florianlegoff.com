@@ -29,7 +29,8 @@
 					<p>
 						<a href="mailto:contact@florianlegoff.com">contact@florianlegoff.com</a><br />
 						<a href="http://pgp.mit.edu/pks/lookup?op=get&amp;search=0x329F5F50B1294A46">Clé GPG (Cliquez)</a><br />
-						<a href="idtox" class="clickToTox">ID TOX (Cliquez)</a>
+						<a href="idtox" class="clickToTox">ID TOX :</a>
+						<textarea class="idTox">AF448137C1017AA436CF0833CD55BEB5F306087434A609801466835E7C163811E06796BDBB7B</textarea>
 					</p>
 				</section>
 				<section class="colonneFooter">
@@ -66,10 +67,6 @@
 		</nav>
 
 	</footer>
-
-	<!--<img src="<?php echo site_url(); ?>assets/images/icoFooter" alt="Icones liens footer" /> <a href="http://pgp.mit.edu/pks/lookup?op=get&amp;search=0x329F5F50B1294A46">Clé GPG (Cliquez)</a><br />
-	<textarea>AF448137C1017AA436CF0833CD55BEB5F306087434A609801466835E7C163811E06796BDBB7B</textarea><br /><br />-->
-			
 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/javascript/custom.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/javascript/jquery.rotate.js"></script>
@@ -126,21 +123,6 @@
 	 }); // Fin du jQuery
 	</script>
 
-	<!--<script type="text/javascript">
-	$(function(){
-		<?php if($this->uri->segment(1) == null || $this->uri->segment(1) == 'cv')
-		{
-			?> var page = 'profil'; <?php
-		}
-		else
-		{
-			?> var page = '<?php echo $this->uri->segment(1); ?>'; <?php
-		} ?>
-			
-			menuDynamique(page);
-		});
-	</script>-->
-	
 	</body>
 
 </html>
