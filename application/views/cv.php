@@ -2,7 +2,7 @@
 
 <div class="banniereSkills">
 	<h3>CURICULUM VITAE</h3>
-	<a class="btn" href="http://cloud.florianlegoff.com/index.php/s/EYROhGYmEN0u9ED">Télécharger en PDF</a>
+	<a class="btn" href="http://cloud.florianlegoff.com/index.php/s/KLlizSRscLEbm1x">Télécharger en PDF</a>
 </div>
 
 <div class="menuRed">
@@ -45,11 +45,11 @@
 <?php endforeach; ?>
 
 <script type="text/javascript">
-	
+
 	$(function(){
 		$('.delItemCV').each(function() {
 			$(this).on('click', function(){
-				
+
 				if( confirm('Confirmation de suppression ?') )
 				{
 					var url = $(this).attr('href');
