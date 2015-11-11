@@ -5,6 +5,10 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule .* index.php?/$0 [PT,L]
 
+# Redirect on HTTPS
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.florianlegoff.com/$1 [QSA,R=301,L]
+
 # Redirect on the www.
-RewriteCond %{HTTP_HOST} !^www\.florianlegoff\.com [NC]
-RewriteRule (.*) http://www.florianlegoff.com/$1 [QSA,R=301,L]
+RewriteCond %{HTTP_HOST} !^www\.florianlegoff\.tk [NC]
+RewriteRule (.*) https://www.florianlegoff.tk/$1 [QSA,R=301,L]
