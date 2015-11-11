@@ -1,6 +1,6 @@
 <?php require('application/views/template/header.php'); ?>
-	
-<iframe width="100%" height="300px" frameBorder="0" src="http://umap.openstreetmap.fr/fr/map/florian-le-goff_49646?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
+
+<iframe width="100%" height="300px" frameBorder="0" src="https://umap.openstreetmap.fr/fr/map/florian-le-goff_49646?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&datalayersControl=true&onLoadPanel=undefined&captionBar=false"></iframe>
 
 <div class="conteneur formContact">
 
@@ -13,15 +13,15 @@
 			<h4>Votre message à bien été envoyé !</h4>
 			<p>Je vous répondrais au plus vite.</p>
 		</div>
-	
+
 	<?php echo form_open('contact'); ?>
 		<h3>ME CONTACTER</h3>
 			<input type="text" name="nom" id="nom" placeholder="Votre nom" value="<?php echo set_value('nom'); ?>" autofocus /><br />
-			
+
 			<input type="text" name="mail" id="mail" placeholder="Votre e-mail" value="<?php echo set_value('mail'); ?>" /><br />
-			
+
 			<input type="text" name="objet" id="objet" placeholder="Objet du message" value="<?php echo set_value('objet'); ?>" /><br />
-			
+
 			<textarea name="message" id="message" cols="50" rows="10" placeholder="Votre message .." ><?php echo set_value('nom'); ?></textarea><br />
 
 			<input type="submit" id="submit" value="Envoyer" />
