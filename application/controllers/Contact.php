@@ -28,11 +28,11 @@ class Contact extends CI_Controller
 
           if ($this->form_validation->run())
           {
-               $nom = htmlentities($this->input->post('nom'));
-               $expediteur = $this->input->post('mail');
-               $objet = htmlentities($this->input->post('objet'));
-               $message = nl2br(htmlentities($this->input->post('message')));
-               
+               $nom = $this->security->xss_clean($this->input->post('nom'));
+               $expediteur = $this->security->xss_clean($this->input->post('mail'));
+               $objet = $this->security->xss_clean($this->input->post('objet'));
+               $message = nl2br($this->security->xss_clean($this->input->post('message')));
+
                date_default_timezone_set('Europe/Paris');
 
                // **  I. Envoi de mail  **
@@ -43,8 +43,8 @@ class Contact extends CI_Controller
                $this->email->subject($objet);
                $this->email->message($message);
                $this->email->send();
- 
- 
+
+
                // **  II. Sauvegarde du mail en base de données.  **
 
                // Mise en tableau des données à insérer
@@ -58,11 +58,11 @@ class Contact extends CI_Controller
 
                // Envoi en base de données
                $this->admin_model->saveMail($data);
-     
+
                // Envoi de la confirmation d'execution à la requête AJAX.
                echo "success";
           }
           else
                echo validation_errors(); // On retourne les erreurs de validations de formulaire à la requête AJAX
      }
-} // Fin de la classe contact.php   
+} // Fin de la classe contact.php
