@@ -11,7 +11,7 @@
 
 		<div class="formSuccess" style="display:none;">
 			<h4>Votre message à bien été envoyé !</h4>
-			<p>Je vous répondrais au plus vite.</p>
+			<p>Je vous répondrai au plus vite.</p>
 		</div>
 
 	<?php echo form_open('contact'); ?>

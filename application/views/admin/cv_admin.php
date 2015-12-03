@@ -5,7 +5,7 @@
 </div>
 
 <div class="conteneur formUpdate">
-	
+
 <?php
 if(validation_errors() != null): ?>
 	<div class="formError">
@@ -27,7 +27,7 @@ if($this->uri->segment(2) == 'edit')
 
 		<textarea name="informations" id="informations"><?php echo $rubrique->informations; ?></textarea><br /><br />
 
-		<input type="submit" value="Metre à jour" />
+		<input type="submit" value="Mettre à jour" />
 
 	<?php echo form_close();
 }
