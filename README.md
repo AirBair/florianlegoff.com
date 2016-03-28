@@ -7,7 +7,7 @@ Source code of my personal Website
 
 ## Resources
 
-- CodeIgniter - version 3.0.4 : <https://www.codeigniter.com>
+- CodeIgniter - version 3.0.6 : <https://www.codeigniter.com>
 - jQuery - version 1.11.1 : <https://jquery.com>
 - jQuery Color - version 2.1.2 : <https://plugins.jquery.com/color>
 - "Sinkin Sans" Font : <http://www.fontsquirrel.com/fonts/sinkin-sans>
