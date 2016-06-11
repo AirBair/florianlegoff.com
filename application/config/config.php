@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'https://florianlegoff.tk';
+$config['base_url'] = 'https://www.florianlegoff.com';
 
 /*
 |--------------------------------------------------------------------------
