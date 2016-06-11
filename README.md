@@ -8,14 +8,22 @@ Source code of my personal Website
 ## Resources
 
 - CodeIgniter - version 3.0.6 : <https://www.codeigniter.com>
-- jQuery - version 1.11.1 : <https://jquery.com>
-- jQuery Color - version 2.1.2 : <https://plugins.jquery.com/color>
+- Bootstrap - version 3.3.6 : <https://getbootstrap.com/>
+- jQuery - version 1.12.3 : <https://jquery.com>
+- Animate.css - version 3.5.1 : <https://daneden.github.io/animate.css/>
+- WOW - version 1.1.3 : <http://mynameismatthieu.com/WOW/index.html>
+- Particles.js - version 2.0.0 <http://vincentgarreau.com/particles.js>
 - "Sinkin Sans" Font : <http://www.fontsquirrel.com/fonts/sinkin-sans>
 - "Fabrica" Font : <http://www.ffonts.net/Fabrica.font>
 
 
 ## Server Requirements
 
-PHP version 5.4 or newer is recommended.
+PHP version 5.5 or newer is recommended.
 
-It should work on 5.2.4 as well, but I strongly advise you NOT to run such old versions of PHP, because of potential security and performance issues, as well as missing features.
+It should work on 5.2.4 as well, but we strongly advise you NOT to run such old versions of PHP, because of potential security and performance issues, as well as missing features.
+
+
+## License
+
+This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.

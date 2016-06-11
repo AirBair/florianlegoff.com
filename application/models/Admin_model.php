@@ -4,100 +4,154 @@ if ( !defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin_model extends CI_Model
 {
-	// Déclarations des tables à utiliser.
-	private $mail = 'mailPerso';
-	private $admin = 'mdpAdmin';
-	private $profil = 'profil';
-	private $projets = 'projets';
-	private $catSkill = 'skillCategories';
-	private $skills = 'competences';
-	private $services = 'services';
-	private $catCv = 'cvCategories';
-	private $cv = 'cv';
-	private $legals = 'legals';
+	private $_config = 'config';
+	private $_mails = 'mails';
+	private $_projects = 'projects';
+	private $_skills_groups = 'skills_groups';
+	private $_skills_list = 'skills_list';
+	private $_services = 'services';
+	private $_cv_groups = 'cv_groups';
+	private $_cv_list = 'cv_list';
+
 
 	/*************************************************************************
-							IDENTIFICATION ADMINISTRATEUR
+								ADMINISTRATION ACCESS
 	*************************************************************************/
 
-	// Retourne le mot de passe hashé
-	public function identification($mdp)
+	public function login($mdp)
 	{
 		$req = $this->db->select('*')
-						->from($this->admin)
-						->where('mdp', $mdp)
+						->from($this->_config)
+						->where('label','admin_password')
+						->where('content_fr',$mdp)
 						->get();
 
-		if ($req->num_rows() > 0)
+		if($req->num_rows() > 0)
 			return true;
 	}
 
+
 	/*************************************************************************
-									BOITE MAIL
+									CONFIG
 	*************************************************************************/
 
-	// Compte le nombre de mail
-	public function countMail($where = array())
+	public function getConfig($label = NULL)
 	{
-		return (int) $this->db->where($where)->count_all_results($this->mail);
-	}
-
-	// Retourne tous les mails
-	public function readMail()
-	{
-		return $this->db->select('*')
-						->from($this->mail)
-						->order_by('id', 'desc')
+		if(isset($label))
+		{
+			$req = $this->db->select('*')
+						->from($this->_config)
+						->where('label', $label)
 						->get()
-						->result();
+						->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+						->from($this->_config)
+						->where('label !=', 'admin_password') // All except the admin password.
+						->get()
+						->result_array();
+		}
+
+		return $req;
 	}
 
-	// Retourne un mail précis
-	public function getMail($mail)
+	public function editConfig($label, $data)
 	{
-		$req = $this->db->select('*')
-					 	->from($this->mail)
-					 	->where('id', $mail)
-					 	->get();
-
-		if($req->num_rows() > 0)
-			return $req->row();
+		return $this->db->where('label', $label)
+						->update($this->_config, $data);
 	}
 
-	// Sauvegarde un mail
-	public function saveMail($data)
+
+	/*************************************************************************
+									MAILBOX
+	*************************************************************************/
+
+	public function countMails($where = array())
 	{
-		return $this->db->insert($this->mail, $data);
+		return (int) $this->db->where($where)->count_all_results($this->_mails);
 	}
 
-	// Supprime un mail
-	public function delMail($mail)
+	public function getMails($id = NULL)
+	{
+		if(isset($id))
+		{
+			$req = $this->db->select('*')
+						 	->from($this->_mails)
+						 	->where('id', $id)
+						 	->get()
+							->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+							->from($this->_mails)
+							->order_by('id', 'desc')
+							->get()
+							->result_array();
+		}
+
+		return $req;
+	}
+
+	public function addMail($data)
+	{
+		return $this->db->insert($this->_mails, $data);
+	}
+
+	public function deleteMail($mail)
 	{
 		return $this->db->where('id', $mail)
-						->delete($this->mail);
+						->delete($this->_mails);
 	}
 
 	/*************************************************************************
-									Profil
+									PROJECTS
 	*************************************************************************/
 
-	// Retourne une rubrique du profil
-	public function getProfil($id)
+	public function countProjects()
 	{
-		$req = $this->db->select('*')
-						->from($this->profil)
-						->where('id', $id)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->row();
+		return (int) $this->db->count_all_results($this->_projects);
 	}
 
-	// Modifie une rubrique du profil
-	public function editProfil($id, $infos)
+	public function getProjects($label = NULL)
 	{
-		return $this->db->where('id', $id)
-						->update($this->profil, $infos);
+		if(isset($label))
+		{
+			$req = $this->db->select('*')
+							->from($this->_projects)
+							->where('label', $label)
+							->get()
+							->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+							->from($this->_projects)
+							->order_by('position','asc')
+							->get()
+							->result_array();
+		}
+
+		return $req;
+	}
+
+	public function addProject($data)
+	{
+		return $this->db->insert($this->_projects, $data);
+	}
+
+	public function updateProject($label, $data)
+	{
+		return $this->db->where('label', $label)
+						->update($this->_projects, $data);
+	}
+
+	public function deleteProjet($label)
+	{
+		return $this->db->where('label', $label)
+						->delete($this->_projects);
 	}
 
 
@@ -105,263 +159,169 @@ class Admin_model extends CI_Model
 									COMPETENCES
 	*************************************************************************/
 
-	// Compte le nombre de compétences
 	public function countSkills()
 	{
-		return (int) $this->db->count_all_results($this->skills);
+		return (int) $this->db->count_all_results($this->_skills_list);
 	}
 
-	// Retourne les catégories des compétences (sans les compétences)
-	public function getCategorieSkill()
+	public function getSkills_groups()
 	{
 		return $this->db->select('*')
-						->from($this->catSkill)
-						->order_by('id_catSkill', 'asc')
+						->from($this->_skills_groups)
+						->order_by('position', 'asc')
 						->get()
-						->result();
+						->result_array();
 	}
 
-	// Retourne toutes les compétences d'une catégorie
-	public function readSkill($categorie)
+	public function getSkills($group, $id = NULL)
 	{
-		$req = $this->db->select('*')
-						->from($this->skills)
-						->where('cat_skill', $categorie)
-						->get();
+		if(isset($id))
+		{
+			$req = $this->db->select('*')
+							->from($this->_skills_list)
+							->where('id', $id)
+							->get()
+							->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+							->from($this->_skills_list)
+							->where('skills_group', $group)
+							->order_by('position')
+							->get()
+							->result_array();
+		}
 
-		if($req->num_rows() > 0)
-			return $req->result();
+		return $req;
 	}
 
-	// Retourne une compétence précise
-	public function getCompetence($idSkill)
-	{
-		$req = $this->db->select('*')
-						->from($this->skills)
-						->where('id_skill', $idSkill)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->row();
-	}
-
-	// Ajoute une compétence
 	public function addSkill($data)
 	{
-		$this->db->insert($this->skills, $data);
-
-		return $this->db->insert_id();
+		if($this->db->insert($this->_skills_list, $data))
+			return $this->db->insert_id();
 	}
 
-	// Modifie une compétence
-	public function modifSkill($skill, $infos)
+	public function updateSkill($id, $data)
 	{
-		return $this->db->where('id_skill', $skill)
-						->update($this->skills, $infos);
+		return $this->db->where('id', $id)
+						->update($this->_skills_list, $data);
 	}
 
-	// Supprime une compétence
-	public function delSkill($skill)
+	public function deleteSkill($id)
 	{
-		return $this->db->where('id_skill', $skill)
-						->delete($this->skills);
+		return $this->db->where('id', $id)
+						->delete($this->_skills_list);
 	}
 
-	/*************************************************************************
-									PROJETS
-	*************************************************************************/
-
-	// Compte le nombre de projet
-	public function countProjets()
-	{
-		return (int) $this->db->count_all_results($this->projets);
-	}
-
-	// Retourne tous les projets
-	public function getAllProjets()
-	{
-		$req = $this->db->select('*')
-						->from($this->projets)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->result();
-	}
-
-	// Retourne un projet précis
-	public function getOneProjet($attr)
-	{
-		$req = $this->db->select('*')
-						->from($this->projets)
-						->where('attribut_projet', $attr)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->row();
-	}
-
-	// Ajoute un projet
-	public function addProjet($data)
-	{
-		return $this->db->insert($this->projets, $data);
-	}
-
-	// Modifie un projet
-	public function updateProjet($projet, $data)
-	{
-		return $this->db->where('attribut_projet', $projet)
-						->update($this->projets, $data);
-	}
-
-	// Supprime un projet
-	public function delProjet($projet)
-	{
-		return $this->db->where('attribut_projet', $projet)
-						->delete($this->projets);
-	}
 
 	/*************************************************************************
 									SERVICES
 	*************************************************************************/
 
-	// Retourne tous les services
-	public function getServices()
+	public function countServices()
 	{
-		$req = $this->db->select('*')
-						->from($this->services)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->result();
+		return (int) $this->db->count_all_results($this->_skills_list);
 	}
 
-	// Retourne un service précis
-	public function getOneService($service)
+	public function getServices($id = NULL)
 	{
-		$req = $this->db->select('*')
-						->from($this->services)
-						->where('id', $service)
-						->get();
+		if(isset($id))
+		{
+			$req = $this->db->select('*')
+							->from($this->_services)
+							->where('id', $id)
+							->get()
+							->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+							->from($this->_services)
+							->order_by('position')
+							->get()
+							->result_array();
+		}
 
-		if($req->num_rows() > 0)
-			return $req->row();
+		return $req;
 	}
 
-	// Modifie un service
-	public function updateService($service, $data)
+	public function addService($data)
 	{
-		return $this->db->where('id', $service)
-						->update($this->services, $data);
+		if($this->db->insert($this->_services, $data))
+			return $this->db->insert_id();
 	}
+
+	public function updateService($id, $data)
+	{
+		return $this->db->where('id', $id)
+						->update($this->_services, $data);
+	}
+
+	public function deleteService($id)
+	{
+		return $this->db->where('id', $id)
+						->delete($this->_services);
+	}
+
 
 	/*************************************************************************
 									CV
 	*************************************************************************/
 
-	// Retourne les catégories du CV (sans les rubriques des catégories)
-	public function get_categoriesCv()
+	public function countItems()
 	{
-		$req = $this->db->select('*')
-						->from($this->catCv)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->result();
+		return (int) $this->db->count_all_results($this->_cv_list);
 	}
 
-	// Retourne toutes les rubriques d'une catégorie du CV
-	public function get_rubriquesCv($section)
+	public function getCV_groups()
 	{
-		$req = $this->db->select('*')
-						->from($this->cv)
-						->where('section', $section)
-						->order_by('id', 'desc')
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->result();
+		return $this->db->select('*')
+						->from($this->_cv_groups)
+						->order_by('position', 'asc')
+						->get()
+						->result_array();
 	}
 
-	// Retourne une rubrique précise
-	public function one_rubriqueCv($id)
+	public function getItems($group, $id = NULL)
 	{
-		$req = $this->db->select('*')
-						->from($this->cv)
-						->where('id', $id)
-						->get();
+		if(isset($id))
+		{
+			$req = $this->db->select('*')
+							->from($this->_cv_list)
+							->where('id', $id)
+							->get()
+							->row_array();
+		}
+		else
+		{
+			$req = $this->db->select('*')
+							->from($this->_cv_list)
+							->where('cv_group', $group)
+							->order_by('position')
+							->get()
+							->result_array();
+		}
 
-		if($req->num_rows() > 0)
-			return $req->row();
+		return $req;
 	}
 
-	// Ajoute une rubrique au CV
-	public function add_rubriqueCv($infos)
+	public function addItem($data)
 	{
-		return $this->db->insert($this->cv, $infos);
+		if($this->db->insert($this->_cv_list, $data))
+			return $this->db->insert_id();
 	}
 
-	// Modifie une rubrique au CV
-	public function edit_rubriqueCv($id, $infos)
-	{
-		return $this->db->where('id', $id)
-						->update($this->cv, $infos);
-
-		return true;
-	}
-
-	// Supprime une rubrique du CV
-	public function delete_rubriqueCv($id)
+	public function updateItem($id, $data)
 	{
 		return $this->db->where('id', $id)
-						->delete($this->cv);
+						->update($this->_cv_list, $data);
 	}
 
-
-	/*************************************************************************
-							Mentions Légales
-	*************************************************************************/
-
-	// Retourne toutes les mentions légales
-	public function get_legals()
-	{
-		$req = $this->db->select('*')
-						->from($this->legals)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->result();
-	}
-
-	// Retourne une rubrique légale précise
-	public function get_oneLegal($rubrique)
-	{
-		$req = $this->db->select('*')
-						->from($this->legals)
-						->where('id', $rubrique)
-						->get();
-
-		if($req->num_rows() > 0)
-			return $req->row();
-	}
-
-	// Ajoute une rubrique légale
-	public function add_legal($infos)
-	{
-		return $this->db->insert($this->legals, $infos);
-	}
-
-	// Modifie une rubrique légale
-	public function edit_legal($id, $infos)
+	public function deleteItem($id)
 	{
 		return $this->db->where('id', $id)
-						->update($this->legals, $infos);
+						->delete($this->_cv_list);
 	}
 
-	// Supprime une rubrique légale
-	public function del_legal($id)
-	{
-		return $this->db->where('id', $id)
-						->delete($this->legals);
-	}
-
-} // Fin du modèle admin_model.php
+} // End admin_model.php

@@ -1,21 +1,16 @@
    /*******************************************************************
+	*                 WebSite : www.florianlegoff.com                 *
 	*                                                                 *
-	*                 Site Web : www.florianlegoff.com                *
-	*                                                                 *
-	*                                                                 *
-	*               Developpement web -> Florian LE GOFF              *
-	*                                                                 *
+	*               Web Developpement -> Florian LE GOFF              *
 	*            Design -> Damien AUBIN (www.aubindamien.com)         *
 	*                                                                 *
-	*                                                                 *
-	*               Aucuns Droits Réservés - CopyMe !                 *
-	*                                                                 *
+	*    This work is licensed under a Creative Commons Attribution	  *
+	*				ShareAlike 4.0 International License              *
 	*******************************************************************/
 
 /**********************************************************************
-							Police
+							FONTS
 ***********************************************************************/
-
 @font-face{
 	font-family: 'Fabrica';
 	src: url('../fonts/Fabrica.otf');
@@ -24,1492 +19,436 @@
 	font-family: 'Sinkin400Regular';
 	src: url('../fonts/SinkinSans-400Regular.otf');
 }
-
 @font-face{
 	font-family: 'Sinkin200Light';
 	src: url('../fonts/SinkinSans-200XLight.otf');
 }
 
 /**********************************************************************
-							Eléments récurrents
+							COLORS
 ***********************************************************************/
-/*
-Noir clair : 2d3440
-Noir sombre : 262c35
-Rouge : c24450 // b43c3c
-Boutons : 3c424f
-*/
-html
-{
-	margin: 0;
-	padding: 0;
+.lightblack{
+	color: #2d3440;
 }
-
-body
-{
-	margin:0;
-	padding: 0;
-	margin-top: -25px;
-	margin-bottom: 80px;
-	min-width: 960px;
-	font-family: 'Fabrica';
-	background-color: rgb(20,20,20);
-	color: white;
+.darkblack{
+	color: #262c35;
 }
-
-.back0
-{
-	margin-top: 0px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+.lightred{
+	color: #c24450;
 }
-
-.back1
-{
-	margin-top:0px;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: rgb(50,50,50);
+.darkred{
+	color: #b43c3c;
 }
-
-.back0_black
-{
-	margin-top:0px;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	background-color: rgb(30,30,30);
-}
-
-.back1_black
-{
-	margin-top:0px;
-	padding-top: 50px;
-	padding-bottom: 50px;
+.bg_lightblack{
 	background-color: rgb(40,40,40);
 }
-
-.titlePage
-{
-	text-align: center;
-	color: rgb(243,60,60);
+.bg_darkblack{
+	background-color: rgb(20,20,20);
 }
-
-.borderRed
-{
-	border-top: 5px solid rgb(243,60,60);
+.bg_lightred{
+	background-color: #c24450;
 }
-
-.conteneur
-{
-	width: 100%;
-	max-width: 1300px;
-	margin: auto;
-	margin-top: 0px;
-}
-
-.clear
-{
-	clear: both;
-}
-
-.btn
-{
-	display: inline-block;
-	height: 20px;
-	min-width: 110px;
-	margin-top: 10px;
-	padding: 10px;
-	padding-left: 30px;
-	padding-right: 30px;
-	border: solid 2px #c24450;
-	color: white;
-	font-size: 16px;
-	text-align: center;
-	text-decoration: none;
-
-	transition: background-color 0.3s;
-}
-
-.btn:hover
-{
-	background-color: #b64444;
-
-	transition : background-color 0.3s;
-}
-
-a
-{
-	color: #b43c3c;
-	text-decoration: none;
-}
-
-a:active
-{
-	text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6
-{
-	font-family: 'Sinkin200Light';
-}
-
-.formError
-{
-	display: inline-block;
-	width: calc(100% - 20px);
-	max-width: 1280px;
-	margin: auto;
-	margin-bottom: 50px;
-	padding-left: 20px;
+.bg_darkred{
 	background-color: #b43c3c;
-	text-align: left;
 }
 
-.formSuccess
-{
-	display: inline-block;
-	width: calc(100% - 20px);
-	max-width: 1280px;
-	margin: auto;
-	margin-bottom: 50px;
-	padding-left: 20px;
-	background-color: #669966;
-	text-align: left;
-}
-
-/***********************************************************************
-								Header
-************************************************************************/
-header
-{
-	display: none;
-}
-
-/*******************************
-		Menu de navigation
-********************************/
-footer
-{
-	width: 100%;
-	position: fixed;
-	bottom:0;
-	left: 0;
-	z-index: 20;
-	background-color: rgb(20,20,20);
-}
-
-footer nav
-{
-    display: inline-block;
-    width: 100%;
-    height: 80px;
-    margin-top:0px;
-	padding:0px;
-}
-
-footer nav ul
-{
-	width: 100%;
-	max-width: 1300px;
-	margin:auto;
-	margin-top:0px;
-	padding:0px;
-}
-
-footer nav ul li
-{
-
-	display: inline-block;
-	width: 20%;
-	height: 85px;
-	margin-top:0px;
-	margin-left: -5px;
-	list-style-type : none;
-	font-size: 12px;
-	text-align: center;
-}
-
-footer nav a
-{
-	display: inline-block;
-	width:100%;
-	text-decoration: none;
-	color: rgb(150,150,150);
-	vertical-align: top;
-}
-
-footer nav a.linkimg
-{
-	height: 50px;
-	text-decoration: none;
-	color: rgb(100,100,100);
-}
-
-footer nav a.linkimg img
-{
-	width: 60px;
-	height: 60px;
-}
-
-footer nav a.linkText
-{
-	display: none;
-	padding-top: 25px;
-	padding-bottom: 23px;
-	letter-spacing: 3px;
-	font-size: 16px;
-	text-align: center;
-}
-
-footer nav li:hover a.linkText
-{
+/**********************************************************************
+							RECCURENT ITEMS
+***********************************************************************/
+body{
+	min-width: 960px;
+	max-width: 100%;
+	font-family: 'Fabrica';
 	color: white;
-}
-
-.arborescence
-{
-	display: none;
-	text-align: center;
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-bottom: solid 1px rgb(40,40,40);
-}
-
-.arborescence .siteMap
-{
-	display: none;
-	width: 100%;
-	max-width: 1300px;
-	margin: auto;
-}
-
-.siteMap section.colonneFooter
-{
-	display: inline-block;
-	width: calc(25% - 20px);
-	padding-left: 15px;
-	vertical-align: top;
-	color: white;
-	font-size: 13px;
-	text-align: left;
-}
-
-.siteMap section.colonneFooter h5
-{
-	font-size: 18px;
-	color: #b43c3c;
-}
-
-.siteMap section.colonneFooter a
-{
-	display: inline-block;
-	margin-bottom: 5px;
 	font-size: 15px;
-	color: rgb(150,150,150);
-
-	transition: color 0.2s
-}
-
-.siteMap section.colonneFooter a:hover
-{
-	color: rgb(240,240,240);
-	transition: color 0.2s;
-}
-
-.legals
-{
-	display: none;
-	text-align: center;
-	width: 100%;
-	margin: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-top: solid 1px rgb(40,40,40);
-	border-bottom: solid 1px rgb(40,40,40);
-	color: rgb(200,200,200);
-}
-
-.idTox
-{
-	width: 90%;
-	height: 50px;
-	max-width: 90%;
-	max-height: 50px;
-	padding: 5px;
-	border: solid 1px rgb(40,40,40);
-	background-color: rgb(20,20,20);
-	color: rgb(150,150,150);
-}
-
-
-/***********************************************************************
-								Page PROFIL
-************************************************************************/
-
-.contAboutMe
-{
-	width: 100%;
-	background-color: rgb(30,30,30);
-}
-
-.imgAbout
-{
-	display: inline-block;
-	width: 45%;
-	height: 700px;
-	vertical-align: top;
-	background-image: url('/assets/images/bannieres/banProfil_700.jpg');
-	background-repeat: no-repeat;
-	background-position: center center;
-}
-
-.contentAboutMe
-{
-	display: inline-block;
-	width: 55%;
-	margin-left: -5px;
-	vertical-align: top;
-	position: relative;
-}
-
-.titleAboutMe
-{
 	margin-top: 80px;
-	padding: 25px;
-	text-align: center;
 }
 
-.titleAboutMe .aboutName
-{
+h1{
 	font-size: 40px;
 	font-family: 'Sinkin400Regular';
 	letter-spacing: 10px;
 }
-
-.titleAboutMe .aboutTitle
-{
-	font-size: 18px;
-	color: #b43c3c;
+h2, h3, h4, h5, h6{
 	font-family: 'Sinkin200Light';
+}
+h2{
+	font-size: 30px;
+	letter-spacing: 5px;
+	color: #b43c3c;
+	margin-bottom: 80px;
+}
+h3{
+	font-size: 20px;
+	color: #b43c3c;
 	letter-spacing: 3px;
 }
 
-.aboutMe
-{
-	width: 70%;
-	padding: 25px;
-	margin: auto;
-	font-size: 15px;
-	color: white;
-	text-align: justify;
-}
-
-@media all and (max-width: 1366px){
-	.titleAboutMe .aboutName
-	{
-		font-size: 30px;
-	}
-}
-
-.carrouselMain
-{
-	width: 1300px;
-	height: 731px;
-	margin: auto;
-	margin-bottom: 50px;
-	position: relative;
-}
-
-.carrouselMain .slide
-{
-	display: none;
-	position: absolute;
-	top:0;
-	left:0;
-	z-index: 1;
-}
-
-.carrouselMain .slide img
-{
-	width: 1300px;
-	height: 731px;
-}
-
-.carrouselMain .slide a
-{
-	display: inline-block;
-	width: 1300px;
-	padding-top: 10px;
-	height: 30px;
-	background-color: rgba(30,30,30,0.75);
-	color: white;
-	text-decoration: none;
-	text-align: center;
-	position: absolute;
-	bottom: 5px;
-	left: 0;
-}
-
-.carrouselMain .carrouselNav
-{
-	position: absolute;
-	bottom: -45px;
-	left: 600px;
-	z-index: 5;
-}
-
-.carrouselMain .carrouselNav span
-{
-	display: inline-block;
-	color: rgba(30,30,30,0);
-	background-color: rgba(30,30,30,0.75);
-	width: 15px;
-	height: 15px;
-	border-radius: 15px;
-	margin-left: 5px;
-}
-
-.carrouselMain .carrouselNav span:hover, .carrouselMain .carrouselNav .active
-{
-	background-color: rgb(243,60,60);
-	cursor: pointer;
-}
-
-@media all and (max-width: 1366px){
-	.carrouselMain, .carrouselMain .slide img
-	{
-		width: 960px;
-		height: 500px;
-	}
-
-	.carrouselMain .slide a
-	{
-		width: 960px;
-	}
-
-	.carrouselMain .carrouselNav
-	{
-		left: 450px;
-	}
-}
-
-.myService
-{
-	width: 100%;
-	margin-top: 0px;
-	color: rgb(230,230,230);
-	position: relative;
-}
-
-.myService .imgMyService
-{
-	display: inline-block;
-	width: 45%;
-	margin-top: -25px;
-	height: 500px;
-	vertical-align: top;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-}
-
-.myService .contentMyService
-{
-	display: inline-block;
-	width: calc(55% - 40px);
-	height: 410px;
-	margin-left: -5px;
-	padding: 20px;
-	vertical-align: top;
-	background-color: rgb(30,30,30);
-	text-align: center;
-	font-size: 16px;
-	color: white;
-}
-
-.myService .contentMyService h3
-{
-	padding-top: 10px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	color: #c24450;
-	font-size: 22px;
-	font-weight: bold;
-}
-
-.myService .myServiceBtn a
-{
-	margin-top: 50px;
-	margin-left: 20px;
-}
-
-@media all and (max-width: 1366px){
-	.myService .imgMyService
-	{
-		width: 100%;
-		margin-top: -25px;
-		height: 200px;
-	}
-
-	.myService .contentMyService
-	{
-		width: 100%;
-		margin: 0;
-		padding:0;
-		padding-bottom: 30px;
-	}
-
-	.myService .descMyService
-	{
-		width: 80%;
-		margin-left: 10%;
-		text-align: justify;
-	}
-}
-
-.modoProfil
-{
-	display: none;
-}
-
-.contentAboutMe:hover .modoProfil, .myService:hover .modoProfil
-{
-	display: block;
-	position: absolute;
-	top: 25px;
-	right: 5px;
-}
-
-/***********************************************************************
-								Page CV
-************************************************************************/
-
-.menuRed
-{
-	width: 100%;
-	background-color: #b64444;
-	z-index: 2;
-}
-
-.menuFloat
-{
-	position: fixed;
-	top:0;
-	left:0;
-}
-
-.menuRed p
-{
-	width: 780px;
-	margin:auto;
-}
-
-.menuRed a
-{
-	display: inline-block;
-	padding-top: 15px;
-	height: 35px;
-	width: 150px;
-	margin-right: -5px;
-	text-align: center;
-	color: white;
-	text-decoration: none;
-}
-
-.menuRed a:hover
-{
-	background-color: rgb(220,40,40);
-}
-
-.cvSection
-{
-	margin-top: 50px;
-	margin-bottom: 100px;
-	text-align: center;
-}
-
-.cvSection a
-{
-	color: rgb(243,60,60);
-	text-decoration: none;
-}
-
-.cvSection .itemCV
-{
-	width: 90%;
-	max-width: 1300px;
-	margin: auto;
-	margin-bottom: 30px;
-	padding-top: 30px;
-	position: relative;
-	background-color: rgb(30,30,30);
-	text-align: center;
-}
-
-.cvSection .itemCV p.contentItemCV
-{
-	padding: 30px;
-}
-
-.cvSection .modoCV
-{
-	position: absolute;
-	top: 0px;
-	right: 15px;
-}
-
-.cvSection .modoCV img
-{
-	width: 20px;
-	height: 20px;
-}
-
-
-/***********************************************************************
-								Page COMPETENCES
-************************************************************************/
-
-.banniereSkills
-{
-	width: 100%;
-	height: 250px;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-	color: rgb(230,230,230);
-	text-align: center;
-}
-
-.banniereSkills h3
-{
-	padding-top: 100px;
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-.skills
-{
-	width: 100%;
-	text-align: center;
-	position: relative;
-	vertical-align: top;
-}
-
-.openNavCatSkills
-{
-	width: 40px;
-	height: 100%;
-	margin: 0;
-	position: fixed;
-	top: 250px;
-	left: 0px;
-	background-color: rgb(30,30,30);
-	z-index: 3;
-	cursor: pointer;
-	vertical-align: top;
-}
-
-.navCatSkills
-{
-	display: none;
-	vertical-align: top;
-	width: 300px;
-	height: 100%;
-	position: fixed;
-	top: 250px;
-	left: 0px;
-	background-color: rgb(30,30,30);
-	z-index: 3;
-}
-
-.navCatSkills p
-{
-	display: inline-block;
-	width: 250px;
-	margin: 0;
-	padding: 25px;
-	border-bottom: solid 1px rgb(60,60,60);
-	cursor: pointer;
-	color: (100,100,100);
-
-	transition: color 0.3s;
-}
-
-.navCatSkills p:hover
-{
-	color: rgb(226,66,66);
-	transition: color 0.3s;
-}
-
-
-.contentCatSkills
-{
-	display: inline-block;
-	width: 100%;
-	max-width: 1300px;
-	margin: auto;
-	text-align: right;
-}
-
-.catSkills
-{
-	margin-bottom: 150px;
-}
-
-.catSkills h3
-{
-	color: rgb(230,230,230);
-	letter-spacing: 5px;
-	text-align: center;
-	margin-bottom: 50px;
-}
-
-div.itemSkill
-{
-	display: inline-block;
-	width: 30%;
-	min-width: 400px;
-	height: 150px;
-	margin-bottom: 5px;
-	vertical-align: top;
-	background-color: rgb(50,50,50);
-	color: rgb(60,60,60);
-	position: relative;
-}
-
-p.imgSkill
-{
-	display: inline-block;
-	text-align: center;
-	width: 150px;
-	vertical-align: middle;
-	color: rgb(230,230,230);
-}
-
-p.imgSkill img
-{
-	width: 100px;
-	height: 85px;
-}
-
-div.skillInfos
-{
-	display: inline-block;
-	width: 210px;
-	margin-left: 20px;
-	text-align: center;
-	vertical-align: middle;
-}
-
-div.skillInfos a.rdExt
-{
-	display: inline-block;
-	margin-right: 3px;
-	width: 26px;
-	height: 26px;
-	border-radius: 26px;
-	border: solid rgb(226,66,66) 1px;
-	vertical-align: top;
-}
-
-div.skillInfos span.rdInt
-{
-	display: inline-block;
-	margin-top: 5px;
-	width: 16px;
-	height: 16px;
-	border-radius: 16px;
-	background-color: rgb(226,66,66);
-}
-
-div.itemSkill p.skillModo
-{
-	display: none;
-}
-
-div.itemSkill:hover p.skillModo
-{
-	display: block;
-	position: absolute;
-	top: 0px;
-	right: 5px;
-}
-
-div.itemSkill p.skillModo img
-{
-	width: 20px;
-	height: 20px;
-}
-
-
-/***********************************************************************
-								Page PROJETS
-************************************************************************/
-.banniereProjets
-{
-	width: 100%;
-	height: 450px;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-	color: rgb(230,230,230);
-	text-align: center;
-}
-
-.banniereProjets h3
-{
-	padding-top: 200px;
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-@media all and (max-width: 1366px){
-	.banniereProjets
-	{
-		height: 220px;
-	}
-
-	.banniereProjets h3
-	{
-		padding-top: 100px;
-	}
-}
-
-.grilleProjets
-{
-	text-align: center;
-	margin-top: 70px;
-	margin-bottom: 70px;
-}
-
-.grilleProjets .projet
-{
-	display: inline-block;
-	width: 300px;
-	margin-right: 16px;
-	margin-bottom: 15px;
-	text-align: center;
-}
-
-.grilleProjets .projet p
-{
-	position: relative;
-}
-
-.grilleProjets .projet img
-{
-	width: 300px;
-}
-
-.grilleProjets .projet h4
-{
-	margin-top: -5px;
-}
-.grilleProjets .projet a
-{
-	color: rgb(230,230,230);
-	text-decoration: none;
-}
-
-.grilleProjets .projet p .viewProject
-{
-	display: none;
-	width: 300px;
-	height: 130px;
-	padding-top: 40px;
-	background: rgba(243,60,60,0.85);
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: white
-}
-
-.grilleProjets .projet p .viewProject img
-{
-	width: 50px;
-	height: 50px;
-}
-
-.prezProjet
-{
-	width: 100%;
-	position: relative;
-}
-
-.prezProjet .enTeteProjet
-{
-	background-color: rgb(40,40,40);
-	text-align: center;
-	padding: 70px 0 70px 0;
-}
-
-.enTeteProjet h2
-{
-	color: rgb(230,230,230);
-	letter-spacing: 5px;
-	text-align: center;
-	margin-bottom: 70px;
-}
-
-.enTeteProjet h2 span.sTitreProjet
-{
-	font-size: 14px;
-	letter-spacing: 0px;
-}
-
-@media all and (max-width: 1366px){
-	.enTeteProjet .diapoProjet img
-	{
-		width: 960px;
-		height: 500px;
-	}
-}
-
-.corpsProjet
-{
-	width: 100%;
-	max-width: 1500px;
-	margin: auto;
-	text-align: center;
-	padding: 70px 0 70px 0px;
-}
-
-.corpsProjet h3
-{
-	text-align: center;
-	margin-bottom: 70px;
-	color: rgb(230,230,230);
-}
-
-.corpsProjet .descriptionProjet
-{
-	display: inline-block;
-	width: 50%;
-	text-align: justify;
-	margin-right: 5%;
-	vertical-align: top;
-	color: rgb(180,180,180);
-	transition: color 0.3s;
-}
-
-.corpsProjet .descriptionProjet:hover
-{
-	color: rgb(230,230,230);
-	transition: color 0.3s;
-}
-
-.corpsProjet .detailsProjet
-{
-	display: inline-block;
-	width: 40%;
-	border: solid rgba(226,66,66,0.6) 1px;
-	vertical-align: top;
-}
-
-.corpsProjet .detailsProjet span
-{
-	display: inline-block;
-	width: 45%;
-	margin-bottom: 60px;
-	text-align: center;
-	color: rgb(180,180,180);
-}
-
-.corpsProjet .detailsProjet span strong
-{
-	display: block;
-	margin-bottom: 10px;
-	color: rgb(230,230,230);
-}
-
-.prezProjet .footProjet
-{
-	background-color: rgb(50,50,50);
-	text-align: center;
-	vertical-align: top;
-	padding: 30px 0 30px 0;
-}
-
-.footProjet h3
-{
-	color: rgb(230,230,230);
-}
-
-.modoProjet
-{
-	position: absolute;
-	top: 15px;
-	right: 15px;
-}
-
-/***********************************************************************
-								Page SERVICES
-************************************************************************/
-.banniereServices
-{
-	width: 100%;
-	height: 250px;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-	color: rgb(230,230,230);
-	text-align: center;
-}
-
-.banniereServices h3
-{
-	padding-top: 100px;
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-.service
-{
-	display: inline-block;
-	width: calc(40% - 50px);
-	margin-left: 5%;
-	margin-top: 70px;
-	position: relative;
-	border: solid 1px rgba(0,0,0,0);
-	text-align: justify;
-	vertical-align: top;
-	min-width: 500px;
-	padding: 25px;
-	color: rgb(180,180,180);
-	transition : border 0.3s;
-	transition : color 0.3s;
-}
-
-.service:hover
-{
-	border: solid rgba(226,66,66,0.6) 1px;
-	color: rgb(250,250,250);
-	transition : border 0.3s;
-	transition : color 0.3s;
-}
-
-@media all and (max-width: 1366px){
-    .service
-    {
-    	width: calc(80% - 50px);
-    	margin-left: 10%;
-    }
-
-    .service:hover
-    {
-    	border: solid 1px rgba(0,0,0,0);
-    }
-}
-
-.service h4
-{
-	color: rgb(226,66,66);
-	text-align: center;
-	font-size: 18px;
-}
-
-.service .modoService
-{
-	display: none;
-}
-
-.service:hover .modoService
-{
-	display: block;
-	position: absolute;
-	top: 5px;
-	right: 5px;
-}
-
-.service .modoService img
-{
-	width: 20px;
-	height: 20px;
-}
-
-/***********************************************************************
-								Page CONTACT
-************************************************************************/
-.formContact
-{
-	margin-top: 70px;
-}
-
-.formContact form
-{
-	display: inline-block;
-	width: calc(55% - 2px);
-	border-right: solid 2px #c24450;
-	vertical-align: top;
-}
-
-.formContact form input
-{
-	height: 20px;
-	width: 300px;
-	margin-bottom: 15px;
-	padding: 10px;
-	border: solid 1px rgb(60,60,60);
-	background-color: rgb(30,30,30);
-	color: rgb(200,200,200);
-}
-
-.formContact form textarea
-{
-	width: 500px;
-	height: 150px;
-	margin-bottom: 15px;
-	padding: 10px;
-	border: solid 1px rgb(60,60,60);
-	background-color: rgb(30,30,30);
-	color: rgb(200,200,200);
-}
-
-.formContact form input[type="submit"]
-{
-	width: 150px;
-	margin-left: 175px;
-	height: 40px;
-}
-
-.formContact form input[type=submit]:hover
-{
-	color: rgb(243,60,60);
-	cursor: pointer;
-	transition-duration: 0.5s;
-}
-
-.formContact .infosContact
-{
-	display: inline-block;
-	width: 45%;
-	margin-left: -5px;
-	vertical-align: top;
-}
-
-.formContact .infosContact h3
-{
-	text-align: center;
-}
-
-.formContact .infosContact p
-{
-	width: 400px;
-	margin: auto;
-	margin-top: 70px;
-}
-
-.formContact .infosContact span
-{
-	display: block;
-	padding-left: 40px;
-	padding-top: 10px;
-}
-
-.formContact .infosContact img
-{
-	vertical-align: middle;
-	padding-right: 20px;
-}
-
-.formContact .infosContact label
-{
-	display: none;
-}
-
-.formContact .infosContact textarea
-{
-	display: none;
-	width: 100%;
-	padding: 10px;
-	padding: 10px;
-	border: solid 1px rgb(60,60,60);
-	background-color: rgb(30,30,30);
-	color: rgb(200,200,200);
-}
-
-@media all and (max-width: 1366px){
-	.formContact form
-	{
-		text-align: center;
-		border-right: none;
-		margin-bottom: 70px;
-		width: 100%;
-	}
-
-	.formContact form input[type="submit"]
-	{
-		margin-left: auto;
-	}
-
-	.formContact .infosContact
-	{
-		width: 100%;
-		margin-bottom: 50px;
-		text-align: center;
-	}
-	.formContact .infosContact p
-	{
-		margin-top: 50px;
-		text-align: left;
-	}
-}
-
-/***********************************************************************
-							Page Mentions légales
-************************************************************************/
-
-.banniereLegals
-{
-	width: 100%;
-	height: 250px;
-	background-image: url('/assets/images/bannieres/myServices.jpg');
-	background-repeat:no-repeat;
-	background-position: center center;
-	color: rgb(230,230,230);
-	text-align: center;
-}
-
-.banniereLegals h3
-{
-	padding-top: 100px;
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-.mentionsLegales
-{
-	text-align: center;
-}
-
-.sectionlegals
-{
-	display: inline-block;
-	width: calc(50% - 3px);
-	vertical-align: top;
-	margin-bottom: 80px;
-	font-size: 16px;
-}
-
-.sectionlegals h3
-{
-	color: #c24450;
-	font-size: 22px;
-}
-
-.sectionlegals a
-{
+a{
 	color: #b43c3c;
 	text-decoration: none;
 }
+a:hover, a:active, a:focus{
+	color: #c24450;
+	text-decoration: none;
+}
+
+#profil, #projects, #skills, #services, #contact{
+	padding: 50px 0px;
+	min-height: calc(100vh - 80px);
+}
 
 /***********************************************************************
-							Page 404
+								HEADER/FOOTER
 ************************************************************************/
-.error404
-{
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+header{
+	width: 100%;
+	height: 80px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	border-bottom: 2px rgb(50,50,50) solid;
+	padding: 0;
 }
-.error404 h3
-{
-	color: rgb(230,230,230);
-	letter-spacing: 5px;
+header nav ul, footer div{
+	display: flex;
+	max-width: 1300px;
+	margin: auto;
+	padding: 10px 0px;
+}
+header nav ul li, footer div p{
+	flex: 1;
+	list-style-type: none;
 	text-align: center;
+}
+header nav a{
+	display: inline-block;
+	padding-top: 10px;
 	font-size: 40px;
+	color: rgb(180,180,180);
+}
+footer{
+	padding-top: 10px;
+}
+footer p .langFlag{
+	width: 50px;
+	height: 30px;
+	padding: 5px;
+	opacity: 0.3;
+}
+footer p .currentLang{
+	opacity: 1;
+}
+/***********************************************************************
+								PROFIL
+************************************************************************/
+#profil{
+	display: flex;
+	align-items: center;
+	font-size: 17px;
+}
+#profil #particles{
+	display: block;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100vh;
+}
+#profil figure img{
+	width: 300px;
+	height: 300px;
 }
 
-.error404 p
-{
-	font-family: 'Sinkin200Light';
-	color: rgb(230,230,230);
+/***********************************************************************
+								SKILLS
+************************************************************************/
+#skills h5{
+	color: white;
+}
+#skills img{
+	max-width: 150px;
+	height: 100px;
+}
+#skills > div{
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	padding-top: 50px;
+	padding-bottom: 120px;
+}
+
+/***********************************************************************
+								PROJECTS
+************************************************************************/
+#projects .hover-bg{
+	display: flex;
+	width: 300px;
+	height: 170px;
+	margin: auto;
+	align-items: center;
+	flex-direction: column;
+}
+#projects .hover-bg .hover-text {
+	position: absolute;
+	width: 300px;
+	height: 170px;
+	padding-top: 50px;
+	background: rgba(194,68,80,0.8);
+	color: #FFFFFF;
+	opacity: 0;
 	text-align: center;
+	transition: all 0.5s;
+}
+#projects .hover-bg .hover-text>.projectMore {
+	color: #fff;
+	font-size: 25px;
+	font-weight: 500;
+	padding: 15px 0px;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition: all 0.3s;
+}
+#projects .hover-bg:hover .hover-text>.projectMore {
+	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+#projects .hover-bg .hover-text p {
+	color: #FFFFFF;
+	font-size: 16px;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	transform: translateY(100%);
+	transition: all 0.3s;
+}
+#projects .hover-bg:hover .hover-text p {
+	opacity: 1;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateY(0);
+	transform: translateY(0);
+}
+#projects .hover-bg:hover .hover-text {
+	opacity: 1;
+}
+
+#projects .projectModal .modal-content{
+	background-color: rgba(0,0,0,0.8);
+	min-height: 100vh;
+	position: relative;
+}
+#projects .projectModal .closeModal{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 25px;
+	color: white;
+	cursor: pointer;
+}
+#projects .projectModal h2{
+	margin-bottom: 10px;
+}
+#projects .projectModal .carousel{
+	margin: 50px 0px;
+}
+#projects .projectModal .details{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+#projects .projectModal .description p, .projectModal .details p{
+	padding: 30px;
+}
+
+
+/***********************************************************************
+								SERVICES
+************************************************************************/
+#services{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+#services > div{
+	display: flex;
+	flex-wrap: wrap;
+}
+#services .service{
+	padding: 60px 30px;
+}
+#services .service i{
+	font-size: 30px;
+}
+
+/***********************************************************************
+								CONTACT
+************************************************************************/
+#contact form input{
+	height: 50px;
+	width: 100%;;
+	margin-bottom: 15px;
+	padding: 10px;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
+}
+#contact form textarea{
+	width: 100%;
+	height: 150px;
+	margin-bottom: 15px;
+	padding: 10px;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
+}
+#contact form input[type="submit"]{
+	display: block;
+	width: 150px;
+	height: 40px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+#contact form input[type=submit]:hover{
+	color: rgb(243,60,60);
+	border-color: rgb(243,60,60);
+	cursor: pointer;
+	transition-duration: 0.3s;
+}
+
+#contact aside{
+	display: flex;
+	align-items: top;
+	margin-bottom: 50px;
+}
+#contact aside p{
+	flex: 1;
+	text-align: center;
+}
+#contact aside textarea{
+	width: 100%;
+	max-width: 100%;
+	resize: none;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
+}
+
+/***********************************************************************
+								LEGALS
+************************************************************************/
+#legals .closeModal{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	font-size: 25px;
+	color: white;
+	cursor: pointer;
+}
+#legals h2{
+	margin-bottom: 10px;
+}
+#legals h4{
+	padding: 40px 0px 20px 0px;
+	text-decoration: underline;
+}
+
+/***********************************************************************
+							ERROR 404
+************************************************************************/
+#error404{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin-top: -80px;
 }
 
 /***********************************************************************
 							Espace Administrateur
 ************************************************************************/
-
-#connexionAdmin
-{
-	text-align: center;
-	margin-top: 70px;
+#adminLogin{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	margin-top: -80px;
 }
-
-#connexionAdmin h3
-{
-	text-align: center;
-	font-family: 'Sinkin200Light';
-	font-size: 25px;
-	color: rgb(230,230,230);
-	letter-spacing: 15px;
-}
-
-#connexionAdmin input
-{
-	height: 20px;
-	width: 200px;
-	margin-top: 70px;
+#adminLogin form input[type="password"]{
+	height: 50px;
+	width: 400px;
+	margin: 25px 0px;
 	padding: 10px;
-	border-radius: 5px;
-	border: none;
+	border: solid 1px rgb(60,60,60);
 	background-color: rgb(30,30,30);
-	color: rgb(243,60,60);
+	color: rgb(200,200,200);
 }
-
-#connexionAdmin input[type="submit"]
-{
-	width: 150px;
-	height: 40px;
-}
-
-#connexionAdmin input[type=submit]:hover
-{
-	color: rgb(243,60,60);
-	transition-duration: 0.5s;
-}
-
-.success
-{
-	color: green;
-}
-
-.error
-{
-	color: rgb(243,60,60);
-}
-
-
-.formUpdate
-{
-	text-align: center;
-	margin-top: 70px;
-	margin-bottom: 70px;
-}
-
-.formUpdate input[type="text"]
-{
-	width: 500px;
-	text-align: center;
-}
-
-.formUpdate textarea
-{
-	width: 960px;
-	height: 300px;
-}
-
-.oneMail
-{
-	background-color: rgb(50,50,50);
-	position: relative;
-}
-
-.oneMail .metaMail
-{
-	padding: 25px;
-}
-
-.oneMail .contentMail
-{
-	text-align: justify;
-	padding: 25px;
-	background-color: rgb(40,40,40);
-}
-
-.oneMail .modoMail
-{
-	position: absolute;
-	top: 25px;
-	right: 25px;
-}
-
-.adminSkill
-{
-	text-align: center;
-}
-
-.adminSkill input[type="text"]
-{
-	width: 500px;
-}
-
-.adminSkill textarea
-{
-	width: 500px;
-	height: 200px;
-}
-
-.adminSkill a
-{
-	color: rgb(243,60,60);
-	text-decoration: none;
-}
-
-.addProjetAdmin
-{
-	text-align: center;
-}
-
-.addProjetAdmin input[type="text"]
-{
-	width: 500px;
-}
-
-.addProjetAdmin textarea
-{
-	width: 500px;
-	height: 200px;
-}
-
-.adminProjet .corpsProjet
-{
-	text-align: center;
-}
-
-.adminProjet .corpsProjet input[type="text"]
-{
-	width: 400px;
-}
-
-.adminProjet .corpsProjet textarea
-{
-	width: 400px;
-	height: 200px;
-}
-
-.adminService
-{
-	text-align: center;
-}
-
-.adminService input[type="text"]
-{
-	width: 500px;
-}
-
-.adminService textarea
-{
-	width: 500px;
-	height: 200px;
-}
-
-.cloud
-{
-	text-align: center;
-}
-
-.cloud a
-{
-	display: block;
+#adminLogin form button[type="submit"]{
+	height: 50px;
+	width: 50px;
 	padding: 10px;
-	color: rgb(243,60,60);
-	text-decoration: none;
+	font-size: 24px;
+}
+
+#adminNav, #adminContent{
+	height: 100vh;
+	margin-top: -80px;
+	overflow: auto;
+}
+
+#adminNav > div{
+	padding: 25px 0px;
+	border-bottom: solid 1px rgb(50,50,50);
+}
+#adminNav a{
+	color: white;
+}
+#adminNav ul{
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+}
+#adminNav li{
+	list-style-type: none;
+	border-bottom: solid 1px rgb(50,50,50);
+}
+#adminNav li a{
+	display: block;
+	width: 100%;
+	padding: 25px 0px;
+}
+
+#adminContent section{
+	min-height: 100vh;
+}
+#adminContent section h2{
+	margin: 50px 0px 20px 0px;
+}
+#adminContent section input[type="text"],#adminContent section input[type="password"]{
+	height: 50px;
+	padding: 10px;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
+}
+#adminContent section textarea{
+	height: 150px;
+	margin: 10px 0px;
+	padding: 10px;
+	border: solid 1px rgb(60,60,60);
+	background-color: rgb(30,30,30);
+	color: rgb(200,200,200);
+}
+
+#adminContent #admin_mails div{
+	padding: 50px;
+}
+#adminContent #admin_mails > div:nth-of-type(odd){
+	background-color: rgb(20,20,20);
 }

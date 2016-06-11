@@ -1,131 +1,93 @@
-/*function menuDynamique(page) {
-
-	$('#' + page + ' a').css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
-	$('#' + page + ' .linktext').hide();
-	$('#' + page + ' .linkimg').css('display', 'inline-block');
-	$('#' + page + 'Arrow').show();
-	$('#' + page + 'Nav').show();
-
-	$('nav li').mouseenter(function() {
-      $('#' + page + ' a').css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
-      $('#' + page + ' .linktext').show();
-      $('#' + page + ' .linkimg').css('display', 'none');
-      $('#' + page + 'Arrow').hide();
-      $('#' + page + 'Nav').slideUp(50);
-		$(this).children().css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
-		link = $(this).attr('id');
-		$('#' + link + ' .linktext').hide();
-		$('#' + link + ' .linkimg').css('display', 'inline-block');
-		$('#' + link + 'Arrow').slideDown(100);
-		$('#' + link + 'Nav').slideDown(200);
-	});
-
-	$('nav li').mouseleave(function() {
-      $(this).each(function(){
-         $(this).children().css('backgroundColor', 'rgba(0,0,0,0)').css('color', 'rgb(150,150,150)');
-         $('.linktext').show();
-         $('.linkimg').css('display', 'none');
-      });
-      $('.infoNav').each(function(){
-         $(this).find('img').hide();
-         $(this).find('span').slideUp(100);
-      })
-	});
-
-	$('nav').mouseleave(function(){
-		$('#' + page + ' a').css('backgroundColor', 'rgba(243,60,60,1)').css('color', 'white');
-		$('#' + page + ' .linktext').hide();
-		$('#' + page + ' .linkimg').css('display', 'inline-block');
-		$('#' + page + 'Arrow').slideDown(100);
-		$('#' + page + 'Nav').slideDown(100);
-	});
-}*/
-
 $(function(){
 
-	/* MON CV */
+    /***********************************************************************
+    								HEADER
+    ************************************************************************/
 
-   $('.menuRed a').each(function(){
-      $(this).click(function(){
-         var ancre = $(this).attr('href');
-         $('html, body').animate({
-            scrollTop:$(ancre).offset().top - $('.menuRed').innerHeight() - 20
-         }, 'slow');
-         return false;
-      });
-   });
+    // Nav Scroll
+    $('header li a').each(function(){
+       $(this).click(function(){
+          var target = $(this).attr('href');
+          $('html, body').animate({
+             scrollTop:($(target).offset().top - 80)
+          }, 'slow');
+          return false;
+       });
+    });
 
-   $(window).scroll(function() {
-     if ($(window).scrollTop() >= $('.banniereSkills').innerHeight())
-     {
-         // fixed
-         $('.menuRed').addClass("menuFloat");
-     }
-     else
-     {
-         // relative
-         $('.menuRed').removeClass("menuFloat");
-     }
-   });
+    // ScrollSpy to change color of menu item.
+    $(window).scroll(function(){
+        var posTop = $(window).scrollTop() + 90;
+        $('body > section').each(function(index){
+            var offsetTop = $(this).offset().top;
+            var h = $(this).height();
 
-	$('.cvSection h3 a').each(function(){
-		$(this).click(function(){
-			return false;
-		});
-	});
+            if (posTop >= offsetTop-80 && posTop <= offsetTop + h) {
+                $('header nav a').eq(index).addClass('darkred');
+            } else {
+                $('header nav a').eq(index).removeClass('darkred');
+            }
+        });
+    }).trigger('scroll');
 
-   /* MES COMPETENCES */
+    /***********************************************************************
+        								CONTACT
+    ************************************************************************/
 
+    // Display/Hide Tox ID.
+    $('a[href="toxID"').popover({
+        html:true,
+        placement:'bottom',
+        template:'<div class="popover bg_darkblack" role="tooltip"><div class="arrow darkblack"></div><div class="popover-content"></div></div>'
+    });
 
-   /*$('.itemSkill').mouseenter(function(){
-      $(this).find('img').fadeOut(100);
-      $(this).find('.skillInfos').slideDown(100);
-   });
+    // Form Submit in AJAX.
+    $('#contact input[type="submit"]').click(function() {
+        var form_contact = $('#contact form');
+        var form_data = {
+            name : $('#contact_name').val(),
+            email : $('#contact_email').val(),
+            object : $('#contact_object').val(),
+            message : $('#contact_message').val()
+        };
 
-   $('.itemSkill').mouseleave(function(){
-      $(this).find('img').fadeIn(100);
-      $(this).find('.skillInfos').slideUp(100);
-   });*/
-
-   /* MES PROJETS */
-
-   	$('.projet').each(function(){
-   		$(this).mouseenter(function(){
-   			$(this).find('a.viewProject').slideDown(100);
-   		});
-   });
-
-   	$('.projet').each(function(){
-   		$(this).mouseleave(function(){
-   			$(this).find('a.viewProject').slideUp(100);
-   		});
-   });
-
-   	$('.projet a').each(function(){
-   		$(this).click(function(){
-   			$('.prezProjet').hide();
-   			var link = $(this).attr('href');
-   			$(link).slideDown();
-   			$('html,body').animate({scrollTop: $(link).offset().top}, 'slow');
-   			return false;
-   		});
-   	});
-
-   	$('.prezProjet .closeProjet').click(function(){
-   		$('.prezProjet').slideUp(300);
-   		return false;
-   	});
-
-   	$('.prezProjet .footProjet a').each(function(){
-   		$(this).click(function(){
-   			$('.prezProjet').hide();
-   			var link = $(this).attr('href');
-   			$(link).show();
-   			return false;
-   		});
-   	});
-
+        $.ajax({
+            type: "POST",
+            url: form_contact.attr('action'),
+            data: form_data,
+            dataType: 'json',
+            success: function(data){
+                if(data == "success")
+                {
+                    $('#contact_form_error').addClass('hidden');
+                    $('#contact_form_success').removeClass('hidden');
+                    $('#contact input[type="text"]').val('');
+                    $('#contact textarea').val('');
+                }
+                else
+                {
+                    $('#contact_form_success').addClass('hidden');
+                    $('#contact_form_error .errors_validation').html(data);
+                    $('#contact_form_error').removeClass('hidden');
+                }
+            },
+            error: function(){
+                $('#contact_form_success').addClass('hidden');
+                $('#contact_form_error .errors_validation').html('<p>Erreur Inconnue ...</p>');
+                $('#contact_form_error').removeClass('hidden');
+            }
+        });
+        return false;
+    });
+});
 
 
+/***********************************************************************
+                            INIT LIBRAIRIES
+************************************************************************/
 
+new WOW().init();
+
+particlesJS.load('particles', 'assets/javascript/particles.json', function(){
+  console.log('callback - particles.js config loaded');
 });
