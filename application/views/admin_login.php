@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?php if($this->language == 'english')echo 'en';else echo 'fr'; ?>">
+<html>
 	<head>
 		<title>Admin Login | Florian LE GOFF</title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>

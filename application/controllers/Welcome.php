@@ -17,18 +17,18 @@ class Welcome extends CI_Controller
 	public function index()
 	{
 		$data = array(
-			'freelance_developper' => $this->admin_model->getConfig('freelance_developper'),
-			'curriculum_vitae' => $this->admin_model->getConfig('curriculum_vitae'),
-			'projects' => $this->admin_model->getProjects(),
-			'skills_groups' => $this->admin_model->getSkills_groups(),
-			'services' => $this->admin_model->getServices(),
-			'gpg_key' => $this->admin_model->getConfig('gpg_key'),
-			'tox_id' => $this->admin_model->getConfig('tox_id'),
+			'freelance_developper' => $this->admin_model->readConfig('freelance_developper'),
+			'curriculum_vitae' => $this->admin_model->readConfig('curriculum_vitae'),
+			'projects' => $this->admin_model->readProjects(),
+			'skills_groups' => $this->admin_model->readSkills_groups(),
+			'services' => $this->admin_model->readServices(),
+			'gpg_key' => $this->admin_model->readConfig('gpg_key'),
+			'tox_id' => $this->admin_model->readConfig('tox_id'),
 			'legals' => array(
-				$this->admin_model->getConfig('legals_author'),
-				$this->admin_model->getConfig('legals_hosting'),
-				$this->admin_model->getConfig('legals_resources'),
-				$this->admin_model->getConfig('legals_license')
+				$this->admin_model->readConfig('legals_author'),
+				$this->admin_model->readConfig('legals_hosting'),
+				$this->admin_model->readConfig('legals_resources'),
+				$this->admin_model->readConfig('legals_license')
 			)
 		);
 		$this->load->view('welcome', $data);
@@ -84,7 +84,7 @@ class Welcome extends CI_Controller
 				  'message' => $message,
 				  'sending_date' => date("Y-m-d H:i:s")
 			 );
-			 $this->admin_model->addMail($data);
+			 $this->admin_model->createMail($data);
 
 			echo json_encode("success");exit;
 		}

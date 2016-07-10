@@ -72,12 +72,12 @@
 				  	</div>
 
 					<div class="projectModal modal fade" id="project_<?=$project['label']?>" tabindex="-1" role="dialog" aria-hidden="true">
-						<div class="modal-content col-md-10 col-md-offset-1 col-sm-12">
+						<div class="modal-content col-md-12 col-sm-12">
 					    	<div class="close-modal" data-dismiss="modal"><div class="lr"><div class="rl"></div></div></div>
 					      	<div class="row">
-					        	<div class="col-md-12">
+					        	<div class="col-md-10 col-md-offset-1">
 					          		<div class="modal-body text-center">
-										<span class="glyphicon glyphicon-remove-circle closeModal" data-dismiss="modal"></span>
+										<span class="glyphicon glyphicon-remove-circle closeModal absoluteClose" data-dismiss="modal"></span>
 					            		<h2><?=$project['title']?></h2>
 					            		<h4><?=$project['subtitle_'.$this->language]?></h4>
 										<div class="carousel">
@@ -104,6 +104,7 @@
 												<p><strong><?=$this->lang->line('project_website_url')?></strong><br /><?=$project['url']?></p>
 											</div>
 										</div>
+										<div class="row text-center"><span class="glyphicon glyphicon-remove-circle closeModal" data-dismiss="modal"></span></div>
 					          		</div>
 					        	</div>
 					    	</div>
@@ -117,7 +118,7 @@
 				<?php foreach($skills_groups as $group): ?>
 						<h4 class="col-sm-12 text-center wow tada"><?=$group['name_'.$this->language]?></h4>
 						<div class="col-md-12">
-						<?php foreach($this->admin_model->getSkills($group['id']) as $skill): ?>
+						<?php foreach($this->admin_model->readSkills($group['id']) as $skill): ?>
 							<div class="col-sm-4 col-md-2 wow bounceIn">
 						    	<div class="thumbnail bg_lightblack" style="border:none">
 									<img src="<?=base_url()?>assets/images/skills/<?=$skill['icon']?>" alt="Icon <?=$skill['name_'.$this->language]?>"/>

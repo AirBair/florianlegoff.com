@@ -153,6 +153,7 @@ footer p .currentLang{
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	width: 100%;
 	height: 100vh;
 }
 #profil figure img{
@@ -241,12 +242,17 @@ footer p .currentLang{
 	position: relative;
 }
 #projects .projectModal .closeModal{
-	position: absolute;
-	top: 15px;
-	right: 15px;
 	font-size: 25px;
 	color: white;
 	cursor: pointer;
+}
+#projects .projectModal .closeModal:hover{
+	color: #b43c3c;
+}
+#projects .absoluteClose{
+	position: absolute;
+	top: 15px;
+	right: 15px;
 }
 #projects .projectModal h2{
 	margin-bottom: 10px;
@@ -406,6 +412,10 @@ footer p .currentLang{
 	padding: 25px 0px;
 	border-bottom: solid 1px rgb(50,50,50);
 }
+#adminNav figure img{
+	width: 50px;
+	height: 50px;
+}
 #adminNav a{
 	color: white;
 }
@@ -426,29 +436,41 @@ footer p .currentLang{
 
 #adminContent section{
 	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 #adminContent section h2{
-	margin: 50px 0px 20px 0px;
+	padding: 50px 0px 20px 0px;
 }
-#adminContent section input[type="text"],#adminContent section input[type="password"]{
+#adminContent table tr td:last-child, #adminContent table tr th:last-child{
+	text-align: right;
+}
+#adminContent section input[type="text"],#adminContent section input[type="password"],#adminContent section input[type="number"],#adminContent section select{
 	height: 50px;
 	padding: 10px;
+	margin: 0px 0px 20px 0px;
 	border: solid 1px rgb(60,60,60);
 	background-color: rgb(30,30,30);
 	color: rgb(200,200,200);
 }
 #adminContent section textarea{
 	height: 150px;
-	margin: 10px 0px;
+	margin: 0px 0px 20px 0px;
 	padding: 10px;
 	border: solid 1px rgb(60,60,60);
 	background-color: rgb(30,30,30);
 	color: rgb(200,200,200);
 }
 
-#adminContent #admin_mails div{
+#adminContent #admin_skills img{
+	max-width: 115px;
+	height: 50px;
+}
+
+#adminContent #admin_mails div.row{
 	padding: 50px;
 }
-#adminContent #admin_mails > div:nth-of-type(odd){
+#adminContent #admin_mails > div.row:nth-of-type(odd){
 	background-color: rgb(20,20,20);
 }
