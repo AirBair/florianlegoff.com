@@ -66,7 +66,7 @@
 								</a>
 							</div>
 							<div class="caption">
-				        		<h3 class="text-center"><a href="#project_<?=$project['label']?>"><?=$project['title']?></a></h3>
+				        		<h3 class="text-center"><a href="#project_<?=$project['label']?>" data-toggle="modal"><?=$project['title']?></a></h3>
 				      		</div>
 				    	</div>
 				  	</div>
