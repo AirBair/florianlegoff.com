@@ -347,16 +347,9 @@ footer p .currentLang{
 /***********************************************************************
 								LEGALS
 ************************************************************************/
-#legals .closeModal{
-	position: absolute;
-	top: 15px;
-	right: 15px;
-	font-size: 25px;
+#legals .close{
+	font-size: 30px;
 	color: white;
-	cursor: pointer;
-}
-#legals h2{
-	margin-bottom: 10px;
 }
 #legals h4{
 	padding: 40px 0px 20px 0px;

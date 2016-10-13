@@ -205,25 +205,24 @@
 		</footer>
 
 		<div class="modal fade" id="legals" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="modal-content col-md-10 col-md-offset-1 bg_lightblack">
-				<div class="close-modal" data-dismiss="modal"><div class="lr"><div class="rl"></div></div></div>
-				<span class="glyphicon glyphicon-remove-circle closeModal" data-dismiss="modal"></span>
-				<div class="row">
-					<div class="col-md-10 col-md-offset-1 col-sm-12">
-						<div class="modal-body text-justify">
-							<h2 class="text-center"><?=$this->lang->line('legals')?></h2>
-							<div class="row">
-								<?php foreach($legals as $legal): ?>
-									<div class="col-md-6">
-										<h4><?=$legal['title_'.$this->language]?></h4>
-										<p><?=$legal['content_'.$this->language]?></p>
-									</div>
-								<?php endforeach; ?>
-							</div>
+            <div class="modal-dialog modal-lg" role="document">
+    			<div class="modal-content bg_lightblack">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span class="glyphicon glyphicon-remove-circle"></span></button>
+                        <h2 class="modal-title"><?=$this->lang->line('legals')?></h2>
+                    </div>
+    				<div class="modal-body text-justify">
+						<div class="row">
+							<?php foreach($legals as $legal): ?>
+								<div class="col-md-6">
+									<h4><?=$legal['title_'.$this->language]?></h4>
+									<p><?=$legal['content_'.$this->language]?></p>
+								</div>
+							<?php endforeach; ?>
 						</div>
-					</div>
-				</div>
-			</div>
+    				</div>
+    			</div>
+            </div>
 		</div>
 
 		<script type="text/javascript" src="<?=js_url('wow.min')?>"></script>
