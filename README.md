@@ -7,7 +7,7 @@ Source code of my personal Website
 
 ## Resources
 
-- CodeIgniter - version 3.1.0 : <https://www.codeigniter.com>
+- CodeIgniter - version 3.1.2 : <https://www.codeigniter.com>
 - Bootstrap - version 3.3.6 : <https://getbootstrap.com/>
 - jQuery - version 1.12.3 : <https://jquery.com>
 - Animate.css - version 3.5.1 : <https://daneden.github.io/animate.css/>
