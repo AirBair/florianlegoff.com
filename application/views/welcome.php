@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="<?php if($this->language == 'english')echo 'en';else echo 'fr';?>">
+<html lang="<?php if ($this->language == 'english') {
+    echo 'en';
+} else {
+    echo 'fr';
+}?>">
 	<head>
 		<title>Florian LE GOFF - <?=$freelance_developper['title_'.$this->language]?></title>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -15,7 +19,7 @@
 	<body class="row bg_lightblack">
 
 		<!-- Piwik Image Tracker-->
-		<img src="https://stats.florianlegoff.com/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
+		<img src="https://piwik.florianlegoff.com/piwik.php?idsite=1&amp;rec=1" style="border:0" alt="" />
 		<!-- End Piwik -->
 
 		<header class="bg_darkblack">
@@ -98,7 +102,11 @@
 											</div>
 											<div class="col-md-6 details">
 												<p><strong><?=$this->lang->line('project_customer')?></strong><br /><?=$project['customer']?></p>
-												<p><strong><?=$this->lang->line('project_deployement')?></strong><br /><?php if($project['date_realisation'] == '0000-00-00') echo $this->lang->line('undefined');else echo date('m-Y', strtotime($project['date_realisation'])); ?></p>
+												<p><strong><?=$this->lang->line('project_deployement')?></strong><br /><?php if ($project['date_realisation'] == '0000-00-00') {
+    echo $this->lang->line('undefined');
+} else {
+    echo date('m-Y', strtotime($project['date_realisation']));
+} ?></p>
 												<p><strong><?=$this->lang->line('project_webdesign')?></strong><br /><?=$project['webdesign']?></p>
 												<p><strong><?=$this->lang->line('project_technologies')?></strong><br /><?=$project['techno']?></p>
 												<p><strong><?=$this->lang->line('project_website_url')?></strong><br /><?=$project['url']?></p>
@@ -115,22 +123,23 @@
 
 			<section id="skills" class="row bg_lightblack">
 				<h2 class="text-center"><?=strtoupper($this->lang->line('skills'))?></h2>
-				<?php foreach($skills_groups as $group): ?>
+				<?php foreach ($skills_groups as $group): ?>
 						<h4 class="col-sm-12 text-center wow tada"><?=$group['name_'.$this->language]?></h4>
 						<div class="col-md-12">
-						<?php foreach($this->admin_model->readSkills($group['id']) as $skill): ?>
+						<?php foreach ($this->admin_model->readSkills($group['id']) as $skill): ?>
 							<div class="col-sm-4 col-md-2 wow bounceIn">
 						    	<div class="thumbnail bg_lightblack" style="border:none">
 									<img src="<?=base_url()?>assets/images/skills/<?=$skill['icon']?>" alt="Icon <?=$skill['name_'.$this->language]?>"/>
 									<div class="caption text-center">
 										<h5><?=$skill['name_'.$this->language]?></h5>
 										<p class="lightred">
-										<?php for($i=0 ; $i<5 ; $i++):
-											if($skill['mark'] > $i)
-												echo '<span class="glyphicon glyphicon-star"></span>';
-											else
-												echo '<span class="glyphicon glyphicon-star-empty"></span>';
-										endfor; ?>
+										<?php for ($i=0 ; $i<5 ; $i++):
+                                            if ($skill['mark'] > $i) {
+                                                echo '<span class="glyphicon glyphicon-star"></span>';
+                                            } else {
+                                                echo '<span class="glyphicon glyphicon-star-empty"></span>';
+                                            }
+                                        endfor; ?>
 										</p>
 						      		</div>
 						    	</div>
@@ -143,7 +152,7 @@
 			<section id="services" class="row bg_darkblack">
 				<h2 class="text-center"><?=strtoupper($this->lang->line('services'))?></h2>
 				<div class="col-md-10 col-sm-12 text-center">
-					<?php foreach($services as $service): ?>
+					<?php foreach ($services as $service): ?>
 					<div class="col-md-4 col-sm-6 service wow slideInDown">
 						<i class="glyphicon glyphicon-<?=$service['icon']?>"></i>
 			        	<h4><?=strtoupper($service['name_'.$this->language])?></h4>
@@ -198,8 +207,12 @@
 				<p><a href="#legals" data-toggle="modal"><?=$this->lang->line('legals')?></a></p>
 				<p><?=$this->lang->line('designed_with')?> <a href="https://www.aubindamien.com" title="Damien AUBIN, Infographiste 3D">Damien AUBIN</a></p>
 				<p>
-					<a href="<?=base_url('welcome/lang/fr')?>"><img src="<?=site_url()?>/assets/images/icons/fr_flag.svg" alt="Flag France" class="langFlag <?php if($this->language=='french')echo 'currentLang';?>" /></a>
-					<a href="<?=base_url('welcome/lang/en')?>"><img src="<?=site_url()?>/assets/images/icons/en_flag.svg" alt="Drapeau United Kingdom" class="langFlag <?php if($this->language=='english')echo 'currentLang';?>" /></a>
+					<a href="<?=base_url('welcome/lang/fr')?>"><img src="<?=site_url()?>/assets/images/icons/fr_flag.svg" alt="Flag France" class="langFlag <?php if ($this->language=='french') {
+                                            echo 'currentLang';
+                                        }?>" /></a>
+					<a href="<?=base_url('welcome/lang/en')?>"><img src="<?=site_url()?>/assets/images/icons/en_flag.svg" alt="Drapeau United Kingdom" class="langFlag <?php if ($this->language=='english') {
+                                            echo 'currentLang';
+                                        }?>" /></a>
 				</p>
 			</div>
 		</footer>
@@ -213,7 +226,7 @@
                     </div>
     				<div class="modal-body text-justify">
 						<div class="row">
-							<?php foreach($legals as $legal): ?>
+							<?php foreach ($legals as $legal): ?>
 								<div class="col-md-6">
 									<h4><?=$legal['title_'.$this->language]?></h4>
 									<p><?=$legal['content_'.$this->language]?></p>
