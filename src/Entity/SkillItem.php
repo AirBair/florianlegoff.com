@@ -14,6 +14,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @UniqueEntity("titleEn")
  * @UniqueEntity("titleFr")
+ *
+ * @Vich\Uploadable
  */
 class SkillItem
 {
@@ -80,7 +82,7 @@ class SkillItem
     /**
      * @var File
      *
-     * @Vich\UploadableField(mapping="project_image", fileNameProperty="imageName")
+     * @Vich\UploadableField(mapping="skill_image", fileNameProperty="imageName")
      *
      * @Assert\Image()
      */
@@ -263,6 +265,10 @@ class SkillItem
     public function setImageFile(File $imageFile)
     {
         $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
 
         return $this;
     }

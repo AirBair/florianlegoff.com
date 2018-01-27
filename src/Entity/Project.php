@@ -14,6 +14,8 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @UniqueEntity("titleEn")
  * @UniqueEntity("titleFr")
+ *
+ * @Vich\Uploadable
  */
 class Project
 {
@@ -104,7 +106,7 @@ class Project
      * @ORM\Column(type="date")
      *
      * @Assert\NotBlank()
-     * @Assert\DateTime()
+     * @Assert\Date()
      */
     private $realisationDate;
 
@@ -460,7 +462,7 @@ class Project
     {
         $this->imageFile = $imageFile;
 
-        if (null !== $image) {
+        if (null !== $imageFile) {
             $this->updatedAt = new \DateTimeImmutable();
         }
 
