@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContentRepository")
@@ -38,6 +39,15 @@ class Content
      * @ORM\Column(type="text")
      */
     private $contentFr;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     *
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updatedAt;
 
 
     /**
@@ -118,6 +128,30 @@ class Content
     public function setContentFr($contentFr)
     {
         $this->contentFr = $contentFr;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Updated At
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of Updated At
+     *
+     * @param \DateTime updatedAt
+     *
+     * @return Content
+     */
+    public function setUpdatedAt(\DateTime $updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

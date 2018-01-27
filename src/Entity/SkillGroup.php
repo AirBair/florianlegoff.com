@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SkillGroupRepository")
@@ -45,6 +46,15 @@ class SkillGroup
      * @ORM\OneToMany(targetEntity="App\Entity\SkillItem", mappedBy="skillGroup", cascade={"persist", "remove"}, orphanRemoval=true)
      */
     private $skillItems;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     *
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updatedAt;
 
 
     /**
@@ -187,6 +197,30 @@ class SkillGroup
     public function removeSkillItem(\App\Entity\SkillItem $skillItem)
     {
         $this->skillItem->removeElement($skillItem);
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Updated At
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of Updated At
+     *
+     * @param \DateTime updatedAt
+     *
+     * @return SkillGroup
+     */
+    public function setUpdatedAt(\DateTime $updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }

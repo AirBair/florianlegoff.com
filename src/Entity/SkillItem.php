@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SkillItemRepository")
@@ -53,6 +54,15 @@ class SkillItem
      * @ORM\Column(type="integer")
      */
     private $position;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(type="datetime")
+     *
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updatedAt;
 
 
     /**
@@ -181,6 +191,30 @@ class SkillItem
     public function setPosition($position)
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of Updated At
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * Set the value of Updated At
+     *
+     * @param \DateTime updatedAt
+     *
+     * @return SkillItem
+     */
+    public function setUpdatedAt(\DateTime $updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
     }
