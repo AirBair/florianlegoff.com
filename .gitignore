@@ -12,3 +12,8 @@
 /public/images/skills/*
 !/public/images/skills/.gitkeep
 ###< app ###
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+/public/build/
+###< symfony/webpack-encore-pack ###
