@@ -4,11 +4,16 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
+ *
+ * @UniqueEntity("titleEn")
+ * @UniqueEntity("titleFr")
  */
 class Project
 {
@@ -25,6 +30,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleEn;
 
@@ -32,6 +39,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleFr;
 
@@ -39,6 +48,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
      */
     private $typeEn;
 
@@ -46,6 +57,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="string", length=255)
+     *
+     * @Assert\NotBlank()
      */
     private $typeFr;
 
@@ -53,6 +66,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $descriptionEn;
 
@@ -60,6 +75,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $descriptionFr;
 
@@ -67,6 +84,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $technologiesEn;
 
@@ -74,6 +93,8 @@ class Project
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $technologiesFr;
 
@@ -81,6 +102,9 @@ class Project
      * @var \DateTime
      *
      * @ORM\Column(type="date")
+     *
+     * @Assert\NotBlank()
+     * @Assert\DateTime()
      */
     private $realisationDate;
 
@@ -88,6 +112,9 @@ class Project
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Url()
      */
     private $url;
 
@@ -95,6 +122,10 @@ class Project
      * @var int
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Type("integer")
+     * @Assert\GreaterThan(0)
      */
     private $position;
 
@@ -102,6 +133,8 @@ class Project
      * @var File
      *
      * @Vich\UploadableField(mapping="project_image", fileNameProperty="imageName")
+     *
+     * @Assert\Image()
      */
     private $imageFile;
 
@@ -118,6 +151,8 @@ class Project
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
+     *
+     * @Assert\DateTime()
      */
     private $updatedAt;
 

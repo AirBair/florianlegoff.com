@@ -4,9 +4,13 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContentRepository")
+ *
+ * @UniqueEntity("label")
  */
 class Content
 {
@@ -23,6 +27,8 @@ class Content
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $label;
 
@@ -30,6 +36,8 @@ class Content
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $contentEn;
 
@@ -37,6 +45,8 @@ class Content
      * @var string
      *
      * @ORM\Column(type="text")
+     *
+     * @Assert\NotBlank()
      */
     private $contentFr;
 
@@ -46,6 +56,8 @@ class Content
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
+     *
+     * @Assert\DateTime()
      */
     private $updatedAt;
 

@@ -4,9 +4,14 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SkillGroupRepository")
+ *
+ * @UniqueEntity("titleEn")
+ * @UniqueEntity("titleFr")
  */
 class SkillGroup
 {
@@ -23,6 +28,8 @@ class SkillGroup
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleEn;
 
@@ -30,6 +37,8 @@ class SkillGroup
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleFr;
 
@@ -37,6 +46,10 @@ class SkillGroup
      * @var int
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Type("integer")
+     * @Assert\GreaterThan(0)
      */
     private $position;
 
@@ -44,6 +57,8 @@ class SkillGroup
      * @var \Doctrine\Common\Collections\Collection
      *
      * @ORM\OneToMany(targetEntity="App\Entity\SkillItem", mappedBy="skillGroup", cascade={"persist", "remove"}, orphanRemoval=true)
+     *
+     * @Assert\Collection()
      */
     private $skillItems;
 
@@ -53,6 +68,8 @@ class SkillGroup
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
+     *
+     * @Assert\DateTime()
      */
     private $updatedAt;
 

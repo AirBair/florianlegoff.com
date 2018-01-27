@@ -4,11 +4,16 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SkillItemRepository")
+ *
+ * @UniqueEntity("titleEn")
+ * @UniqueEntity("titleFr")
  */
 class SkillItem
 {
@@ -26,6 +31,9 @@ class SkillItem
      *
      * @ORM\ManyToOne(targetEntity="\App\Entity\SkillGroup", inversedBy="skillItems")
      * @ORM\JoinColumn(nullable=false)
+     *
+     * @Assert\NotNull()
+     * @Assert\Valid()
      */
     private $skillGroup;
 
@@ -33,6 +41,8 @@ class SkillItem
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleEn;
 
@@ -40,6 +50,8 @@ class SkillItem
      * @var string
      *
      * @ORM\Column(type="string", length=255, unique=true)
+     *
+     * @Assert\NotBlank()
      */
     private $titleFr;
 
@@ -47,6 +59,10 @@ class SkillItem
      * @var int
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Type("integer")
+     * @Assert\Range(min=1, max=5)
      */
     private $grade;
 
@@ -54,6 +70,10 @@ class SkillItem
      * @var int
      *
      * @ORM\Column(type="integer")
+     *
+     * @Assert\NotBlank()
+     * @Assert\Type("integer")
+     * @Assert\GreaterThan(0)
      */
     private $position;
 
@@ -61,6 +81,8 @@ class SkillItem
      * @var File
      *
      * @Vich\UploadableField(mapping="project_image", fileNameProperty="imageName")
+     *
+     * @Assert\Image()
      */
     private $imageFile;
 
@@ -77,6 +99,8 @@ class SkillItem
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
+     *
+     * @Assert\DateTime()
      */
     private $updatedAt;
 
