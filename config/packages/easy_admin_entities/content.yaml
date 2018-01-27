@@ -1,0 +1,13 @@
+easy_admin:
+    entities:
+        Content:
+            class: App\Entity\Content
+            list:
+                sort: label
+                fields:
+                    - label
+            form:
+                fields:
+                    - label
+                    - contentEn
+                    - contentFr

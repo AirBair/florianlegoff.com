@@ -1,0 +1,26 @@
+easy_admin:
+    entities:
+        Project:
+            class: App\Entity\Project
+            list:
+                sort: position
+                fields:
+                    - position
+                    - titleEn
+                    - titleFr
+                    - typeEn
+                    - typeFr
+            form:
+                fields:
+                    - titleEn
+                    - titleFr
+                    - typeEn
+                    - typeFr
+                    - { property: imageFile, type: vich_image, base_path: '%app.path.projects_images%' }
+                    - descriptionEn
+                    - descriptionFr
+                    - technologiesEn
+                    - technologiesFr
+                    - { property: realisationDate, type_options: { widget: 'single_text', input: 'datetime' } }
+                    - url
+                    - position
