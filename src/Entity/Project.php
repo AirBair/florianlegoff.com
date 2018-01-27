@@ -4,6 +4,8 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProjectRepository")
@@ -95,6 +97,20 @@ class Project
      * @ORM\Column(type="integer")
      */
     private $position;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="project_image", fileNameProperty="imageName")
+     */
+    private $imageFile;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(type="string", length=255)
+     */
+    private $imageName;
 
     /**
      * @var \DateTime
@@ -376,6 +392,58 @@ class Project
     public function setPosition($position)
     {
         $this->position = $position;
+
+        return $this;
+    }
+
+    /**
+    * Get the value of Image File
+    *
+    * @return File
+    */
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+    * Set the value of Image File
+    *
+    * @param File imageFile
+    *
+    * @return Project
+    */
+    public function setImageFile(File $imageFile)
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $image) {
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+
+        return $this;
+    }
+
+    /**
+    * Get the value of Image Name
+    *
+    * @return string
+    */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+    * Set the value of Image Name
+    *
+    * @param string imageName
+    *
+    * @return Project
+    */
+    public function setImageName($imageName)
+    {
+        $this->imageName = $imageName;
 
         return $this;
     }

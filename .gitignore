@@ -5,3 +5,10 @@
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
+
+###> app ###
+/public/images/projects/*
+!/public/images/projects/.gitkeep
+/public/images/skills/*
+!/public/images/skills/.gitkeep
+###< app ###
