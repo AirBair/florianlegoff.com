@@ -106,6 +106,14 @@ class SkillItem
 
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->titleEn;
+    }
+
+    /**
      * Get the value of Id
      *
      * @return int
