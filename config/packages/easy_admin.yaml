@@ -1,5 +1,7 @@
 easy_admin:
     site_name: 'Administration'
+    design:
+        brand_color: '#b43c3c'
 
 imports:
     - { resource: easy_admin_entities/ }

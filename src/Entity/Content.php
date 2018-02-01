@@ -175,4 +175,9 @@ class Content
 
         return $this;
     }
+
+    public function getContent($language)
+    {
+        return ($language == 'fr') ? $this->contentFr : $this->contentEn;
+    }
 }
