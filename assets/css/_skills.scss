@@ -1,0 +1,15 @@
+section#skills {
+    hr {
+        border-color: $lightred;
+        width: 50px;
+    }
+
+    img {
+        max-width: 150px;
+        height: 100px;
+    }
+
+    .skill-item {
+        width: 300px;
+    }
+}

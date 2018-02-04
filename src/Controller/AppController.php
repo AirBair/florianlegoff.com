@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Repository\ContentRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\SkillGroupRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -54,6 +55,20 @@ class AppController extends Controller
     {
         return $this->render('_projects.html.twig', array(
             'projects' => $projectRepository->findBy([], ['position' => 'ASC']),
+        ));
+    }
+
+    /**
+     * Skills section of homepage
+     *
+     * @param  SkillGroupRepository $projectRepository
+     *
+     * @return Response
+     */
+    public function skills(SkillGroupRepository $skillGroupRepository): Response
+    {
+        return $this->render('_skills.html.twig', array(
+            'skillGroups' => $skillGroupRepository->findBy([], ['position' => 'ASC']),
         ));
     }
 

@@ -1,0 +1,18 @@
+<section id="skills" class="container-fluid">
+    <h2 class="text-center pt-5">{{ 'skills' | trans | upper }}</h2>
+    {% for skillGroup in skillGroups %}
+        <h4 class="pt-5 text-center">{{ (app.request.locale == 'fr') ? skillGroup.titleFr : skillGroup.titleEn }}</h4>
+        <hr class="pb-4"/>
+        <div class="d-flex flex-wrap justify-content-center">
+            {% for skill in skillGroup.skillItems %}
+                <div class="text-center px-5 pb-5 order-{{ skill.position }} skill-item">
+                    <img src="{{ path_skills_images }}/{{ skill.imageName }}" alt="{{ (app.request.locale == 'fr') ? skill.titleFr : skill.titleEn }}"/>
+                    <h5 class="pt-4">{{ (app.request.locale == 'fr') ? skill.titleFr : skill.titleEn }}</h5>
+                    {% for i in 1..(skill.grade) %}
+                        <i class="fa fa-star text-lightred"></i>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</section>
