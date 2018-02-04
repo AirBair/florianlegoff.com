@@ -10,13 +10,14 @@
     src: url("../fonts/GeosansLight.ttf");
 }
 
-html, body {
+body,
+html {
     height: 100%;
     background-color: $darkblack;
     color: white;
     font-family: 'Sansation';
     margin: 0;
-    padding:0;
+    padding: 0;
 }
 
 h1,
@@ -53,5 +54,5 @@ a:focus,
 a:hover {
     color: $darkred;
 }
-
 @import "_about";
+@import "_projects";

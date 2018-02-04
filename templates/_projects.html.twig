@@ -1,0 +1,17 @@
+<section id="projects" class="container-fluid bg-lightblack">
+    <h2 class="text-center pt-5">{{ 'projects' | trans | upper }}</h2>
+    <div class="d-flex flex-wrap justify-content-around">
+        {% for project in projects %}
+            <div class="text-center px-5 pb-5">
+                <div class="hover-container">
+                    <a class="hover-text" href="#">
+                        <i class="fa fa-plus fa-2x"></i>
+                        <p>{{ (app.request.locale == 'fr') ? project.typeFr : project.typeEn }}</p>
+                    </a>
+                    <img src="{{ path_projects_images }}/{{ project.imageName }}" alt="{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}"/>
+				</div>
+                <h3 class="py-4">{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}</h3>
+            </div>
+        {% endfor %}
+    </div>
+</section>

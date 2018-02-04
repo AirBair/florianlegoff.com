@@ -2,3 +2,6 @@ twig:
     paths: ['%kernel.project_dir%/templates']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        path_projects_images: "%app.path.projects_images%"
+        path_skills_images: "%app.path.skills_images%"

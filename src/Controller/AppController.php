@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\ContentRepository;
+use App\Repository\ProjectRepository;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -16,19 +17,43 @@ class AppController extends Controller
      *
      * @Route("/", name="homepage")
      *
+     * @return Response
+     */
+    public function index(): Response
+    {
+        return $this->render('index.html.twig');
+    }
+
+    /**
+     * About section of homepage
+     *
      * @param  Request           $request
      * @param  ContentRepository $contentRepository
      *
      * @return Response
      */
-    public function index(Request $request, ContentRepository $contentRepository): Response
+    public function about(Request $request, ContentRepository $contentRepository): Response
     {
         $about = $contentRepository->findOneByLabel('about');
         $cv = $contentRepository->findOneByLabel('curriculum_vitae');
 
-        return $this->render('index.html.twig', array(
+        return $this->render('_about.html.twig', array(
             'about' => ($about) ? $about->getContent($request->getLocale()) : null,
             'curriculum_vitae' => ($cv) ? $cv->getContent($request->getLocale()) : null,
+        ));
+    }
+
+    /**
+     * Projects section of homepage
+     *
+     * @param  ProjectRepository $projectRepository
+     *
+     * @return Response
+     */
+    public function projects(ProjectRepository $projectRepository): Response
+    {
+        return $this->render('_projects.html.twig', array(
+            'projects' => $projectRepository->findBy([], ['position' => 'ASC']),
         ));
     }
 
