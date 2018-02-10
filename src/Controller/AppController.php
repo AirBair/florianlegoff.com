@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Message;
+use App\Form\MessageType;
 use App\Repository\ContentRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\SkillGroupRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -69,6 +72,41 @@ class AppController extends Controller
     {
         return $this->render('_skills.html.twig', array(
             'skillGroups' => $skillGroupRepository->findBy([], ['position' => 'ASC']),
+        ));
+    }
+
+    /**
+     * Contact section of homepage
+     *
+     * @Route("/contact", name="contact")
+     *
+     * @return Response|RedirectResponse
+     */
+    public function contact(Request $request, EntityManagerInterface $em): Response
+    {
+        $message = new Message();
+
+        $form = $this->createForm(MessageType::class, $message);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em->persist($message);
+            $em->flush();
+
+            $this->addFlash('success-message', $message->getSubject());
+
+            // Allow & Handle message submission without javascript
+            if ($request->isXmlHttpRequest() === false) {
+                return $this->redirect(
+                    $this->generateUrl('homepage').'#contact'
+                );
+            } else {
+                return $this->redirectToRoute('contact');
+            }
+        }
+
+        return $this->render('_contact.html.twig', array(
+            'form'  =>  $form->createView(),
         ));
     }
 
