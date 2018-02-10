@@ -26,5 +26,7 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    # Doctrine Subscriber to send me an email when a message is posted through the contact form
+    App\EventSubscriber\MessageSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber, connection: default }
