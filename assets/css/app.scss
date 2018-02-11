@@ -54,6 +54,7 @@ a:focus,
 a:hover {
     color: $darkred;
 }
+@import "_header";
 @import "_about";
 @import "_projects";
 @import "_skills";

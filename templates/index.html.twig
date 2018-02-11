@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="{% if app.request.locale == 'fr' %}fr{% else %}en{% endif %}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}" />
         <title>Florian LE GOFF | {{ 'developper' | trans }}</title>
         <link rel="stylesheet" href="{{ asset('build/css/app.css') }}"/>
     </head>
-    <body>
+    <body data-spy="scroll" data-target="#scrollspyNav" data-offset="58">
+        {% include('_header.html.twig') %}
+
         {{ render(controller(('App\\Controller\\AppController:about'))) }}
 
         {{ render(controller(('App\\Controller\\AppController:projects'))) }}
