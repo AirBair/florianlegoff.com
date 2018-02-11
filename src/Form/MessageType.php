@@ -35,7 +35,9 @@ class MessageType extends AbstractType
                 'label' =>  false,
                 'attr' => ['placeholder' => 'your _message'],
             ))
-            ->add('send', SubmitType::class)
+            ->add('send', SubmitType::class, array(
+                'label' => 'send',
+            ))
         ;
     }
 

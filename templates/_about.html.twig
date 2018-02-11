@@ -3,7 +3,7 @@
         <div class="col-10 bg-lightblack text-center" id="about-text-container">
             <img src="{{ asset('images/profile.jpeg') }}" alt="{{ 'profile_picture' | trans }}" class="rounded-circle mx-auto d-block" id="profile-picture"/>
             <h1 class="mt-3">Florian LE GOFF</h1>
-            <h3 class="text-lightred">{{ 'developper' | trans | upper }}</h3>
+            <h3 class="text-lightred">{{ 'developer' | trans | upper }}</h3>
             <p class="my-4 text-justify">
                 {{ ((app.request.locale == 'fr') ? about.contentFr : about.contentEn) | raw | nl2br }}
             </p>
