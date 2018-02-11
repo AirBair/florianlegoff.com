@@ -1,17 +1,22 @@
 <section id="projects" class="container-fluid bg-lightblack">
     <h2 class="text-center pt-5">{{ 'projects' | trans | upper }}</h2>
-    <div class="d-flex flex-wrap justify-content-around">
+    <div class="container-fluid">
+        <div class="row">
         {% for project in projects %}
-            <div class="text-center px-5 pb-5">
-                <div class="hover-container">
-                    <a class="hover-text" href="#">
-                        <i class="fa fa-plus fa-2x"></i>
-                        <p>{{ (app.request.locale == 'fr') ? project.typeFr : project.typeEn }}</p>
-                    </a>
+            <div class="col-lg-6 col-md-12 pb-5">
+                <div class="project">
                     <img src="{{ path_projects_images }}/{{ project.imageName }}" alt="{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}"/>
+                    <div class="hover-container d-flex flex-column justify-content-center">
+                        <h3 class="text-center text-lightred">{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}</h3>
+                        <h5 class="text-center">{{ (app.request.locale == 'fr') ? project.typeFr : project.typeEn }}</h5>
+                        <h6 class="text-center">{{ (app.request.locale == 'fr') ? project.technologiesFr : project.technologiesEn }}</h6>
+                        <a class="text-center" href="{{ project.url }}">{{ project.url }}</a>
+                        <hr class="d-none d-md-block" />
+                        <p class=" text-justify d-none d-md-block">{{ (app.request.locale == 'fr') ? project.descriptionFr : project.descriptionEn }}</p>
+                    </div>
 				</div>
-                <h3 class="py-4">{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}</h3>
             </div>
         {% endfor %}
+    </div>
     </div>
 </section>
