@@ -106,7 +106,22 @@ class AppController extends Controller
         }
 
         return $this->render('_contact.html.twig', array(
-            'form'  =>  $form->createView(),
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Footer section of homepage
+     *
+     * @param  ContentRepository $contentRepository
+     *
+     * @return Response
+     */
+    public function footer(ContentRepository $contentRepository): Response
+    {
+        return $this->render('_footer.html.twig', array(
+            'hosting' => $contentRepository->findOneByLabel('hosting'),
+            'license' => $contentRepository->findOneByLabel('license'),
         ));
     }
 

@@ -1,0 +1,32 @@
+footer {
+    border-top: 3px solid $darkred;
+    padding: 25px;
+
+    a {
+        color: white;
+
+        &:hover {
+            color: $darkred;
+            text-decoration: none;
+        }
+    }
+}
+
+#legalNoticesModal {
+    .modal-content {
+        background-color: $darkblack;
+
+        .modal-header {
+            border-bottom: solid 1px $darkred;
+
+            button.close {
+                color: $darkred;
+                text-shadow: none;
+            }
+        }
+
+        h4 {
+            text-decoration: underline;
+        }
+    }
+}

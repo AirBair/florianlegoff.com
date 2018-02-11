@@ -1,0 +1,46 @@
+<footer>
+    <div class="container d-flex justify-content-between">
+        <div class="col">
+            <a href="https://opensource.org/licenses/mit-license.html">
+                <i class="fa fa-balance-scale"></i>
+                {{ 'licensed_under_MIT' | trans }}
+            </a>
+        </div>
+        <div class="col text-center">
+            <a href="https://gitlab.com/AirBair/personal-website">
+                <i class="fa fa-code"></i>
+                {{ 'by' | trans }}
+                Florian LE GOFF
+            </a>
+        </div>
+        <div class="col text-right">
+            <a href="#legal-notices" data-toggle="modal" data-target="#legalNoticesModal">
+                <i class="fa fa-gavel"></i>
+                {{ 'legal_notices' | trans }}
+            </a>
+        </div>
+    </div>
+</footer>
+<div class="modal fade" id="legalNoticesModal" tabindex="-1" role="dialog" aria-labelledby="{{ 'legal_notices' | trans }}" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">{{ 'legal_notices' | trans }}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4>{{ 'hosting' | trans }}</h4>
+                <p>
+                    {{ ((app.request.locale == 'fr') ? hosting.contentFr : hosting.contentEn) | raw | nl2br }}
+                </p>
+
+                <h4>{{ 'license' | trans }}</h4>
+                <p>
+                    {{ ((app.request.locale == 'fr') ? license.contentFr : license.contentEn) | raw | nl2br }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
