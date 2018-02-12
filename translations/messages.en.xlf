@@ -199,12 +199,39 @@
     <unit id="iPoNdZ_">
       <notes>
         <note category="file-source" priority="1">templates/_about.html.twig:6</note>
+        <note category="file-source" priority="1">templates/login.html.twig:7</note>
         <note category="file-source" priority="1">templates/index.html.twig:7</note>
-        <note category="state" priority="1">new</note>
       </notes>
       <segment>
         <source>developer</source>
         <target>Developer</target>
+      </segment>
+    </unit>
+    <unit id="FveKfWM">
+      <notes>
+        <note category="file-source" priority="1">templates/login.html.twig:20</note>
+      </notes>
+      <segment>
+        <source>username</source>
+        <target>Username</target>
+      </segment>
+    </unit>
+    <unit id="XohImNo">
+      <notes>
+        <note category="file-source" priority="1">templates/login.html.twig:22</note>
+      </notes>
+      <segment>
+        <source>password</source>
+        <target>Password</target>
+      </segment>
+    </unit>
+    <unit id="QoghNQ6">
+      <notes>
+        <note category="file-source" priority="1">templates/login.html.twig:24</note>
+      </notes>
+      <segment>
+        <source>login</source>
+        <target>Login</target>
       </segment>
     </unit>
   </file>

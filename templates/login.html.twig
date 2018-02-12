@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="{% if app.request.locale == 'fr' %}fr{% else %}en{% endif %}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="{{ asset('images/favicon.png') }}"/>
+        <title>Florian LE GOFF | {{ 'developer' | trans }}</title>
+        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}"/>
+    </head>
+    <body>
+        <section id="login" class="container d-flex h-100 justify-content-center">
+            <div class="justify-content-center align-self-center">
+                {% if error %}
+                    <p class="alert alert-danger">
+                        {{ error.messageKey | trans(error.messageData, 'security') }}
+                    </p>
+                {% endif %}
+
+                <form action="{{ path('login') }}" method="post">
+                    <input type="text" id="username" name="_username" value="{{ username }}" placeholder="{{ 'username' | trans }}" autofocus />
+
+                    <input type="password" id="password" name="_password" placeholder="{{ 'password' | trans }}" />
+
+                    <button type="submit">{{ 'login' | trans }}</button>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
