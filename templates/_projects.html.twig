@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
         {% for project in projects %}
-            <div class="col-lg-6 col-md-12 pb-5">
+            <div class="col-lg-6 col-md-12 pb-5 wow animated {% if loop.index % 2 %}fadeInLeft{% else %}fadeInRight{% endif %}">
                 <div class="project">
                     <img src="{{ path_projects_images }}/{{ project.imageName }}" alt="{{ (app.request.locale == 'fr') ? project.titleFr : project.titleEn }}"/>
                     <div class="hover-container d-flex flex-column justify-content-center">

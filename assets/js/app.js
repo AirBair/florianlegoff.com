@@ -1,5 +1,8 @@
 import $ from 'jquery';
 import 'bootstrap';
+import wow from 'wowjs';
+
+new wow.WOW({'offset':100}).init();
 
 $(function() {
     $('header #mainNav li a').each(function() {

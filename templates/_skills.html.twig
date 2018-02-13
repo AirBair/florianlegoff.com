@@ -3,7 +3,7 @@
     {% for skillGroup in skillGroups %}
         <h4 class="pt-5 text-center">{{ (app.request.locale == 'fr') ? skillGroup.titleFr : skillGroup.titleEn }}</h4>
         <hr class="pb-4"/>
-        <div class="d-flex flex-wrap justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center wow animated fadeIn">
             {% for skill in skillGroup.skillItems %}
                 <div class="text-center pb-5 order-{{ skill.position }} skill-item">
                     <img src="{{ path_skills_images }}/{{ skill.imageName }}" alt="{{ (app.request.locale == 'fr') ? skill.titleFr : skill.titleEn }}"/>
