@@ -7,9 +7,19 @@ section#skills {
     img {
         max-width: 150px;
         height: 100px;
+        @include media-breakpoint-down(md) {
+            max-width: 90px;
+            height: 60px;
+        }
+        @include media-breakpoint-down(lg) {
+            max-width: 120px;
+            height: 80px;
+        }
     }
 
     .skill-item {
-        width: 300px;
+        flex-grow: 1;
+        max-width: 300px;
+        min-width: 150px;
     }
 }

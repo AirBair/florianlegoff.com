@@ -1,5 +1,11 @@
 header {
     nav {
         border-bottom: solid 2px $darkred;
+
+        @include media-breakpoint-down(sm) {
+            ul#mainNav {
+                border-bottom: solid 1px $darkred;
+            }
+        }
     }
 }
