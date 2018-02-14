@@ -7,6 +7,7 @@ use App\Form\MessageType;
 use App\Repository\ContentRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\SkillGroupRepository;
+use App\Repository\SocialRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -32,14 +33,16 @@ class AppController extends Controller
      * About section of homepage
      *
      * @param  ContentRepository $contentRepository
+     * @param  SocialRepository  $socialRepository
      *
      * @return Response
      */
-    public function about(ContentRepository $contentRepository): Response
+    public function about(ContentRepository $contentRepository, SocialRepository $socialRepository): Response
     {
         return $this->render('_about.html.twig', array(
             'about' => $contentRepository->findOneByLabel('about'),
             'curriculum_vitae' => $contentRepository->findOneByLabel('curriculum_vitae'),
+            'socials' => $socialRepository->findBy([], ['position' => 'ASC']),
         ));
     }
 

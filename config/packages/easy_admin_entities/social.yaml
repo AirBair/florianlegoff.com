@@ -1,0 +1,17 @@
+easy_admin:
+    entities:
+        Social:
+            class: App\Entity\Social
+            list:
+                sort: position
+                fields:
+                    - position
+                    - title
+                    - icon
+                    - url
+            form:
+                fields:
+                    - title
+                    - icon
+                    - url
+                    - position

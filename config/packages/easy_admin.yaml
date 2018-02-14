@@ -13,6 +13,7 @@ easy_admin:
               children:
                 - { entity: 'SkillGroup', label: 'Groups'}
                 - { entity: 'SkillItem', label: 'Items' }
+            - { entity: 'Social', label: 'Socials', icon: 'share-square' }
             - { entity: 'Message', label: 'Messages', icon: 'envelope' }
 
 imports:

@@ -2,11 +2,11 @@ section#about {
     min-height: 100%;
     padding-top: 100px;
 
-    .row {
+    #about-container {
         padding-top: 100px;
-    }
 
-    #profile-picture {
-        margin-top: -100px;
+        #profile-picture {
+            margin-top: -100px;
+        }
     }
 }
