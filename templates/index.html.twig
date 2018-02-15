@@ -20,6 +20,7 @@
 
         {{ render(controller(('App\\Controller\\AppController:footer'))) }}
 
-        <script type="text/javascript" src="{{ asset('build/js/app.js') }}"></script>
+        <script src="{{ asset('build/js/app.js') }}"></script>
+        {% include '_matomo.html.twig' %}
     </body>
 </html>
