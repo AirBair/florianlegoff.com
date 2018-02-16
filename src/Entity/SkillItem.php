@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Cocur\Slugify\Slugify;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -319,5 +320,17 @@ class SkillItem
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    /**
+     * Get slug representation for vich uploader namer
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        $slugify = new Slugify();
+
+        return $slugify->slugify($this->titleEn);
     }
 }
