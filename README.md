@@ -8,7 +8,7 @@ Source code of my personal Website
 
 - [PHP](https://secure.php.net) (7.2 or higher).
 - [Composer](https://getcomposer.org)
-- [Yarn](https://yarnpkg.com)
+- [Node.js](https://nodejs.org) (6.0 or higher) & [Yarn](https://yarnpkg.com) to compile assets.
 
 ## Installation
 
@@ -20,7 +20,7 @@ Install yarn dependencies & build assets : `yarn install && yarn build`
 
 ### 2 - Configure the .env file
 
-Edit the file .env and complete it with required credentials (database, mailer) & the correct working environment.
+Edit the file .env and complete it with required credentials (database, mailer, admin password) & the correct working environment.
 
 ### 3 - Create/Update the database
 
@@ -31,7 +31,7 @@ Edit the file .env and complete it with required credentials (database, mailer) 
 ```
 HTTPDUSER=$(ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1)
 setfacl -dR -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX public/images/{projects,skills}
-setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX public/images/projects public/{projects,skills}
+setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX public/images/{projects,skills}
 ```
 
 
