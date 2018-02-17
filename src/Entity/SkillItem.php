@@ -259,7 +259,7 @@ class SkillItem
     /**
      * Set the value of Image File
      *
-     * @param File imageFile
+     * @param File $imageFile
      *
      * @return SkillItem
      */
@@ -268,7 +268,7 @@ class SkillItem
         $this->imageFile = $imageFile;
 
         if (null !== $imageFile) {
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTime();
         }
 
         return $this;
@@ -287,7 +287,7 @@ class SkillItem
     /**
      * Set the value of Image Name
      *
-     * @param string imageName
+     * @param string $imageName
      *
      * @return SkillItem
      */
@@ -311,7 +311,7 @@ class SkillItem
     /**
      * Set the value of Updated At
      *
-     * @param \DateTime updatedAt
+     * @param \DateTime $updatedAt
      *
      * @return SkillItem
      */

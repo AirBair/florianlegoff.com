@@ -105,7 +105,7 @@ class Social
     /**
      * Set the value of Title
      *
-     * @param string title
+     * @param string $title
      *
      * @return Social
      */
@@ -129,7 +129,7 @@ class Social
     /**
      * Set the value of Icon
      *
-     * @param string icon
+     * @param string $icon
      *
      * @return Social
      */
@@ -153,7 +153,7 @@ class Social
     /**
      * Set the value of Url
      *
-     * @param string url
+     * @param string $url
      *
      * @return Social
      */
@@ -177,7 +177,7 @@ class Social
     /**
      * Set the value of Position
      *
-     * @param int position
+     * @param int $position
      *
      * @return Social
      */
@@ -201,7 +201,7 @@ class Social
     /**
      * Set the value of Updated At
      *
-     * @param \DateTime updatedAt
+     * @param \DateTime $updatedAt
      *
      * @return Social
      */

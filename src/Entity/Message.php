@@ -92,7 +92,7 @@ class Message
     /**
      * Set the value of Name
      *
-     * @param string name
+     * @param string $name
      *
      * @return Message
      */
@@ -116,7 +116,7 @@ class Message
     /**
      * Set the value of Email
      *
-     * @param string email
+     * @param string $email
      *
      * @return Message
      */
@@ -140,7 +140,7 @@ class Message
     /**
      * Set the value of Subject
      *
-     * @param string subject
+     * @param string $subject
      *
      * @return Message
      */
@@ -164,7 +164,7 @@ class Message
     /**
      * Set the value of Message
      *
-     * @param string message
+     * @param string $message
      *
      * @return Message
      */
@@ -188,7 +188,7 @@ class Message
     /**
      * Set the value of Sent At
      *
-     * @param \DateTime sentAt
+     * @param \DateTime $sentAt
      *
      * @return Message
      */

@@ -165,7 +165,7 @@ class Content
     /**
      * Set the value of Updated At
      *
-     * @param \DateTime updatedAt
+     * @param \DateTime $updatedAt
      *
      * @return Content
      */
@@ -174,10 +174,5 @@ class Content
         $this->updatedAt = $updatedAt;
 
         return $this;
-    }
-
-    public function getContent($language)
-    {
-        return ($language == 'fr') ? $this->contentFr : $this->contentEn;
     }
 }

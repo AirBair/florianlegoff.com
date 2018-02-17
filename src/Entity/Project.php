@@ -443,50 +443,50 @@ class Project
     }
 
     /**
-    * Get the value of Image File
-    *
-    * @return File
-    */
+     * Get the value of Image File
+     *
+     * @return File
+     */
     public function getImageFile()
     {
         return $this->imageFile;
     }
 
     /**
-    * Set the value of Image File
-    *
-    * @param File imageFile
-    *
-    * @return Project
-    */
+     * Set the value of Image File
+     *
+     * @param File $imageFile
+     *
+     * @return Project
+     */
     public function setImageFile(File $imageFile)
     {
         $this->imageFile = $imageFile;
 
         if (null !== $imageFile) {
-            $this->updatedAt = new \DateTimeImmutable();
+            $this->updatedAt = new \DateTime();
         }
 
         return $this;
     }
 
     /**
-    * Get the value of Image Name
-    *
-    * @return string
-    */
+     * Get the value of Image Name
+     *
+     * @return string
+     */
     public function getImageName()
     {
         return $this->imageName;
     }
 
     /**
-    * Set the value of Image Name
-    *
-    * @param string imageName
-    *
-    * @return Project
-    */
+     * Set the value of Image Name
+     *
+     * @param string $imageName
+     *
+     * @return Project
+     */
     public function setImageName($imageName)
     {
         $this->imageName = $imageName;
@@ -507,7 +507,7 @@ class Project
     /**
      * Set the value of Updated At
      *
-     * @param \DateTime updatedAt
+     * @param \DateTime $updatedAt
      *
      * @return Project
      */

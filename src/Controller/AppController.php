@@ -63,7 +63,7 @@ class AppController extends Controller
     /**
      * Skills section of homepage
      *
-     * @param  SkillGroupRepository $projectRepository
+     * @param  SkillGroupRepository $skillGroupRepository
      *
      * @return Response
      */
@@ -78,6 +78,9 @@ class AppController extends Controller
      * Contact section of homepage
      *
      * @Route("/contact", name="contact")
+     *
+     * @param  Request                $request
+     * @param  EntityManagerInterface $em
      *
      * @return Response|RedirectResponse
      */

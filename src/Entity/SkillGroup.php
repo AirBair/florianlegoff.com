@@ -205,7 +205,7 @@ class SkillGroup
      */
     public function addSkillItem(\App\Entity\SkillItem $skillItem)
     {
-        $this->skillItem->add($skillItem);
+        $this->skillItems->add($skillItem);
 
         $skillItem->setSkillGroup($this);
 
@@ -221,7 +221,7 @@ class SkillGroup
      */
     public function removeSkillItem(\App\Entity\SkillItem $skillItem)
     {
-        $this->skillItem->removeElement($skillItem);
+        $this->skillItems->removeElement($skillItem);
 
         return $this;
     }
@@ -239,7 +239,7 @@ class SkillGroup
     /**
      * Set the value of Updated At
      *
-     * @param \DateTime updatedAt
+     * @param \DateTime $updatedAt
      *
      * @return SkillGroup
      */
