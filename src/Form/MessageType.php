@@ -20,19 +20,19 @@ class MessageType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your_name'],
             ))
             ->add('email', EmailType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your_email'],
             ))
             ->add('subject', TextType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'subject'],
             ))
             ->add('message', TextareaType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your _message'],
             ))
             ->add('send', SubmitType::class, array(
@@ -47,7 +47,7 @@ class MessageType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => Message::class
+            'data_class' => Message::class,
         ));
     }
 }

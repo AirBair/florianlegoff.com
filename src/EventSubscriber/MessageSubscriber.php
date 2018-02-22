@@ -14,7 +14,7 @@ class MessageSubscriber implements EventSubscriber
     private $mailer;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param \Swift_Mailer $mailer
      */
@@ -34,7 +34,7 @@ class MessageSubscriber implements EventSubscriber
     }
 
     /**
-     * Send me en email when a message is posted through the contact form
+     * Send me en email when a message is posted through the contact form.
      *
      * @param LifecycleEventArgs $args
      */
