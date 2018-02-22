@@ -61,7 +61,6 @@ class Content
      */
     private $updatedAt;
 
-
     /**
      * @return string
      */
@@ -71,7 +70,7 @@ class Content
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -81,7 +80,7 @@ class Content
     }
 
     /**
-     * Get the value of Label
+     * Get the value of Label.
      *
      * @return string
      */
@@ -91,7 +90,7 @@ class Content
     }
 
     /**
-     * Set the value of Label
+     * Set the value of Label.
      *
      * @param string $label
      *
@@ -105,7 +104,7 @@ class Content
     }
 
     /**
-     * Get the value of Content En
+     * Get the value of Content En.
      *
      * @return string
      */
@@ -115,7 +114,7 @@ class Content
     }
 
     /**
-     * Set the value of Content En
+     * Set the value of Content En.
      *
      * @param string $contentEn
      *
@@ -129,7 +128,7 @@ class Content
     }
 
     /**
-     * Get the value of Content Fr
+     * Get the value of Content Fr.
      *
      * @return string
      */
@@ -139,7 +138,7 @@ class Content
     }
 
     /**
-     * Set the value of Content Fr
+     * Set the value of Content Fr.
      *
      * @param string $contentFr
      *
@@ -153,7 +152,7 @@ class Content
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -163,7 +162,7 @@ class Content
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *

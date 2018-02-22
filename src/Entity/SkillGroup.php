@@ -73,9 +73,8 @@ class SkillGroup
      */
     private $updatedAt;
 
-
     /**
-     * Constructor
+     * Constructor.
      */
     public function __construct()
     {
@@ -91,7 +90,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -101,7 +100,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Title En
+     * Get the value of Title En.
      *
      * @return string
      */
@@ -111,7 +110,7 @@ class SkillGroup
     }
 
     /**
-     * Set the value of Title En
+     * Set the value of Title En.
      *
      * @param string $titleEn
      *
@@ -125,7 +124,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Title Fr
+     * Get the value of Title Fr.
      *
      * @return string
      */
@@ -135,7 +134,7 @@ class SkillGroup
     }
 
     /**
-     * Set the value of Title Fr
+     * Set the value of Title Fr.
      *
      * @param string $titleFr
      *
@@ -149,7 +148,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Position
+     * Get the value of Position.
      *
      * @return int
      */
@@ -159,7 +158,7 @@ class SkillGroup
     }
 
     /**
-     * Set the value of Position
+     * Set the value of Position.
      *
      * @param int $position
      *
@@ -173,7 +172,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Skill Items
+     * Get the value of Skill Items.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
@@ -183,7 +182,7 @@ class SkillGroup
     }
 
     /**
-     * Set the value of Skill Items
+     * Set the value of Skill Items.
      *
      * @param \Doctrine\Common\Collections\Collection $skillItems
      *
@@ -197,7 +196,7 @@ class SkillGroup
     }
 
     /**
-     * Add a Skill Items
+     * Add a Skill Items.
      *
      * @param \App\Entity\SkillItem $skillItem
      *
@@ -213,7 +212,7 @@ class SkillGroup
     }
 
     /**
-     * Remove a Skill Items
+     * Remove a Skill Items.
      *
      * @param \App\Entity\SkillItem $skillItem
      *
@@ -227,7 +226,7 @@ class SkillGroup
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -237,7 +236,7 @@ class SkillGroup
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *
