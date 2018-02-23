@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\EventSubscriber;
 
 use App\Entity\Message;
@@ -14,7 +16,7 @@ class MessageSubscriber implements EventSubscriber
     private $mailer;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param \Swift_Mailer $mailer
      */
@@ -26,7 +28,7 @@ class MessageSubscriber implements EventSubscriber
     /**
      * {@inheritdoc}
      */
-    public function getSubscribedEvents()
+    public function getSubscribedEvents(): array
     {
         return array(
             'postPersist',
@@ -34,11 +36,11 @@ class MessageSubscriber implements EventSubscriber
     }
 
     /**
-     * Send me en email when a message is posted through the contact form
+     * Send me en email when a message is posted through the contact form.
      *
      * @param LifecycleEventArgs $args
      */
-    public function postPersist(LifecycleEventArgs $args)
+    public function postPersist(LifecycleEventArgs $args): void
     {
         $object = $args->getObject();
 
@@ -50,6 +52,7 @@ class MessageSubscriber implements EventSubscriber
                 ->setTo('contact@florianlegoff.com')
                 ->setReplyTo($object->getEmail())
                 ->setBody($object->getMessage());
+
             $this->mailer->send($message);
         }
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
@@ -35,8 +37,8 @@ class SkillItem
      * @ORM\ManyToOne(targetEntity="\App\Entity\SkillGroup", inversedBy="skillItems")
      * @ORM\JoinColumn(nullable=false)
      *
-     * @Assert\NotNull()
-     * @Assert\Valid()
+     * @Assert\NotNull
+     * @Assert\Valid
      */
     private $skillGroup;
 
@@ -45,7 +47,7 @@ class SkillItem
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $titleEn;
 
@@ -54,7 +56,7 @@ class SkillItem
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $titleFr;
 
@@ -63,7 +65,7 @@ class SkillItem
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      * @Assert\Type("integer")
      * @Assert\Range(min=1, max=5)
      */
@@ -74,7 +76,7 @@ class SkillItem
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      */
@@ -85,7 +87,7 @@ class SkillItem
      *
      * @Vich\UploadableField(mapping="skill_image", fileNameProperty="imageName")
      *
-     * @Assert\Image()
+     * @Assert\Image
      */
     private $imageFile;
 
@@ -103,10 +105,9 @@ class SkillItem
      *
      * @Gedmo\Timestampable(on="update")
      *
-     * @Assert\DateTime()
+     * @Assert\DateTime
      */
     private $updatedAt;
-
 
     /**
      * @return string
@@ -117,7 +118,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -127,7 +128,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Skill Group
+     * Get the value of Skill Group.
      *
      * @return \App\Entity\SkillGroup
      */
@@ -137,7 +138,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Skill Group
+     * Set the value of Skill Group.
      *
      * @param \App\Entity\SkillGroup $skillGroup
      *
@@ -151,7 +152,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Title En
+     * Get the value of Title En.
      *
      * @return string
      */
@@ -161,7 +162,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Title En
+     * Set the value of Title En.
      *
      * @param string $titleEn
      *
@@ -175,7 +176,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Title Fr
+     * Get the value of Title Fr.
      *
      * @return string
      */
@@ -185,7 +186,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Title Fr
+     * Set the value of Title Fr.
      *
      * @param string $titleFr
      *
@@ -199,7 +200,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Grade
+     * Get the value of Grade.
      *
      * @return int
      */
@@ -209,7 +210,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Grade
+     * Set the value of Grade.
      *
      * @param int $grade
      *
@@ -223,7 +224,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Position
+     * Get the value of Position.
      *
      * @return int
      */
@@ -233,7 +234,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Position
+     * Set the value of Position.
      *
      * @param int $position
      *
@@ -247,7 +248,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Image File
+     * Get the value of Image File.
      *
      * @return File
      */
@@ -257,7 +258,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Image File
+     * Set the value of Image File.
      *
      * @param File $imageFile
      *
@@ -275,7 +276,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Image Name
+     * Get the value of Image Name.
      *
      * @return string
      */
@@ -285,7 +286,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Image Name
+     * Set the value of Image Name.
      *
      * @param string $imageName
      *
@@ -299,7 +300,7 @@ class SkillItem
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -309,7 +310,7 @@ class SkillItem
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *
@@ -323,7 +324,7 @@ class SkillItem
     }
 
     /**
-     * Get slug representation for vich uploader namer
+     * Get slug representation for vich uploader namer.
      *
      * @return string
      */

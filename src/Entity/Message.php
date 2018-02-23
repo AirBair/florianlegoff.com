@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -25,7 +27,7 @@ class Message
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $name;
 
@@ -34,8 +36,8 @@ class Message
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
-     * @Assert\Email()
+     * @Assert\NotBlank
+     * @Assert\Email
      */
     private $email;
 
@@ -44,7 +46,7 @@ class Message
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $subject;
 
@@ -53,7 +55,7 @@ class Message
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $message;
 
@@ -64,13 +66,12 @@ class Message
      *
      * @Gedmo\Timestampable(on="update")
      *
-     * @Assert\DateTime()
+     * @Assert\DateTime
      */
     private $sentAt;
 
-
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -80,7 +81,7 @@ class Message
     }
 
     /**
-     * Get the value of Name
+     * Get the value of Name.
      *
      * @return string
      */
@@ -90,7 +91,7 @@ class Message
     }
 
     /**
-     * Set the value of Name
+     * Set the value of Name.
      *
      * @param string $name
      *
@@ -104,7 +105,7 @@ class Message
     }
 
     /**
-     * Get the value of Email
+     * Get the value of Email.
      *
      * @return string
      */
@@ -114,7 +115,7 @@ class Message
     }
 
     /**
-     * Set the value of Email
+     * Set the value of Email.
      *
      * @param string $email
      *
@@ -128,7 +129,7 @@ class Message
     }
 
     /**
-     * Get the value of Subject
+     * Get the value of Subject.
      *
      * @return string
      */
@@ -138,7 +139,7 @@ class Message
     }
 
     /**
-     * Set the value of Subject
+     * Set the value of Subject.
      *
      * @param string $subject
      *
@@ -152,7 +153,7 @@ class Message
     }
 
     /**
-     * Get the value of Message
+     * Get the value of Message.
      *
      * @return string
      */
@@ -162,7 +163,7 @@ class Message
     }
 
     /**
-     * Set the value of Message
+     * Set the value of Message.
      *
      * @param string $message
      *
@@ -176,7 +177,7 @@ class Message
     }
 
     /**
-     * Get the value of Sent At
+     * Get the value of Sent At.
      *
      * @return \DateTime
      */
@@ -186,7 +187,7 @@ class Message
     }
 
     /**
-     * Set the value of Sent At
+     * Set the value of Sent At.
      *
      * @param \DateTime $sentAt
      *

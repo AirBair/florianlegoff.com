@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Cocur\Slugify\Slugify;
@@ -34,7 +36,7 @@ class Project
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $titleEn;
 
@@ -43,7 +45,7 @@ class Project
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $titleFr;
 
@@ -52,7 +54,7 @@ class Project
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $typeEn;
 
@@ -61,7 +63,7 @@ class Project
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $typeFr;
 
@@ -70,7 +72,7 @@ class Project
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $descriptionEn;
 
@@ -79,7 +81,7 @@ class Project
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $descriptionFr;
 
@@ -88,7 +90,7 @@ class Project
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $technologiesEn;
 
@@ -97,7 +99,7 @@ class Project
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $technologiesFr;
 
@@ -106,8 +108,8 @@ class Project
      *
      * @ORM\Column(type="date")
      *
-     * @Assert\NotBlank()
-     * @Assert\Date()
+     * @Assert\NotBlank
+     * @Assert\Date
      */
     private $realisationDate;
 
@@ -116,8 +118,8 @@ class Project
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
-     * @Assert\Url()
+     * @Assert\NotBlank
+     * @Assert\Url
      */
     private $url;
 
@@ -126,7 +128,7 @@ class Project
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      */
@@ -137,7 +139,7 @@ class Project
      *
      * @Vich\UploadableField(mapping="project_image", fileNameProperty="imageName")
      *
-     * @Assert\Image()
+     * @Assert\Image
      */
     private $imageFile;
 
@@ -155,10 +157,9 @@ class Project
      *
      * @Gedmo\Timestampable(on="update")
      *
-     * @Assert\DateTime()
+     * @Assert\DateTime
      */
     private $updatedAt;
-
 
     /**
      * @return string
@@ -169,7 +170,7 @@ class Project
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -179,7 +180,7 @@ class Project
     }
 
     /**
-     * Get the value of Title En
+     * Get the value of Title En.
      *
      * @return string
      */
@@ -189,7 +190,7 @@ class Project
     }
 
     /**
-     * Set the value of Title En
+     * Set the value of Title En.
      *
      * @param string $titleEn
      *
@@ -203,7 +204,7 @@ class Project
     }
 
     /**
-     * Get the value of Title Fr
+     * Get the value of Title Fr.
      *
      * @return string
      */
@@ -213,7 +214,7 @@ class Project
     }
 
     /**
-     * Set the value of Title Fr
+     * Set the value of Title Fr.
      *
      * @param string $titleFr
      *
@@ -227,7 +228,7 @@ class Project
     }
 
     /**
-     * Get the value of Type En
+     * Get the value of Type En.
      *
      * @return string
      */
@@ -237,7 +238,7 @@ class Project
     }
 
     /**
-     * Set the value of Type En
+     * Set the value of Type En.
      *
      * @param string $typeEn
      *
@@ -251,7 +252,7 @@ class Project
     }
 
     /**
-     * Get the value of Type Fr
+     * Get the value of Type Fr.
      *
      * @return string
      */
@@ -261,7 +262,7 @@ class Project
     }
 
     /**
-     * Set the value of Type Fr
+     * Set the value of Type Fr.
      *
      * @param string $typeFr
      *
@@ -275,7 +276,7 @@ class Project
     }
 
     /**
-     * Get the value of Description En
+     * Get the value of Description En.
      *
      * @return string
      */
@@ -285,7 +286,7 @@ class Project
     }
 
     /**
-     * Set the value of Description En
+     * Set the value of Description En.
      *
      * @param string $descriptionEn
      *
@@ -299,7 +300,7 @@ class Project
     }
 
     /**
-     * Get the value of Description Fr
+     * Get the value of Description Fr.
      *
      * @return string
      */
@@ -309,7 +310,7 @@ class Project
     }
 
     /**
-     * Set the value of Description Fr
+     * Set the value of Description Fr.
      *
      * @param string $descriptionFr
      *
@@ -323,7 +324,7 @@ class Project
     }
 
     /**
-     * Get the value of Technologies En
+     * Get the value of Technologies En.
      *
      * @return string
      */
@@ -333,7 +334,7 @@ class Project
     }
 
     /**
-     * Set the value of Technologies En
+     * Set the value of Technologies En.
      *
      * @param string $technologiesEn
      *
@@ -347,7 +348,7 @@ class Project
     }
 
     /**
-     * Get the value of Technologies Fr
+     * Get the value of Technologies Fr.
      *
      * @return string
      */
@@ -357,7 +358,7 @@ class Project
     }
 
     /**
-     * Set the value of Technologies Fr
+     * Set the value of Technologies Fr.
      *
      * @param string $technologiesFr
      *
@@ -371,7 +372,7 @@ class Project
     }
 
     /**
-     * Get the value of Realisation Date
+     * Get the value of Realisation Date.
      *
      * @return \DateTime
      */
@@ -381,7 +382,7 @@ class Project
     }
 
     /**
-     * Set the value of Realisation Date
+     * Set the value of Realisation Date.
      *
      * @param \DateTime $realisationDate
      *
@@ -395,7 +396,7 @@ class Project
     }
 
     /**
-     * Get the value of Url
+     * Get the value of Url.
      *
      * @return string
      */
@@ -405,7 +406,7 @@ class Project
     }
 
     /**
-     * Set the value of Url
+     * Set the value of Url.
      *
      * @param string $url
      *
@@ -419,7 +420,7 @@ class Project
     }
 
     /**
-     * Get the value of Position
+     * Get the value of Position.
      *
      * @return int
      */
@@ -429,7 +430,7 @@ class Project
     }
 
     /**
-     * Set the value of Position
+     * Set the value of Position.
      *
      * @param int $position
      *
@@ -443,7 +444,7 @@ class Project
     }
 
     /**
-     * Get the value of Image File
+     * Get the value of Image File.
      *
      * @return File
      */
@@ -453,7 +454,7 @@ class Project
     }
 
     /**
-     * Set the value of Image File
+     * Set the value of Image File.
      *
      * @param File $imageFile
      *
@@ -471,7 +472,7 @@ class Project
     }
 
     /**
-     * Get the value of Image Name
+     * Get the value of Image Name.
      *
      * @return string
      */
@@ -481,7 +482,7 @@ class Project
     }
 
     /**
-     * Set the value of Image Name
+     * Set the value of Image Name.
      *
      * @param string $imageName
      *
@@ -495,7 +496,7 @@ class Project
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -505,7 +506,7 @@ class Project
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *
@@ -519,7 +520,7 @@ class Project
     }
 
     /**
-     * Get slug representation for vich uploader namer
+     * Get slug representation for vich uploader namer.
      *
      * @return string
      */

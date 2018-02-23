@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
 use App\Entity\Message;
@@ -18,7 +20,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AppController extends Controller
 {
     /**
-     * Homepage
+     * Homepage.
      *
      * @Route("/", name="homepage")
      *
@@ -30,10 +32,10 @@ class AppController extends Controller
     }
 
     /**
-     * About section of homepage
+     * About section of homepage.
      *
-     * @param  ContentRepository $contentRepository
-     * @param  SocialRepository  $socialRepository
+     * @param ContentRepository $contentRepository
+     * @param SocialRepository  $socialRepository
      *
      * @return Response
      */
@@ -47,9 +49,9 @@ class AppController extends Controller
     }
 
     /**
-     * Projects section of homepage
+     * Projects section of homepage.
      *
-     * @param  ProjectRepository $projectRepository
+     * @param ProjectRepository $projectRepository
      *
      * @return Response
      */
@@ -61,9 +63,9 @@ class AppController extends Controller
     }
 
     /**
-     * Skills section of homepage
+     * Skills section of homepage.
      *
-     * @param  SkillGroupRepository $skillGroupRepository
+     * @param SkillGroupRepository $skillGroupRepository
      *
      * @return Response
      */
@@ -75,12 +77,12 @@ class AppController extends Controller
     }
 
     /**
-     * Contact section of homepage
+     * Contact section of homepage.
      *
      * @Route("/contact", name="contact")
      *
-     * @param  Request                $request
-     * @param  EntityManagerInterface $em
+     * @param Request                $request
+     * @param EntityManagerInterface $em
      *
      * @return Response|RedirectResponse
      */
@@ -98,24 +100,24 @@ class AppController extends Controller
             $this->addFlash('success-message', $message->getSubject());
 
             // Allow & Handle message submission without javascript
-            if ($request->isXmlHttpRequest() === false) {
-                return $this->redirect(
+            if (false === $request->isXmlHttpRequest()) {
+                $response = $this->redirect(
                     $this->generateUrl('homepage').'#contact'
                 );
             } else {
-                return $this->redirectToRoute('contact');
+                $response = $this->redirectToRoute('contact');
             }
         }
 
-        return $this->render('_contact.html.twig', array(
+        return $response ?? $this->render('_contact.html.twig', array(
             'form' => $form->createView(),
         ));
     }
 
     /**
-     * Footer section of homepage
+     * Footer section of homepage.
      *
-     * @param  ContentRepository $contentRepository
+     * @param ContentRepository $contentRepository
      *
      * @return Response
      */
@@ -128,12 +130,12 @@ class AppController extends Controller
     }
 
     /**
-     * Change the language of the website
+     * Change the language of the website.
      *
      * @Route("/language/{locale}", name="change_language", requirements={"locale": "fr|en"})
      *
-     * @param  Request $request
-     * @param  String  $locale
+     * @param Request $request
+     * @param string  $locale
      *
      * @return RedirectResponse
      */
@@ -141,6 +143,6 @@ class AppController extends Controller
     {
         $request->getSession()->set('_locale', $locale);
 
-        return new RedirectResponse($request->headers->get('referer') ?? $request->getSchemeAndHttpHost());
+        return $this->redirect($request->headers->get('referer') ?? $request->getSchemeAndHttpHost());
     }
 }

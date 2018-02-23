@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\EventSubscriber;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -13,11 +15,12 @@ class LocaleSubscriber implements EventSubscriberInterface
      */
     private $defaultLocale;
 
-
     /**
+     * Constructor.
+     *
      * @param string $defaultLocale
      */
-    public function __construct($defaultLocale = 'en')
+    public function __construct(string $defaultLocale = 'en')
     {
         $this->defaultLocale = $defaultLocale;
     }
@@ -25,7 +28,7 @@ class LocaleSubscriber implements EventSubscriberInterface
     /**
      * {@inheritdoc}
      */
-    public static function getSubscribedEvents()
+    public static function getSubscribedEvents(): array
     {
         return array(
             // must be registered before (i.e. with a higher priority than) the default Locale listener
@@ -36,7 +39,7 @@ class LocaleSubscriber implements EventSubscriberInterface
     /**
      * {@inheritdoc}
      */
-    public function onKernelRequest(GetResponseEvent $event)
+    public function onKernelRequest(GetResponseEvent $event): void
     {
         $request = $event->getRequest();
 

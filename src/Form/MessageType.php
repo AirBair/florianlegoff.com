@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Form;
 
 use App\Entity\Message;
@@ -16,23 +18,23 @@ class MessageType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name', TextType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your_name'],
             ))
             ->add('email', EmailType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your_email'],
             ))
             ->add('subject', TextType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'subject'],
             ))
             ->add('message', TextareaType::class, array(
-                'label' =>  false,
+                'label' => false,
                 'attr' => ['placeholder' => 'your _message'],
             ))
             ->add('send', SubmitType::class, array(
@@ -44,10 +46,10 @@ class MessageType extends AbstractType
     /**
      * {@inheritdoc}
      */
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults(array(
-            'data_class' => Message::class
+            'data_class' => Message::class,
         ));
     }
 }

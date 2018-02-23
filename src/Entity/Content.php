@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -28,7 +30,7 @@ class Content
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $label;
 
@@ -37,7 +39,7 @@ class Content
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $contentEn;
 
@@ -46,7 +48,7 @@ class Content
      *
      * @ORM\Column(type="text")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $contentFr;
 
@@ -57,10 +59,9 @@ class Content
      *
      * @Gedmo\Timestampable(on="update")
      *
-     * @Assert\DateTime()
+     * @Assert\DateTime
      */
     private $updatedAt;
-
 
     /**
      * @return string
@@ -71,7 +72,7 @@ class Content
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -81,7 +82,7 @@ class Content
     }
 
     /**
-     * Get the value of Label
+     * Get the value of Label.
      *
      * @return string
      */
@@ -91,7 +92,7 @@ class Content
     }
 
     /**
-     * Set the value of Label
+     * Set the value of Label.
      *
      * @param string $label
      *
@@ -105,7 +106,7 @@ class Content
     }
 
     /**
-     * Get the value of Content En
+     * Get the value of Content En.
      *
      * @return string
      */
@@ -115,7 +116,7 @@ class Content
     }
 
     /**
-     * Set the value of Content En
+     * Set the value of Content En.
      *
      * @param string $contentEn
      *
@@ -129,7 +130,7 @@ class Content
     }
 
     /**
-     * Get the value of Content Fr
+     * Get the value of Content Fr.
      *
      * @return string
      */
@@ -139,7 +140,7 @@ class Content
     }
 
     /**
-     * Set the value of Content Fr
+     * Set the value of Content Fr.
      *
      * @param string $contentFr
      *
@@ -153,7 +154,7 @@ class Content
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -163,7 +164,7 @@ class Content
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *

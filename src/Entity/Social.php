@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -28,7 +30,7 @@ class Social
      *
      * @ORM\Column(type="string", length=255, unique=true)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $title;
 
@@ -37,7 +39,7 @@ class Social
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      */
     private $icon;
 
@@ -46,8 +48,8 @@ class Social
      *
      * @ORM\Column(type="string", length=255)
      *
-     * @Assert\NotBlank()
-     * @Assert\Url()
+     * @Assert\NotBlank
+     * @Assert\Url
      */
     private $url;
 
@@ -56,7 +58,7 @@ class Social
      *
      * @ORM\Column(type="integer")
      *
-     * @Assert\NotBlank()
+     * @Assert\NotBlank
      * @Assert\Type("integer")
      * @Assert\GreaterThan(0)
      */
@@ -69,10 +71,9 @@ class Social
      *
      * @Gedmo\Timestampable(on="update")
      *
-     * @Assert\DateTime()
+     * @Assert\DateTime
      */
     private $updatedAt;
-
 
     /**
      * @return string
@@ -83,7 +84,7 @@ class Social
     }
 
     /**
-     * Get the value of Id
+     * Get the value of Id.
      *
      * @return int
      */
@@ -93,7 +94,7 @@ class Social
     }
 
     /**
-     * Get the value of Title
+     * Get the value of Title.
      *
      * @return string
      */
@@ -103,7 +104,7 @@ class Social
     }
 
     /**
-     * Set the value of Title
+     * Set the value of Title.
      *
      * @param string $title
      *
@@ -117,7 +118,7 @@ class Social
     }
 
     /**
-     * Get the value of Icon
+     * Get the value of Icon.
      *
      * @return string
      */
@@ -127,7 +128,7 @@ class Social
     }
 
     /**
-     * Set the value of Icon
+     * Set the value of Icon.
      *
      * @param string $icon
      *
@@ -141,7 +142,7 @@ class Social
     }
 
     /**
-     * Get the value of Url
+     * Get the value of Url.
      *
      * @return string
      */
@@ -151,7 +152,7 @@ class Social
     }
 
     /**
-     * Set the value of Url
+     * Set the value of Url.
      *
      * @param string $url
      *
@@ -165,7 +166,7 @@ class Social
     }
 
     /**
-     * Get the value of Position
+     * Get the value of Position.
      *
      * @return int
      */
@@ -175,7 +176,7 @@ class Social
     }
 
     /**
-     * Set the value of Position
+     * Set the value of Position.
      *
      * @param int $position
      *
@@ -189,7 +190,7 @@ class Social
     }
 
     /**
-     * Get the value of Updated At
+     * Get the value of Updated At.
      *
      * @return \DateTime
      */
@@ -199,7 +200,7 @@ class Social
     }
 
     /**
-     * Set the value of Updated At
+     * Set the value of Updated At.
      *
      * @param \DateTime $updatedAt
      *
