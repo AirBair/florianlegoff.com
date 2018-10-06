@@ -15,10 +15,6 @@ class SecurityController extends Controller
      * Login page.
      *
      * @Route("/login", name="login")
-     *
-     * @param AuthenticationUtils $authenticationUtils
-     *
-     * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {

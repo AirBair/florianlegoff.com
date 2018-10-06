@@ -18,8 +18,6 @@ class Kernel extends BaseKernel
 
     /**
      * Get Cache directory.
-     *
-     * @return string
      */
     public function getCacheDir(): string
     {
@@ -28,8 +26,6 @@ class Kernel extends BaseKernel
 
     /**
      * Get Log directory.
-     *
-     * @return string
      */
     public function getLogDir(): string
     {
@@ -38,8 +34,6 @@ class Kernel extends BaseKernel
 
     /**
      * Register Bundles.
-     *
-     * @return \Generator
      */
     public function registerBundles(): \Generator
     {
@@ -52,10 +46,7 @@ class Kernel extends BaseKernel
     }
 
     /**
-     * Configure container.
-     *
-     * @param ContainerBuilder $container
-     * @param LoaderInterface  $loader
+     * Configure services container.
      */
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader): void
     {
@@ -72,8 +63,6 @@ class Kernel extends BaseKernel
 
     /**
      * Configure Routes.
-     *
-     * @param RouteCollectionBuilder $routes
      */
     protected function configureRoutes(RouteCollectionBuilder $routes): void
     {

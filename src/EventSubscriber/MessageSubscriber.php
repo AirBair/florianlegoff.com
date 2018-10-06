@@ -11,15 +11,10 @@ use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 class MessageSubscriber implements EventSubscriber
 {
     /**
-     * @var \Swift_Mailer
+     * Mailer service instance.
      */
     private $mailer;
 
-    /**
-     * Constructor.
-     *
-     * @param \Swift_Mailer $mailer
-     */
     public function __construct(\Swift_Mailer $mailer)
     {
         $this->mailer = $mailer;
@@ -37,8 +32,6 @@ class MessageSubscriber implements EventSubscriber
 
     /**
      * Send me en email when a message is posted through the contact form.
-     *
-     * @param LifecycleEventArgs $args
      */
     public function postPersist(LifecycleEventArgs $args): void
     {

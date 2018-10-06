@@ -14,8 +14,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Message
 {
     /**
-     * @var int
-     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -23,8 +21,6 @@ class Message
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank
@@ -32,8 +28,6 @@ class Message
     private $name;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank
@@ -42,8 +36,6 @@ class Message
     private $email;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank
@@ -51,8 +43,6 @@ class Message
     private $subject;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="text")
      *
      * @Assert\NotBlank
@@ -60,140 +50,71 @@ class Message
     private $message;
 
     /**
-     * @var \DateTime
-     *
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
-     *
-     * @Assert\DateTime
      */
     private $sentAt;
 
-    /**
-     * Get the value of Id.
-     *
-     * @return int
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * Get the value of Name.
-     *
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * Set the value of Name.
-     *
-     * @param string $name
-     *
-     * @return Message
-     */
-    public function setName($name)
+    public function setName(string $name): self
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * Get the value of Email.
-     *
-     * @return string
-     */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    /**
-     * Set the value of Email.
-     *
-     * @param string $email
-     *
-     * @return Message
-     */
-    public function setEmail($email)
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
         return $this;
     }
 
-    /**
-     * Get the value of Subject.
-     *
-     * @return string
-     */
-    public function getSubject()
+    public function getSubject(): ?string
     {
         return $this->subject;
     }
 
-    /**
-     * Set the value of Subject.
-     *
-     * @param string $subject
-     *
-     * @return Message
-     */
-    public function setSubject($subject)
+    public function setSubject(string $subject): self
     {
         $this->subject = $subject;
 
         return $this;
     }
 
-    /**
-     * Get the value of Message.
-     *
-     * @return string
-     */
-    public function getMessage()
+    public function getMessage(): ?string
     {
         return $this->message;
     }
 
-    /**
-     * Set the value of Message.
-     *
-     * @param string $message
-     *
-     * @return Message
-     */
-    public function setMessage($message)
+    public function setMessage(string $message): self
     {
         $this->message = $message;
 
         return $this;
     }
 
-    /**
-     * Get the value of Sent At.
-     *
-     * @return \DateTime
-     */
-    public function getSentAt()
+    public function getSentAt(): ?\DateTimeInterface
     {
         return $this->sentAt;
     }
 
-    /**
-     * Set the value of Sent At.
-     *
-     * @param \DateTime $sentAt
-     *
-     * @return Message
-     */
-    public function setSentAt(\DateTime $sentAt)
+    public function setSentAt(\DateTimeInterface $sentAt): self
     {
         $this->sentAt = $sentAt;
 

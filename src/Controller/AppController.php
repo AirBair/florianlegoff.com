@@ -23,8 +23,6 @@ class AppController extends Controller
      * Homepage.
      *
      * @Route("/", name="homepage")
-     *
-     * @return Response
      */
     public function index(): Response
     {
@@ -33,11 +31,6 @@ class AppController extends Controller
 
     /**
      * About section of homepage.
-     *
-     * @param ContentRepository $contentRepository
-     * @param SocialRepository  $socialRepository
-     *
-     * @return Response
      */
     public function about(ContentRepository $contentRepository, SocialRepository $socialRepository): Response
     {
@@ -50,10 +43,6 @@ class AppController extends Controller
 
     /**
      * Projects section of homepage.
-     *
-     * @param ProjectRepository $projectRepository
-     *
-     * @return Response
      */
     public function projects(ProjectRepository $projectRepository): Response
     {
@@ -64,10 +53,6 @@ class AppController extends Controller
 
     /**
      * Skills section of homepage.
-     *
-     * @param SkillGroupRepository $skillGroupRepository
-     *
-     * @return Response
      */
     public function skills(SkillGroupRepository $skillGroupRepository): Response
     {
@@ -80,11 +65,6 @@ class AppController extends Controller
      * Contact section of homepage.
      *
      * @Route("/contact", name="contact")
-     *
-     * @param Request                $request
-     * @param EntityManagerInterface $em
-     *
-     * @return Response|RedirectResponse
      */
     public function contact(Request $request, EntityManagerInterface $em): Response
     {
@@ -116,10 +96,6 @@ class AppController extends Controller
 
     /**
      * Footer section of homepage.
-     *
-     * @param ContentRepository $contentRepository
-     *
-     * @return Response
      */
     public function footer(ContentRepository $contentRepository): Response
     {
@@ -133,11 +109,6 @@ class AppController extends Controller
      * Change the language of the website.
      *
      * @Route("/language/{locale}", name="change_language", requirements={"locale": "fr|en"})
-     *
-     * @param Request $request
-     * @param string  $locale
-     *
-     * @return RedirectResponse
      */
     public function changeLanguageAction(Request $request, String $locale): RedirectResponse
     {

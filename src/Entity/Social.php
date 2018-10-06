@@ -17,8 +17,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Social
 {
     /**
-     * @var int
-     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -26,8 +24,6 @@ class Social
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255, unique=true)
      *
      * @Assert\NotBlank
@@ -35,8 +31,6 @@ class Social
     private $title;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank
@@ -44,8 +38,6 @@ class Social
     private $icon;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255)
      *
      * @Assert\NotBlank
@@ -54,8 +46,6 @@ class Social
     private $url;
 
     /**
-     * @var int
-     *
      * @ORM\Column(type="integer")
      *
      * @Assert\NotBlank
@@ -65,148 +55,76 @@ class Social
     private $position;
 
     /**
-     * @var \DateTime
-     *
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
-     *
-     * @Assert\DateTime
      */
     private $updatedAt;
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return (string) $this->title;
     }
 
-    /**
-     * Get the value of Id.
-     *
-     * @return int
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * Get the value of Title.
-     *
-     * @return string
-     */
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    /**
-     * Set the value of Title.
-     *
-     * @param string $title
-     *
-     * @return Social
-     */
-    public function setTitle($title)
+    public function setTitle(string $title): self
     {
         $this->title = $title;
 
         return $this;
     }
 
-    /**
-     * Get the value of Icon.
-     *
-     * @return string
-     */
-    public function getIcon()
+    public function getIcon(): ?string
     {
         return $this->icon;
     }
 
-    /**
-     * Set the value of Icon.
-     *
-     * @param string $icon
-     *
-     * @return Social
-     */
-    public function setIcon($icon)
+    public function setIcon(string $icon): self
     {
         $this->icon = $icon;
 
         return $this;
     }
 
-    /**
-     * Get the value of Url.
-     *
-     * @return string
-     */
-    public function getUrl()
+    public function getUrl(): ?string
     {
         return $this->url;
     }
 
-    /**
-     * Set the value of Url.
-     *
-     * @param string $url
-     *
-     * @return Social
-     */
-    public function setUrl($url)
+    public function setUrl(string $url): self
     {
         $this->url = $url;
 
         return $this;
     }
 
-    /**
-     * Get the value of Position.
-     *
-     * @return int
-     */
-    public function getPosition()
+    public function getPosition(): ?int
     {
         return $this->position;
     }
 
-    /**
-     * Set the value of Position.
-     *
-     * @param int $position
-     *
-     * @return Social
-     */
-    public function setPosition($position)
+    public function setPosition(int $position): self
     {
         $this->position = $position;
 
         return $this;
     }
 
-    /**
-     * Get the value of Updated At.
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    /**
-     * Set the value of Updated At.
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Social
-     */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 

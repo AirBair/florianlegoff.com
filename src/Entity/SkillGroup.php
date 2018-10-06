@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -18,8 +20,6 @@ use Symfony\Component\Validator\Constraints as Assert;
 class SkillGroup
 {
     /**
-     * @var int
-     *
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -27,8 +27,6 @@ class SkillGroup
     private $id;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255, unique=true)
      *
      * @Assert\NotBlank
@@ -36,8 +34,6 @@ class SkillGroup
     private $titleEn;
 
     /**
-     * @var string
-     *
      * @ORM\Column(type="string", length=255, unique=true)
      *
      * @Assert\NotBlank
@@ -45,8 +41,6 @@ class SkillGroup
     private $titleFr;
 
     /**
-     * @var int
-     *
      * @ORM\Column(type="integer")
      *
      * @Assert\NotBlank
@@ -56,8 +50,6 @@ class SkillGroup
     private $position;
 
     /**
-     * @var \Doctrine\Common\Collections\Collection
-     *
      * @ORM\OneToMany(targetEntity="App\Entity\SkillItem", mappedBy="skillGroup", cascade={"persist", "remove"}, orphanRemoval=true)
      *
      * @Assert\Collection
@@ -65,188 +57,101 @@ class SkillGroup
     private $skillItems;
 
     /**
-     * @var \DateTime
-     *
      * @ORM\Column(type="datetime")
      *
      * @Gedmo\Timestampable(on="update")
-     *
-     * @Assert\DateTime
      */
     private $updatedAt;
 
-    /**
-     * Constructor.
-     */
     public function __construct()
     {
-        $this->skillItems = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->skillItems = new ArrayCollection();
     }
 
-    /**
-     * @return string
-     */
-    public function __toString()
+    public function __toString(): string
     {
         return (string) $this->titleEn;
     }
 
-    /**
-     * Get the value of Id.
-     *
-     * @return int
-     */
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
 
-    /**
-     * Get the value of Title En.
-     *
-     * @return string
-     */
-    public function getTitleEn()
+    public function getTitleEn(): ?string
     {
         return $this->titleEn;
     }
 
-    /**
-     * Set the value of Title En.
-     *
-     * @param string $titleEn
-     *
-     * @return SkillGroup
-     */
-    public function setTitleEn($titleEn)
+    public function setTitleEn(string $titleEn): self
     {
         $this->titleEn = $titleEn;
 
         return $this;
     }
 
-    /**
-     * Get the value of Title Fr.
-     *
-     * @return string
-     */
-    public function getTitleFr()
+    public function getTitleFr(): ?string
     {
         return $this->titleFr;
     }
 
-    /**
-     * Set the value of Title Fr.
-     *
-     * @param string $titleFr
-     *
-     * @return SkillGroup
-     */
-    public function setTitleFr($titleFr)
+    public function setTitleFr(string $titleFr): self
     {
         $this->titleFr = $titleFr;
 
         return $this;
     }
 
-    /**
-     * Get the value of Position.
-     *
-     * @return int
-     */
-    public function getPosition()
+    public function getPosition(): ?int
     {
         return $this->position;
     }
 
-    /**
-     * Set the value of Position.
-     *
-     * @param int $position
-     *
-     * @return SkillGroup
-     */
-    public function setPosition($position)
+    public function setPosition(int $position): self
     {
         $this->position = $position;
 
         return $this;
     }
 
-    /**
-     * Get the value of Skill Items.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getSkillItems()
-    {
-        return $this->skillItems;
-    }
-
-    /**
-     * Set the value of Skill Items.
-     *
-     * @param \Doctrine\Common\Collections\Collection $skillItems
-     *
-     * @return SkillGroup
-     */
-    public function setSkillItems(\Doctrine\Common\Collections\Collection $skillItems)
-    {
-        $this->skillItems = $skillItems;
-
-        return $this;
-    }
-
-    /**
-     * Add a Skill Items.
-     *
-     * @param \App\Entity\SkillItem $skillItem
-     *
-     * @return SkillGroup
-     */
-    public function addSkillItem(\App\Entity\SkillItem $skillItem)
-    {
-        $this->skillItems->add($skillItem);
-
-        $skillItem->setSkillGroup($this);
-
-        return $this;
-    }
-
-    /**
-     * Remove a Skill Items.
-     *
-     * @param \App\Entity\SkillItem $skillItem
-     *
-     * @return SkillGroup
-     */
-    public function removeSkillItem(\App\Entity\SkillItem $skillItem)
-    {
-        $this->skillItems->removeElement($skillItem);
-
-        return $this;
-    }
-
-    /**
-     * Get the value of Updated At.
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    /**
-     * Set the value of Updated At.
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return SkillGroup
-     */
-    public function setUpdatedAt(\DateTime $updatedAt)
+    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|SkillItem[]
+     */
+    public function getSkillItems(): Collection
+    {
+        return $this->skillItems;
+    }
+
+    public function addSkillItem(SkillItem $skillItem): self
+    {
+        if (!$this->skillItems->contains($skillItem)) {
+            $this->skillItems[] = $skillItem;
+            $skillItem->setSkillGroup($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSkillItem(SkillItem $skillItem): self
+    {
+        if ($this->skillItems->contains($skillItem)) {
+            $this->skillItems->removeElement($skillItem);
+            if ($skillItem->getSkillGroup() === $this) {
+                $skillItem->setSkillGroup(null);
+            }
+        }
 
         return $this;
     }

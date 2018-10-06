@@ -10,11 +10,6 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
 
 class SocialRepository extends ServiceEntityRepository
 {
-    /**
-     * Constructor.
-     *
-     * @param RegistryInterface $registry
-     */
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Social::class);

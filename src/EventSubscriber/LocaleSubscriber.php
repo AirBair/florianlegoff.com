@@ -11,15 +11,10 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class LocaleSubscriber implements EventSubscriberInterface
 {
     /**
-     * @var string
+     * Default locale.
      */
     private $defaultLocale;
 
-    /**
-     * Constructor.
-     *
-     * @param string $defaultLocale
-     */
     public function __construct(string $defaultLocale = 'en')
     {
         $this->defaultLocale = $defaultLocale;
