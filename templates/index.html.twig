@@ -10,15 +10,15 @@
     <body data-spy="scroll" data-target="#scrollspyNav" data-offset="58">
         {% include('_header.html.twig') %}
 
-        {{ render(controller(('App\\Controller\\AppController:about'))) }}
+        {{ render(controller(('App\\Controller\\AppController::about'))) }}
 
-        {{ render(controller(('App\\Controller\\AppController:projects'))) }}
+        {{ render(controller(('App\\Controller\\AppController::projects'))) }}
 
-        {{ render(controller(('App\\Controller\\AppController:skills'))) }}
+        {{ render(controller(('App\\Controller\\AppController::skills'))) }}
 
-        {{ render(controller(('App\\Controller\\AppController:contact'))) }}
+        {{ render(controller(('App\\Controller\\AppController::contact'))) }}
 
-        {{ render(controller(('App\\Controller\\AppController:footer'))) }}
+        {{ render(controller(('App\\Controller\\AppController::footer'))) }}
 
         <script src="{{ asset('build/js/app.js') }}"></script>
         {% include '_matomo.html.twig' %}
