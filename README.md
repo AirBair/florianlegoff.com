@@ -8,7 +8,7 @@ Source code of my personal Website
 
 - [PHP](https://secure.php.net) (7.2 or higher).
 - [Composer](https://getcomposer.org)
-- [Node.js](https://nodejs.org) (6.0 or higher) & [Yarn](https://yarnpkg.com) to compile assets.
+- [Node.js](https://nodejs.org) (10 or higher) & [Yarn](https://yarnpkg.com) to compile assets.
 
 ## Installation
 
