@@ -20,7 +20,7 @@ Install yarn dependencies & build assets : `yarn install && yarn build`
 
 ### 2 - Configure the .env file
 
-Edit the file .env and complete it with required credentials (database, mailer, admin password) & the correct working environment.
+Edit the file .env.local and complete it with required credentials (database, mailer, admin password) & the correct working environment.
 
 ### 3 - Create/Update the database
 
