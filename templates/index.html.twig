@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{{ asset('images/favicon.png') }}" />
         <title>Florian LE GOFF | {{ 'developer' | trans }}</title>
-        <link rel="stylesheet" href="{{ asset('build/css/app.css') }}"/>
+        {{ encore_entry_link_tags('app') }}
     </head>
     <body data-spy="scroll" data-target="#scrollspyNav" data-offset="58">
         {% include('_header.html.twig') %}
@@ -20,7 +20,7 @@
 
         {{ render(controller(('App\\Controller\\AppController::footer'))) }}
 
-        <script src="{{ asset('build/js/app.js') }}"></script>
+        {{ encore_entry_script_tags('app') }}
         {% include '_matomo.html.twig' %}
     </body>
 </html>
