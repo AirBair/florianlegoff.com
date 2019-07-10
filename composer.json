@@ -6,7 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "cocur/slugify": "^3.1",
-        "easycorp/easyadmin-bundle": "^1.17",
+        "easycorp/easyadmin-bundle": "^2.2",
         "php-translation/symfony-bundle": "^0.8.1",
         "sensio/framework-extra-bundle": "^5.1",
         "stof/doctrine-extensions-bundle": "^1.3",
