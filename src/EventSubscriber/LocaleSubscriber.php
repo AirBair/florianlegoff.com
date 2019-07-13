@@ -39,7 +39,7 @@ class LocaleSubscriber implements EventSubscriberInterface
         $request = $event->getRequest();
 
         // Detect if the user has his preferred language available
-        if (null !== $request->getPreferredLanguage() && in_array(substr($request->getPreferredLanguage(), 0, 2), ['en', 'fr'])) {
+        if (null !== $request->getPreferredLanguage() && \in_array(substr($request->getPreferredLanguage(), 0, 2), ['en', 'fr'])) {
             $this->defaultLocale = substr($request->getPreferredLanguage(), 0, 2);
         }
 

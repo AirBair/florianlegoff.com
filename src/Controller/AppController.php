@@ -110,7 +110,7 @@ class AppController extends AbstractController
      *
      * @Route("/language/{locale}", name="change_language", requirements={"locale": "fr|en"})
      */
-    public function changeLanguageAction(Request $request, String $locale): RedirectResponse
+    public function changeLanguageAction(Request $request, string $locale): RedirectResponse
     {
         $request->getSession()->set('_locale', $locale);
 
