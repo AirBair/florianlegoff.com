@@ -6,34 +6,42 @@ Source code of my personal Website
 
 ## System Requirement
 
-- [PHP](https://secure.php.net) (7.2 or higher).
+- [PHP](https://secure.php.net)
 - [Composer](https://getcomposer.org)
-- [Node.js](https://nodejs.org) (10 or higher) & [Yarn](https://yarnpkg.com) to compile assets.
+- [Node.js](https://nodejs.org) or [Yarn](https://yarnpkg.com) to compile assets.
 
 ## Installation
 
-### 1 - Install dependencies
+### 1 - Configure environment variables
 
-Install project dependencies from composer : `composer install`
+Copy the `.env` file to `.env.local` and complete it with required credentials (database, mailer) & the correct working environment.
 
-Install yarn dependencies & build assets : `yarn install && yarn build`
+### 2 - Install project dependencies
 
-### 2 - Configure the .env file
+- In **production** environment:
 
-Edit the file .env.local and complete it with required credentials (database, mailer, admin password) & the correct working environment.
+`composer install --no-dev --optimize-autoloader && composer dump-env prod`
 
-### 3 - Create/Update the database
+- In **development** or **testing** environment:
 
-`php bin/console doctrine:migrations:migrate` (Be careful to not lose any data in case of update)
+`composer install`
 
-### 4 - Grant write access on uploads directories to the web user
+### 3 - Generate static resources (css, javascript, ..)
+
+`yarn install && yarn build`
+
+### 4 - Grant write access on log & uploads directories to the web user
 
 ```
 HTTPDUSER=$(ps axo user,comm | grep -E '[a]pache|[h]ttpd|[_]www|[w]ww-data|[n]ginx' | grep -v root | head -1 | cut -d\  -f1)
-setfacl -dR -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX public/images/{projects,skills}
-setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX public/images/{projects,skills}
+setfacl -dR -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var/log public/images/{projects,skills}
+setfacl -R -m u:"$HTTPDUSER":rwX -m u:$(whoami):rwX var/log public/images/{projects,skills}
 ```
 
+### 5 - Protect sensitive files
+
+Since the `.env.local` (and `.env.local.php` if you are in production environment) contains sensitive information, consider protecting it in read/write mode.
+Only the **web user** and **developers** are supposed to be able to access it.
 
 ## License
 
