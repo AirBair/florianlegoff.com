@@ -34,11 +34,11 @@ class AppController extends AbstractController
      */
     public function about(ContentRepository $contentRepository, SocialRepository $socialRepository): Response
     {
-        return $this->render('_about.html.twig', array(
-            'about' => $contentRepository->findOneByLabel('about'),
-            'curriculum_vitae' => $contentRepository->findOneByLabel('curriculum_vitae'),
+        return $this->render('_about.html.twig', [
+            'about' => $contentRepository->findOneBy(['label' => 'about']),
+            'curriculum_vitae' => $contentRepository->findOneBy(['label' => 'curriculum_vitae']),
             'socials' => $socialRepository->findBy([], ['position' => 'ASC']),
-        ));
+        ]);
     }
 
     /**
@@ -46,9 +46,9 @@ class AppController extends AbstractController
      */
     public function projects(ProjectRepository $projectRepository): Response
     {
-        return $this->render('_projects.html.twig', array(
+        return $this->render('_projects.html.twig', [
             'projects' => $projectRepository->findBy([], ['position' => 'ASC']),
-        ));
+        ]);
     }
 
     /**
@@ -56,9 +56,9 @@ class AppController extends AbstractController
      */
     public function skills(SkillGroupRepository $skillGroupRepository): Response
     {
-        return $this->render('_skills.html.twig', array(
+        return $this->render('_skills.html.twig', [
             'skillGroups' => $skillGroupRepository->findBy([], ['position' => 'ASC']),
-        ));
+        ]);
     }
 
     /**
@@ -89,9 +89,9 @@ class AppController extends AbstractController
             }
         }
 
-        return $response ?? $this->render('_contact.html.twig', array(
+        return $response ?? $this->render('_contact.html.twig', [
             'form' => $form->createView(),
-        ));
+        ]);
     }
 
     /**
@@ -99,10 +99,10 @@ class AppController extends AbstractController
      */
     public function footer(ContentRepository $contentRepository): Response
     {
-        return $this->render('_footer.html.twig', array(
-            'hosting' => $contentRepository->findOneByLabel('hosting'),
-            'license' => $contentRepository->findOneByLabel('license'),
-        ));
+        return $this->render('_footer.html.twig', [
+            'hosting' => $contentRepository->findOneBy(['label' => 'hosting']),
+            'license' => $contentRepository->findOneBy(['label' => 'license']),
+        ]);
     }
 
     /**

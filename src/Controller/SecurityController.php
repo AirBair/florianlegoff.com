@@ -18,10 +18,10 @@ class SecurityController extends AbstractController
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        return $this->render('login.html.twig', array(
+        return $this->render('login.html.twig', [
             'username' => $authenticationUtils->getLastUsername(),
             'error' => $authenticationUtils->getLastAuthenticationError(),
-        ));
+        ]);
     }
 
     /**

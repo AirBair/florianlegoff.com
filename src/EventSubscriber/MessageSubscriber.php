@@ -25,9 +25,9 @@ class MessageSubscriber implements EventSubscriber
      */
     public function getSubscribedEvents(): array
     {
-        return array(
+        return [
             'postPersist',
-        );
+        ];
     }
 
     /**
