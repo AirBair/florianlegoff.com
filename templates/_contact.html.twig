@@ -1,6 +1,6 @@
 <section id="contact" class="container-fluid bg-lightblack">
     <h2 class="text-center pt-5">{{ 'contact' | trans | upper }}</h2>
-    <div class="container pb-5 wow animated fadeInUp">
+    <div class="container pb-5 wow animate__animated animate__fadeInUp">
         {% for successMessage in app.session.flashbag.get('success-message') %}
             <p class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ 'your_message_has_been_successfully_sent_i_will_reply_as_soon_as_possible' | trans }}
