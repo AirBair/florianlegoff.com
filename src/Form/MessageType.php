@@ -21,25 +21,25 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name', TextType::class, array(
+            ->add('name', TextType::class, [
                 'label' => false,
                 'attr' => ['placeholder' => 'your_name'],
-            ))
-            ->add('email', EmailType::class, array(
+            ])
+            ->add('email', EmailType::class, [
                 'label' => false,
                 'attr' => ['placeholder' => 'your_email'],
-            ))
-            ->add('subject', TextType::class, array(
+            ])
+            ->add('subject', TextType::class, [
                 'label' => false,
                 'attr' => ['placeholder' => 'subject'],
-            ))
-            ->add('message', TextareaType::class, array(
+            ])
+            ->add('message', TextareaType::class, [
                 'label' => false,
                 'attr' => ['placeholder' => 'your _message'],
-            ))
-            ->add('send', SubmitType::class, array(
+            ])
+            ->add('send', SubmitType::class, [
                 'label' => 'send',
-            ))
+            ])
         ;
     }
 
@@ -48,8 +48,8 @@ class MessageType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults(array(
+        $resolver->setDefaults([
             'data_class' => Message::class,
-        ));
+        ]);
     }
 }
