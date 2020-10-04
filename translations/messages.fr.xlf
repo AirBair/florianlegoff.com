@@ -1,238 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="fr">
-  <file id="messages.fr">
-    <unit id="JXfA9Ve">
-      <notes>
-        <note category="file-source" priority="1">templates/_projects.html.twig:2</note>
-        <note category="file-source" priority="1">templates/_header.html.twig:13</note>
-      </notes>
-      <segment>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="JXfA9Ve" resname="projects">
         <source>projects</source>
         <target>Projets</target>
-      </segment>
-    </unit>
-    <unit id="kBwbs5d">
-      <notes>
-        <note category="file-source" priority="1">templates/_about.html.twig:4</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_projects.html.twig:2</note>
+        <note priority="1">templates/_header.html.twig:13</note>
+      </trans-unit>
+      <trans-unit id="kBwbs5d" resname="profile_picture">
         <source>profile_picture</source>
         <target>Photo de profil</target>
-      </segment>
-    </unit>
-    <unit id="cpGJQhj">
-      <notes>
-        <note category="file-source" priority="1">templates/_about.html.twig:10</note>
-        <note category="file-source" priority="1">templates/_about.html.twig:11</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_about.html.twig:4</note>
+      </trans-unit>
+      <trans-unit id="cpGJQhj" resname="curriculum_vitae">
         <source>curriculum_vitae</source>
         <target>Curriculum Vitae</target>
-      </segment>
-    </unit>
-    <unit id="CT59X9u">
-      <notes>
-        <note category="file-source" priority="1">templates/_contact.html.twig:2</note>
-        <note category="file-source" priority="1">templates/_header.html.twig:19</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_about.html.twig:10</note>
+        <note priority="1">templates/_about.html.twig:11</note>
+      </trans-unit>
+      <trans-unit id="CT59X9u" resname="contact">
         <source>contact</source>
         <target>Contact</target>
-      </segment>
-    </unit>
-    <unit id="FlCeD5P">
-      <notes>
-        <note category="file-source" priority="1">templates/_contact.html.twig:6</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_contact.html.twig:2</note>
+        <note priority="1">templates/_header.html.twig:19</note>
+      </trans-unit>
+      <trans-unit id="FlCeD5P" resname="your_message_has_been_successfully_sent_i_will_reply_as_soon_as_possible">
         <source>your_message_has_been_successfully_sent_i_will_reply_as_soon_as_possible</source>
         <target>Votre message a bien été envoyé, je vous répondrai au plus vite.</target>
-      </segment>
-    </unit>
-    <unit id="MQ.yABS">
-      <notes>
-        <note category="file-source" priority="1">templates/_contact.html.twig:7</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_contact.html.twig:6</note>
+      </trans-unit>
+      <trans-unit id="MQ.yABS" resname="close">
         <source>close</source>
         <target>Fermer</target>
-      </segment>
-    </unit>
-    <unit id="WPzArF9">
-      <notes>
-        <note category="file-source" priority="1">templates/_header.html.twig:4</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_contact.html.twig:7</note>
+      </trans-unit>
+      <trans-unit id="WPzArF9" resname="toggle_navigation">
         <source>toggle_navigation</source>
         <target>Basculer la navigation</target>
-      </segment>
-    </unit>
-    <unit id="pCYuHJv">
-      <notes>
-        <note category="file-source" priority="1">templates/_header.html.twig:10</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_header.html.twig:4</note>
+      </trans-unit>
+      <trans-unit id="pCYuHJv" resname="about">
         <source>about</source>
         <target>A Propos</target>
-      </segment>
-    </unit>
-    <unit id="MsHPSaL">
-      <notes>
-        <note category="file-source" priority="1">templates/_header.html.twig:16</note>
-        <note category="file-source" priority="1">templates/_skills.html.twig:2</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_header.html.twig:10</note>
+      </trans-unit>
+      <trans-unit id="MsHPSaL" resname="skills">
         <source>skills</source>
         <target>Compétences</target>
-      </segment>
-    </unit>
-    <unit id="Ibs2rQY">
-      <notes>
-        <note category="file-source" priority="1">templates/_header.html.twig:24</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_header.html.twig:16</note>
+        <note priority="1">templates/_skills.html.twig:2</note>
+      </trans-unit>
+      <trans-unit id="Ibs2rQY" resname="french">
         <source>french</source>
         <target>Français</target>
-      </segment>
-    </unit>
-    <unit id="tiNNLqD">
-      <notes>
-        <note category="file-source" priority="1">templates/_header.html.twig:29</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_header.html.twig:24</note>
+      </trans-unit>
+      <trans-unit id="tiNNLqD" resname="english">
         <source>english</source>
         <target>Anglais</target>
-      </segment>
-    </unit>
-    <unit id="hQEiSOU">
-      <notes>
-        <note category="file-source" priority="1">templates/_footer.html.twig:6</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_header.html.twig:29</note>
+      </trans-unit>
+      <trans-unit id="hQEiSOU" resname="licensed_under_MIT">
         <source>licensed_under_MIT</source>
         <target>Sous Licence MIT</target>
-      </segment>
-    </unit>
-    <unit id="p_LSbo0">
-      <notes>
-        <note category="file-source" priority="1">templates/_footer.html.twig:12</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_footer.html.twig:6</note>
+      </trans-unit>
+      <trans-unit id="p_LSbo0" resname="by">
         <source>by</source>
         <target>par</target>
-      </segment>
-    </unit>
-    <unit id="97ov9tF">
-      <notes>
-        <note category="file-source" priority="1">templates/_footer.html.twig:19</note>
-        <note category="file-source" priority="1">templates/_footer.html.twig:24</note>
-        <note category="file-source" priority="1">templates/_footer.html.twig:28</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_footer.html.twig:12</note>
+      </trans-unit>
+      <trans-unit id="97ov9tF" resname="legal_notices">
         <source>legal_notices</source>
         <target>Mentions Légales</target>
-      </segment>
-    </unit>
-    <unit id="WLXJpyH">
-      <notes>
-        <note category="file-source" priority="1">templates/_footer.html.twig:34</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_footer.html.twig:19</note>
+        <note priority="1">templates/_footer.html.twig:24</note>
+        <note priority="1">templates/_footer.html.twig:28</note>
+      </trans-unit>
+      <trans-unit id="WLXJpyH" resname="hosting">
         <source>hosting</source>
         <target>Hébergement</target>
-      </segment>
-    </unit>
-    <unit id="zB07AjS">
-      <notes>
-        <note category="file-source" priority="1">templates/_footer.html.twig:39</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_footer.html.twig:34</note>
+      </trans-unit>
+      <trans-unit id="zB07AjS" resname="license">
         <source>license</source>
         <target>Licence</target>
-      </segment>
-    </unit>
-    <unit id="J84dG.Q">
-      <notes>
-        <note category="file-source" priority="1">src/Form/MessageType.php:38</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_footer.html.twig:39</note>
+      </trans-unit>
+      <trans-unit id="J84dG.Q" resname="send">
         <source>send</source>
         <target>Envoyer</target>
-      </segment>
-    </unit>
-    <unit id="S1fWkfU">
-      <notes>
-        <note category="file-source" priority="1">src/Form/MessageType.php:24</note>
-      </notes>
-      <segment>
+        <note priority="1">src/Form/MessageType.php:38</note>
+      </trans-unit>
+      <trans-unit id="S1fWkfU" resname="your_name">
         <source>your_name</source>
         <target>Votre Nom</target>
-      </segment>
-    </unit>
-    <unit id="Uu1euvk">
-      <notes>
-        <note category="file-source" priority="1">src/Form/MessageType.php:28</note>
-      </notes>
-      <segment>
+        <note priority="1">src/Form/MessageType.php:24</note>
+      </trans-unit>
+      <trans-unit id="Uu1euvk" resname="your_email">
         <source>your_email</source>
         <target>Votre Email</target>
-      </segment>
-    </unit>
-    <unit id="qUkfTBv">
-      <notes>
-        <note category="file-source" priority="1">src/Form/MessageType.php:32</note>
-      </notes>
-      <segment>
+        <note priority="1">src/Form/MessageType.php:28</note>
+      </trans-unit>
+      <trans-unit id="qUkfTBv" resname="subject">
         <source>subject</source>
         <target>Sujet</target>
-      </segment>
-    </unit>
-    <unit id="cvT_GmJ">
-      <notes>
-        <note category="file-source" priority="1">src/Form/MessageType.php:36</note>
-      </notes>
-      <segment>
+        <note priority="1">src/Form/MessageType.php:32</note>
+      </trans-unit>
+      <trans-unit id="cvT_GmJ" resname="your _message">
         <source>your _message</source>
         <target>Votre Message</target>
-      </segment>
-    </unit>
-    <unit id="iPoNdZ_">
-      <notes>
-        <note category="file-source" priority="1">templates/_about.html.twig:6</note>
-        <note category="file-source" priority="1">templates/login.html.twig:7</note>
-        <note category="file-source" priority="1">templates/index.html.twig:7</note>
-      </notes>
-      <segment>
+        <note priority="1">src/Form/MessageType.php:36</note>
+      </trans-unit>
+      <trans-unit id="iPoNdZ_" resname="developer">
         <source>developer</source>
         <target>Développeur</target>
-      </segment>
-    </unit>
-    <unit id="FveKfWM">
-      <notes>
-        <note category="file-source" priority="1">templates/login.html.twig:20</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/_about.html.twig:6</note>
+        <note priority="1">templates/login.html.twig:7</note>
+        <note priority="1">templates/index.html.twig:7</note>
+      </trans-unit>
+      <trans-unit id="FveKfWM" resname="username">
         <source>username</source>
         <target>Nom d'utilisateur</target>
-      </segment>
-    </unit>
-    <unit id="XohImNo">
-      <notes>
-        <note category="file-source" priority="1">templates/login.html.twig:22</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/login.html.twig:20</note>
+      </trans-unit>
+      <trans-unit id="XohImNo" resname="password">
         <source>password</source>
         <target>Mot de passe</target>
-      </segment>
-    </unit>
-    <unit id="QoghNQ6">
-      <notes>
-        <note category="file-source" priority="1">templates/login.html.twig:24</note>
-      </notes>
-      <segment>
+        <note priority="1">templates/login.html.twig:22</note>
+      </trans-unit>
+      <trans-unit id="QoghNQ6" resname="login">
         <source>login</source>
         <target>Connexion</target>
-      </segment>
-    </unit>
+        <note priority="1">templates/login.html.twig:24</note>
+      </trans-unit>
+    </body>
   </file>
 </xliff>
