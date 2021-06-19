@@ -8,16 +8,15 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('public')
     ->exclude('var')
     ->exclude('vendor')
-    ->exclude('translations')
-;
+    ->exclude('translations');
 
-return PhpCsFixer\Config::create()
+return (new PhpCsFixer\Config())
     ->setRiskyAllowed(true)
     ->setRules([
         '@Symfony' => true,
         '@Symfony:risky' => true,
         '@DoctrineAnnotation' => true,
-        '@PHP71Migration:risky' => true,
+        '@PHP80Migration:risky' => true,
         'no_useless_else' => true,
         'no_useless_return' => true,
         'ordered_class_elements' => true,
@@ -27,5 +26,4 @@ return PhpCsFixer\Config::create()
         'strict_comparison' => true,
     ])
     ->setCacheFile(__DIR__.'/var/.php_cs.cache')
-    ->setFinder($finder)
-;
+    ->setFinder($finder);
