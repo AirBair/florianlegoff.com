@@ -9,7 +9,7 @@
         "popper.js": "^1.14.5",
         "regenerator-runtime": "^0.13.2",
         "sass": "^1.32.13",
-        "sass-loader": "^11.0.1",
+        "sass-loader": "^12.1.0",
         "webpack-notifier": "^1.6.0",
         "wowjs": "^1.1.3"
     },
