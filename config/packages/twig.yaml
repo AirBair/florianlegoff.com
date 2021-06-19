@@ -3,3 +3,7 @@ twig:
     globals:
         path_projects_images: "%app.path.projects_images%"
         path_skills_images: "%app.path.skills_images%"
+
+when@test:
+    twig:
+        strict_variables: true
